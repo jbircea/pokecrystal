@@ -49,6 +49,8 @@ NewPokedexOrder:
 	db WIGGLYTUFF
 	db TOGEPI
 	db TOGETIC
+	db DWEBBLE
+	db CRUSTLE
 	db SANDSHREW
 	db SANDSLASH
 	db EKANS

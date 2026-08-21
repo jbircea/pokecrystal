@@ -1,10 +1,10 @@
-	db "TINY BIRD@" ; species name
-	dw 100, 40 ; height, weight
+	db "SEAGULL@" ; species name
+	dw 60, 95 ; height, weight
 
-	db   "To protect its"
-	next "territory, it"
-	next "flies around"
+	db   "It makes its"
+	next "nest on steep"
+	next "sea cliffs."
 
-	page "ceaselessly,"
-	next "making high-"
-	next "pitched cries.@"
+	page "Riding updrafts,"
+	next "it soars to"
+	next "great heights.@"

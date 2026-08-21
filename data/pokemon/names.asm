@@ -20,8 +20,8 @@ PokemonNames::
 	dname "PIDGEOT"
 	dname "RATTATA"
 	dname "RATICATE"
-	dname "SPEAROW"
-	dname "FEAROW"
+	dname "WINGULL"
+	dname "PELIPPER"
 	dname "EKANS"
 	dname "ARBOK"
 	dname "PIKACHU"
@@ -251,11 +251,11 @@ PokemonNames::
 	dname "LUGIA"
 	dname "HO-OH"
 	dname "CELEBI"
+	dname "DWEBBLE"
+	dname "CRUSTLE"
 	assert_table_length NUM_POKEMON
-	dname "?????"
 	dname "EGG"
 	assert_table_length EGG
-	dname "?????"
 	dname "?????"
 	dname "?????"
 	assert_table_length $100

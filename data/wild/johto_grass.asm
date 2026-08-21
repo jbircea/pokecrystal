@@ -1433,24 +1433,24 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_36
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, LEDYBA
-	db 4, PIDGEY
+	db 4, CRUSTLE
+	db 4, CRUSTLE
 	db 5, BELLSPROUT
 	db 5, GROWLITHE
-	db 5, PIDGEY
-	db 6, PIDGEY
-	db 6, PIDGEY
+	db 5, DWEBBLE
+	db 6, DWEBBLE
+	db 6, DWEBBLE
 	; day
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, CRUSTLE
+	db 4, CRUSTLE
 	db 5, BELLSPROUT
 	db 5, GROWLITHE
-	db 5, PIDGEY
-	db 6, PIDGEY
-	db 6, PIDGEY
+	db 5, DWEBBLE
+	db 6, DWEBBLE
+	db 6, DWEBBLE
 	; nite
-	db 4, SPINARAK
-	db 4, HOOTHOOT
+	db 4, CRUSTLE
+	db 4, CRUSTLE
 	db 5, BELLSPROUT
 	db 5, HOOTHOOT
 	db 5, HOOTHOOT

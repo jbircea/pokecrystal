@@ -35,6 +35,7 @@ AlphabeticalPokedexOrder:
 	db CORSOLA
 	db CROBAT
 	db CROCONAW
+	db CRUSTLE
 	db CUBONE
 	db CYNDAQUIL
 	db DELIBIRD
@@ -50,6 +51,7 @@ AlphabeticalPokedexOrder:
 	db DROWZEE
 	db DUGTRIO
 	db DUNSPARCE
+	db DWEBBLE
 	db EEVEE
 	db EKANS
 	db ELECTABUZZ

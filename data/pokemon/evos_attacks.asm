@@ -288,30 +288,32 @@ RaticateEvosAttacks:
 	db 0 ; no more level-up moves
 
 SpearowEvosAttacks:
-	db EVOLVE_LEVEL, 20, FEAROW
+	db EVOLVE_LEVEL, 25, FEAROW
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, WATER_GUN
 	db 1, GROWL
-	db 7, LEER
-	db 13, FURY_ATTACK
-	db 25, PURSUIT
-	db 31, MIRROR_MOVE
-	db 37, DRILL_PECK
-	db 43, AGILITY
+	db 7, SUPERSONIC
+	db 13, WING_ATTACK
+	db 21, MIST
+	db 26, ROOST
+	db 31, QUICK_ATTACK
+	db 43, PURSUIT
+	db 55, AGILITY
 	db 0 ; no more level-up moves
 
 FearowEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, PECK
+	db 1, WATER_GUN
 	db 1, GROWL
-	db 1, LEER
-	db 1, FURY_ATTACK
-	db 7, LEER
-	db 13, FURY_ATTACK
-	db 26, PURSUIT
-	db 32, MIRROR_MOVE
-	db 40, DRILL_PECK
-	db 47, AGILITY
+	db 1, WING_ATTACK
+	db 6, SUPERSONIC
+	db 11, WING_ATTACK
+	db 16, MIST
+	db 25, PROTECT
+	db 29, ROOST
+	db 35, QUICK_ATTACK
+	db 43, PURSUIT
+	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
@@ -2192,7 +2194,9 @@ SentretEvosAttacks:
 	db EVOLVE_LEVEL, 15, FURRET
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 5, DEFENSE_CURL
+	db 3, NASTY_PLOT
+	db 4, MOON_BLAST
+	db 5, ROOST
 	db 11, QUICK_ATTACK
 	db 17, FURY_SWIPES
 	db 25, SLAM
@@ -3355,3 +3359,33 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DwebbleEvosAttacks:
+    db EVOLVE_LEVEL, 35, CRUSTLE
+	db 0 ; no more evolutions
+	db 1, FURY_CUTTER
+	db 1, SAND_ATTACK
+	db 6, WITHDRAW
+	db 11, MUD_SLAP
+	db 16, ROCK_SMASH
+	db 21, PROTECT
+	db 26, SLASH
+	db 31, ANCIENTPOWER
+	db 35, CLAMP
+	db 41, ROCK_SLIDE
+	db 0; no more level-up moves
+
+CrustleEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, FURY_CUTTER
+	db 1, SAND_ATTACK
+	db 6, WITHDRAW
+	db 11, MUD_SLAP
+	db 16, ROCK_SMASH
+	db 21, PROTECT
+	db 26, SLASH
+	db 31, ANCIENTPOWER
+	db 35, CLAMP
+	db 41, ROCK_SLIDE
+	db 50, FISSURE
+	db 0; no more level-up moves

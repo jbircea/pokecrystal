@@ -52,11 +52,10 @@ RattataEggMoves:
 	db -1 ; end
 
 SpearowEggMoves:
-	db FAINT_ATTACK
-	db FALSE_SWIPE
-	db SCARY_FACE
-	db QUICK_ATTACK
-	db TRI_ATTACK
+	db AGILITY
+	db GUST
+	db TWISTER
+	db MIST
 	db -1 ; end
 
 EkansEggMoves:
@@ -636,6 +635,11 @@ DunsparceEggMoves:
 	db BITE
 	db RAGE
 	db -1 ; end
+
+DwebbleEggMoves:
+	db COUNTER
+	db CURSE
+	db SPIKES
 
 GligarEggMoves:
 	db METAL_CLAW

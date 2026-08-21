@@ -1,10 +1,10 @@
-	db "BEAK@" ; species name
-	dw 311, 840 ; height, weight
+	db "WATERBIRD@" ; species name
+	dw 120, 280 ; height, weight
 
-	db   "It uses its long"
-	next "beak to attack. It"
-	next "has a surprisingly"
+	db   "It dips its"
+	next "large bill in"
+	next "the sea,"
 
-	page "long reach, so it"
-	next "must be treated"
-	next "with caution.@"
+	page "then scoops up"
+	next "numerous prey"
+	next "along with water.@"
