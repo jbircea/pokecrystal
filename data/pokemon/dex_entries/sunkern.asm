@@ -1,10 +1,10 @@
-	db "SEED@" ; species name
+	db "PONDSKATER@" ; species name
 	dw 100, 40 ; height, weight
 
-	db   "It is very weak."
-	next "Its only means of"
-	next "defense is to"
+	db   "They usually"
+	next "live on ponds,"
+	next "but after an"
 
-	page "shake its leaves"
-	next "desperately at its"
-	next "attacker.@"
+	page "evening shower,"
+	next "they may appear"
+	next "in puddles.@"

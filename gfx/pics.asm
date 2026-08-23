@@ -214,7 +214,6 @@ QuagsireFrontpic:    INCBIN "gfx/pokemon/quagsire/front.animated.2bpp.lz"
 
 SECTION "Pics 9", ROMX
 
-EkansFrontpic:       INCBIN "gfx/pokemon/ekans/front.animated.2bpp.lz"
 SudowoodoFrontpic:   INCBIN "gfx/pokemon/sudowoodo/front.animated.2bpp.lz"
 PikachuFrontpic:     INCBIN "gfx/pokemon/pikachu/front.animated.2bpp.lz"
 SeadraFrontpic:      INCBIN "gfx/pokemon/seadra/front.animated.2bpp.lz"
@@ -714,6 +713,7 @@ DwebbleFrontpic: INCBIN "gfx/pokemon/dwebble/front.animated.2bpp.lz"
 DwebbleBackpic:  INCBIN "gfx/pokemon/dwebble/back.2bpp.lz"
 CrustleFrontpic: INCBIN "gfx/pokemon/crustle/front.animated.2bpp.lz"
 CrustleBackpic:  INCBIN "gfx/pokemon/crustle/back.2bpp.lz"
+EkansFrontpic:       INCBIN "gfx/pokemon/ekans/front.animated.2bpp.lz"
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).

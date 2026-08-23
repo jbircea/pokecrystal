@@ -228,15 +228,15 @@ JohtoWaterWildMons:
 
 	def_water_wildmons CIANWOOD_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
+	db 20, KRABBY
 	db 15, TENTACOOL
 	db 20, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_CITY
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
+	db 20, KRABBY
+	db 15, CORSOLA
 	db 20, TENTACRUEL
 	end_water_wildmons
 

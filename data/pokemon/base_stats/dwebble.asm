@@ -1,6 +1,6 @@
 	db DWEBBLE ; 252
 
-	db  50,  35, 85,  55,  65, 35
+	db  50,  65, 85,  55,  35, 35
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, ROCK ; type

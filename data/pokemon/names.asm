@@ -190,7 +190,7 @@ PokemonNames::
 	dname "SKIPLOOM"
 	dname "JUMPLUFF"
 	dname "AIPOM"
-	dname "SUNKERN"
+	dname "SURSKIT"
 	dname "SUNFLORA"
 	dname "YANMA"
 	dname "WOOPER"

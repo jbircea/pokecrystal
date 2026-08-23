@@ -135,7 +135,7 @@ BattleAnimations::
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_Constrict
 	dw BattleAnim_Amnesia
-	dw BattleAnim_Kinesis
+	dw BattleAnim_FairyWind
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
@@ -151,7 +151,7 @@ BattleAnimations::
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
 	dw BattleAnim_Psywave
-	dw BattleAnim_Splash
+	dw BattleAnim_Astonish
 	dw BattleAnim_AcidArmor
 	dw BattleAnim_Crabhammer
 	dw BattleAnim_Explosion
@@ -2002,14 +2002,17 @@ BattleAnim_AcidArmor:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_Splash:
+BattleAnim_Astonish:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_sound 0, 0, SFX_VICEGRIP
-	anim_call BattleAnim_TargetObj_2Row
-	anim_bgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN, $0, BG_EFFECT_USER, $0
+	anim_bgp $1b
+	anim_obp1 $1b
+	anim_wait 32
+	anim_call BattleAnim_UserObj_2Row
+	anim_bgeffect BATTLE_BG_EFFECT_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
+	anim_sound 0, 1, SFX_PSYCHIC
 	anim_wait 96
-	anim_incbgeffect BATTLE_BG_EFFECT_BOUNCE_DOWN
-	anim_call BattleAnim_ShowMon_0
+	anim_incbgeffect BATTLE_BG_EFFECT_NIGHT_SHADE
+	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_Dig:
@@ -2466,18 +2469,21 @@ BattleAnim_SkullBash:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
-BattleAnim_Kinesis:
-	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_NOISE
+BattleAnim_FairyWind:
+	anim_2gfx BATTLE_ANIM_GFX_REFLECT, BATTLE_ANIM_GFX_SPEED
 	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_obj BATTLE_ANIM_OBJ_KINESIS, 80, 76, $0
-	anim_wait 32
 .loop
-	anim_sound 0, 0, SFX_KINESIS
-	anim_obj BATTLE_ANIM_OBJ_SOUND, 64, 88, $0
-	anim_wait 32
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj BATTLE_ANIM_OBJ_SCREEN, 72, 80, $0
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 72, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 88, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 80, $4
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_SHOOTING_SPARKLE, 64, 96, $4
+	anim_wait 8
 	anim_loop 3, .loop
-	anim_wait 32
-	anim_sound 0, 0, SFX_KINESIS_2
 	anim_wait 32
 	anim_ret
 
