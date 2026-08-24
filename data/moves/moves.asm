@@ -145,7 +145,7 @@ Moves:
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,       100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,       100, 15,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, NORMAL,       100, 15,   0
-	move CONSTRICT,    EFFECT_SPEED_DOWN_HIT,     10, NORMAL,       100, 35,  10
+	move CONSTRICT,    EFFECT_CONFUSE_HIT,        75, BUG,          100, 15,  10
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC_TYPE, 100, 20,   0
 	move KINESIS,      EFFECT_NORMAL_HIT,         40, FAIRY,        100, 30,   0
 	move SOFTBOILED,   EFFECT_HEAL,                0, NORMAL,       100, 10,   0

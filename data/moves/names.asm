@@ -131,7 +131,7 @@ MoveNames::
 	li "SWIFT"
 	li "SKULL BASH"
 	li "SPIKE CANNON"
-	li "CONSTRICT"
+	li "SIGNAL BEAM"
 	li "AMNESIA"
 	li "FAIRY WIND"
 	li "SOFTBOILED"

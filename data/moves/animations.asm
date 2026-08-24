@@ -133,7 +133,7 @@ BattleAnimations::
 	dw BattleAnim_Swift
 	dw BattleAnim_SkullBash
 	dw BattleAnim_SpikeCannon
-	dw BattleAnim_Constrict
+	dw BattleAnim_SignalBeam
 	dw BattleAnim_Amnesia
 	dw BattleAnim_FairyWind
 	dw BattleAnim_Softboiled
@@ -1805,17 +1805,16 @@ BattleAnim_Confusion:
 	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
-BattleAnim_Constrict:
-	anim_1gfx BATTLE_ANIM_GFX_ROPE
-	anim_sound 0, 1, SFX_BIND
-	anim_obj BATTLE_ANIM_OBJ_BIND2, 132, 64, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 48, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND2, 132, 40, $0
-	anim_wait 8
-	anim_obj BATTLE_ANIM_OBJ_BIND1, 132, 56, $0
-	anim_wait 64
+BattleAnim_SignalBeam:
+	anim_1gfx BATTLE_ANIM_GFX_PSYCHIC
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_BGPALS_INVERTED, $0, $4, $0
+.loop
+	anim_sound 6, 2, SFX_PSYBEAM
+	anim_obj BATTLE_ANIM_OBJ_WAVE, 64, 88, $4
+	anim_wait 4
+	anim_loop 10, .loop
+	anim_wait 48
 	anim_ret
 
 BattleAnim_Earthquake:

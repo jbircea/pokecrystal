@@ -1,9 +1,9 @@
 	db DUNSPARCE ; 206
 
-	db 100,  70,  70,  45,  65,  65
+	db 100,  70,  90,  45,  65,  85
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db NORMAL, DRAGON ; type
 	db 190 ; catch rate
 	db 75 ; base exp
 	db NO_ITEM, NO_ITEM ; items

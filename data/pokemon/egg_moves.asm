@@ -629,11 +629,11 @@ PinecoEggMoves:
 	db -1 ; end
 
 DunsparceEggMoves:
-	db BIDE
+	db SPLASH
 	db ANCIENTPOWER
 	db ROCK_SLIDE
 	db BITE
-	db RAGE
+	db CURSE
 	db -1 ; end
 
 DwebbleEggMoves:
