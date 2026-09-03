@@ -4,7 +4,7 @@ MoveDescriptions::
 	dw PoundDescription
 	dw KarateChopDescription
 	dw DoubleslapDescription
-	dw CometPunchDescription
+	dw BulldozeDescription
 	dw MegaPunchDescription
 	dw PayDayDescription
 	dw FirePunchDescription
@@ -13,7 +13,7 @@ MoveDescriptions::
 	dw ScratchDescription
 	dw VicegripDescription
 	dw GuillotineDescription
-	dw RazorWindDescription
+	dw StoneEdgeDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
@@ -41,7 +41,7 @@ MoveDescriptions::
 	dw DoubleEdgeDescription
 	dw TailWhipDescription
 	dw PoisonStingDescription
-	dw TwineedleDescription
+	dw LungeDescription
 	dw PinMissileDescription
 	dw LeerDescription
 	dw BiteDescription
@@ -125,14 +125,14 @@ MoveDescriptions::
 	dw LickDescription
 	dw SmogDescription
 	dw SludgeDescription
-	dw BoneClubDescription
+	dw BulletPunchDescription
 	dw FireBlastDescription
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
 	dw SkullBashDescription
 	dw SpikeCannonDescription
-	dw ConstrictDescription
+	dw SignalBeamDescription
 	dw AmnesiaDescription
 	dw KinesisDescription
 	dw SoftboiledDescription
@@ -155,7 +155,7 @@ MoveDescriptions::
 	dw CrabhammerDescription
 	dw ExplosionDescription
 	dw FurySwipesDescription
-	dw BonemerangDescription
+	dw BugBuzzDescription
 	dw RestDescription
 	dw RockSlideDescription
 	dw HyperFangDescription
@@ -197,7 +197,7 @@ MoveDescriptions::
 	dw DestinyBondDescription
 	dw PerishSongDescription
 	dw IcyWindDescription
-	dw DetectDescription
+	dw DragonClawDescription
 	dw BoneRushDescription
 	dw LockOnDescription
 	dw OutrageDescription
@@ -231,7 +231,7 @@ MoveDescriptions::
 	dw PursuitDescription
 	dw RapidSpinDescription
 	dw SweetScentDescription
-	dw IronTailDescription
+	dw IronHeadDescription
 	dw MetalClawDescription
 	dw VitalThrowDescription
 	dw MorningSunDescription
@@ -276,9 +276,9 @@ DoubleslapDescription:
 	db   "Repeatedly slaps"
 	next "2-5 times.@"
 
-CometPunchDescription:
-	db   "Repeatedly punches"
-	next "2-5 times.@"
+BulldozeDescription:
+	db   "Stomps the ground,"
+	next "lowering SPEED.@"
 
 MegaPunchDescription:
 	db   "A powerful punch"
@@ -312,9 +312,9 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+StoneEdgeDescription:
+	db   "Has a high criti-"
+	next "cal hit ratio.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -424,9 +424,9 @@ PoisonStingDescription:
 	db   "An attack that may"
 	next "poison the target.@"
 
-TwineedleDescription:
-	db   "Jabs the foe twice"
-	next "using stingers.@"
+LungeDescription:
+	db   "An attack that"
+	next "lowers ATTACK.@"
 
 PinMissileDescription:
 	db   "Fires pins that"
@@ -760,9 +760,9 @@ SludgeDescription:
 	db   "An attack that may"
 	next "poison the foe.@"
 
-BoneClubDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+BulletPunchDescription:
+	db   "Lets the user get"
+	next "in the first hit.@"
 
 FireBlastDescription:
 	db   "An attack that"
@@ -788,9 +788,9 @@ SpikeCannonDescription:
 	db   "Fires spikes to"
 	next "hit 2-5 times.@"
 
-ConstrictDescription:
+SignalBeamDescription:
 	db   "An attack that may"
-	next "lower SPEED.@"
+	next "confuse the foe.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
@@ -880,9 +880,9 @@ FurySwipesDescription:
 	db   "Quickly scratches"
 	next "2-5 times.@"
 
-BonemerangDescription:
-	db   "An attack that"
-	next "strikes twice.@"
+BugBuzzDescription:
+	db   "A loud attack that"
+	next "may lower SP.DEF.@"
 
 RestDescription:
 	db   "Sleep for 2 turns"
@@ -1048,9 +1048,9 @@ IcyWindDescription:
 	db   "An icy attack that"
 	next "lowers SPEED.@"
 
-DetectDescription:
-	db   "Evades attack that"
-	next "turn. It may fail.@"
+DragonClawDescription:
+	db   "Slashes the foe"
+	next "with sharp claws.@"
 
 BoneRushDescription:
 	db   "An attack that"
@@ -1184,9 +1184,9 @@ SweetScentDescription:
 	db   "Reduces the foe's"
 	next "evasiveness.@"
 
-IronTailDescription:
+IronHeadDescription:
 	db   "An attack that may"
-	next "reduce DEFENSE.@"
+	next "cause flinching.@"
 
 MetalClawDescription:
 	db   "An attack that may"
