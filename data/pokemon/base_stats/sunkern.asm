@@ -1,6 +1,6 @@
 	db SUNKERN ; 191
 
-	db  60,  45,  45,  100,  65,  77
+	db  40,  30,  32,  80,  50,  52
 	;   hp  atk  def  spd  sat  sdf
 
 	db BUG, WATER ; type

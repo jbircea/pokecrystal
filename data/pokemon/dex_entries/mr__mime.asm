@@ -1,10 +1,10 @@
-	db "BARRIER@" ; species name
-	dw 403, 1200 ; height, weight
+	db "KITE@" ; species name
+	dw 303, 1433 ; height, weight
 
-	db   "It uses the"
-	next "mysterious"
-	next "power it has in"
+	db   "The pattern on"
+	next "its back varies"
+	next "by region. It"
 
-	page "its fingers to"
-	next "solidify air into"
-	next "an invisible wall.@"
+	page "often swims in"
+	next "a school of"
+	next "Remoraid.@"

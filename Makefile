@@ -261,6 +261,7 @@ gfx/pokemon/scyther/normal.gbcpal: tools/gbcpal += --reverse
 gfx/pokemon/jynx/normal.gbcpal: tools/gbcpal += --reverse
 gfx/pokemon/porygon/normal.gbcpal: tools/gbcpal += --reverse
 gfx/pokemon/porygon2/normal.gbcpal: tools/gbcpal += --reverse
+# Newly-added species: force normal.gbcpal to be built before front/back.2bpp, # so make doesn't fall back to the DMG-only catch-all rule on a clean build. gfx/pokemon/dwebble/front.2bpp gfx/pokemon/dwebble/back.2bpp: | gfx/pokemon/dwebble/normal.gbcpal gfx/pokemon/crustle/front.2bpp gfx/pokemon/crustle/back.2bpp: | gfx/pokemon/crustle/normal.gbcpal
 
 gfx/trainers/swimmer_m.gbcpal: tools/gbcpal += --reverse
 

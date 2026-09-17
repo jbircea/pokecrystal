@@ -102,8 +102,6 @@ UnownEFrontpic:      INCBIN "gfx/pokemon/unown_e/front.animated.2bpp.lz"
 
 SECTION "Pics 5", ROMX
 
-GolbatFrontpic:      INCBIN "gfx/pokemon/golbat/front.animated.2bpp.lz"
-KinglerFrontpic:     INCBIN "gfx/pokemon/kingler/front.animated.2bpp.lz"
 ExeggcuteFrontpic:   INCBIN "gfx/pokemon/exeggcute/front.animated.2bpp.lz"
 MagcargoFrontpic:    INCBIN "gfx/pokemon/magcargo/front.animated.2bpp.lz"
 PersianFrontpic:     INCBIN "gfx/pokemon/persian/front.animated.2bpp.lz"
@@ -127,8 +125,6 @@ HeracrossFrontpic:   INCBIN "gfx/pokemon/heracross/front.animated.2bpp.lz"
 
 SECTION "Pics 6", ROMX
 
-AriadosFrontpic:     INCBIN "gfx/pokemon/ariados/front.animated.2bpp.lz"
-NoctowlFrontpic:     INCBIN "gfx/pokemon/noctowl/front.animated.2bpp.lz"
 WartortleFrontpic:   INCBIN "gfx/pokemon/wartortle/front.animated.2bpp.lz"
 LaprasFrontpic:      INCBIN "gfx/pokemon/lapras/front.animated.2bpp.lz"
 GolemFrontpic:       INCBIN "gfx/pokemon/golem/front.animated.2bpp.lz"
@@ -183,8 +179,6 @@ KangaskhanBackpic:   INCBIN "gfx/pokemon/kangaskhan/back.2bpp.lz"
 
 SECTION "Pics 8", ROMX
 
-SeelFrontpic:        INCBIN "gfx/pokemon/seel/front.animated.2bpp.lz"
-CrobatFrontpic:      INCBIN "gfx/pokemon/crobat/front.animated.2bpp.lz"
 ChanseyFrontpic:     INCBIN "gfx/pokemon/chansey/front.animated.2bpp.lz"
 TangelaFrontpic:     INCBIN "gfx/pokemon/tangela/front.animated.2bpp.lz"
 SnubbullFrontpic:    INCBIN "gfx/pokemon/snubbull/front.animated.2bpp.lz"
@@ -713,12 +707,18 @@ DwebbleFrontpic: INCBIN "gfx/pokemon/dwebble/front.animated.2bpp.lz"
 DwebbleBackpic:  INCBIN "gfx/pokemon/dwebble/back.2bpp.lz"
 CrustleFrontpic: INCBIN "gfx/pokemon/crustle/front.animated.2bpp.lz"
 CrustleBackpic:  INCBIN "gfx/pokemon/crustle/back.2bpp.lz"
-EkansFrontpic:       INCBIN "gfx/pokemon/ekans/front.animated.2bpp.lz"
+EkansFrontpic:   INCBIN "gfx/pokemon/ekans/front.animated.2bpp.lz"
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
+SeelFrontpic:        INCBIN "gfx/pokemon/seel/front.animated.2bpp.lz"
+CrobatFrontpic:      INCBIN "gfx/pokemon/crobat/front.animated.2bpp.lz"
+GolbatFrontpic:      INCBIN "gfx/pokemon/golbat/front.animated.2bpp.lz"
+KinglerFrontpic:     INCBIN "gfx/pokemon/kingler/front.animated.2bpp.lz"
+AriadosFrontpic:     INCBIN "gfx/pokemon/ariados/front.animated.2bpp.lz"
+NoctowlFrontpic:     INCBIN "gfx/pokemon/noctowl/front.animated.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 

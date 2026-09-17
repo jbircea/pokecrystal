@@ -211,7 +211,7 @@ Moves:
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,       100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,           95, 15, 100
 	move DETECT,       EFFECT_NORMAL_HIT,         80, DRAGON,       100, 15,   0
-	move BONE_RUSH,    EFFECT_MULTI_HIT,          25, GROUND,        80, 10,   0
+	move BONE_RUSH,    EFFECT_ALL_UP_HIT,         60, GHOST,        100, 5,   10
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,       100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,       100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,         100, 10,   0

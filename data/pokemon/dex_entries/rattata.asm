@@ -1,10 +1,10 @@
-	db "RAT@" ; species name
-	dw 100, 80 ; height, weight
+	db "DONKEY@" ; species name
+	dw 39, 2425 ; height, weight
 
-	db   "This #MON's"
-	next "impressive vital-"
-	next "ity allows it to"
+	db   "It loves playing"
+	next "in the mud. If it"
+	next "isn't showered"
 
-	page "live anywhere. It"
-	next "also multiplies"
-	next "very quickly.@"
+	page "with mud often,"
+	next "it refuses to"
+	next "follow orders.@"

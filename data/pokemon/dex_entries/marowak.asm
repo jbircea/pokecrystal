@@ -1,10 +1,10 @@
-	db "BONEKEEPER@" ; species name
-	dw 303, 990 ; height, weight
+	db "HUMMING@" ; species name
+	dw 307, 454 ; height, weight
 
-	db   "Somewhere in the"
-	next "world is a ceme-"
-	next "tery just for"
+	db   "If you hear a"
+	next "beautiful song"
+	next "in the mountains"
 
-	page "MAROWAK. It gets"
-	next "its bones from"
-	next "those graves.@"
+	page "far from people,"
+	next "it is likely"
+	next "Altaria's hum.@"

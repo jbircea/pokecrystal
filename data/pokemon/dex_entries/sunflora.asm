@@ -1,10 +1,10 @@
-	db "SUN@" ; species name
-	dw 207, 190 ; height, weight
+	db "EYEBALL@" ; species name
+	dw 31, 79 ; height, weight
 
-	db   "As the hot season"
-	next "approaches, the"
-	next "petals on this"
+	db   "Its thin, winglike"
+	next "antennae are"
+	next "highly absorbent."
 
-	page "#MON's face"
-	next "become more vivid"
-	next "and lively.@"
+	page "It waits out"
+	next "rainy days in"
+	next "tree hollows.@"

@@ -197,7 +197,7 @@ MoveNames::
 	li "PERISH SONG"
 	li "ICY WIND"
 	li "DRAGON CLAW"
-	li "BONE RUSH"
+	li "OMINOUS WIND"
 	li "LOCK-ON"
 	li "OUTRAGE"
 	li "SANDSTORM"

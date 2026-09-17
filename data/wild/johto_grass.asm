@@ -5,29 +5,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SPROUT_TOWER_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, RATTATA
-	db 4, RATTATA
-	db 5, RATTATA
+	db 3, SENTRET
+	db 4, SENTRET
+	db 5, HOOTHOOT
 	db 3, HOOTHOOT
-	db 6, GASTLY
+	db 6, BELLSPROUT
 	db 5, GASTLY
-	db 5, MISDREAVUS
+	db 5, GASTLY
 	; day
-	db 3, RATTATA
-	db 4, RATTATA
-	db 5, RATTATA
+	db 3, SENTRET
+	db 4, SENTRET
+	db 5, HOOTHOOT
 	db 3, HOOTHOOT
-	db 6, MISDREAVUS
+	db 6, BELLSPROUT
 	db 5, GASTLY
 	db 5, GASTLY
 	; nite
-	db 3, GASTLY
+	db 3, HOOTHOOT
 	db 4, GASTLY
-	db 5, GASTLY
-	db 3, MISDREAVUS
-	db 6, GASTLY
-	db 5, MISDREAVUS
 	db 5, HOOTHOOT
+	db 3, GASTLY
+	db 6, GASTLY
+	db 5, HOOTHOOT
+	db 5, ODDISH
 	end_grass_wildmons
 
 	def_grass_wildmons SPROUT_TOWER_3F
@@ -1183,25 +1183,25 @@ JohtoGrassWildMons:
 	db 3, GEODUDE
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, TEDDIURSA
 	db 4, ZUBAT
+	db 2, TEDDIURSA
+	db 4, TEDDIURSA
 	db 4, DUNSPARCE
 	; day
 	db 3, GEODUDE
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, ZUBAT
 	db 4, ZUBAT
+	db 2, TEDDIURSA
+	db 4, DUNSPARCE
 	db 4, DUNSPARCE
 	; nite
 	db 3, GEODUDE
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, ZUBAT
 	db 4, ZUBAT
+	db 2, ZUBAT
+	db 4, DUNSPARCE
 	db 4, DUNSPARCE
 	end_grass_wildmons
 
@@ -1236,83 +1236,83 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 2, SPEAROW
+	db 2, PIDGEY
+	db 2, SENTRET
+	db 3, PIDGEY
+	db 3, SENTRET
 	db 2, SUNKERN
-	db 3, YANMA
-	db 3, SPEAROW
-	db 2, PSYDUCK
-	db 3, LEDYBA
-	db 3, LEDYBA
+	db 3, SUNKERN
+	db 3, HOPPIP
 	; day
-	db 2, SPEAROW
+	db 2, PIDGEY
+	db 2, SENTRET
+	db 3, PIDGEY
+	db 3, SENTRET
 	db 2, SUNKERN
-	db 3, YANMA
-	db 3, SPEAROW
-	db 2, PSYDUCK
-	db 3, LEDYBA
-	db 3, LEDYBA
+	db 3, SUNKERN
+	db 3, HOPPIP
 	; nite
 	db 2, HOOTHOOT
 	db 2, SUNKERN
 	db 3, HOOTHOOT
-	db 3, YANMA
-	db 2, SPINARAK
-	db 3, SPINARAK
-	db 3, HOOTHOOT
+	db 3, SUNKERN
+	db 2, HOOTHOOT
+	db 3, PSYDUCK
+	db 3, PSYDUCK
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, PIDGEY
-	db 3, PIDGEY
+	db 3, LEDYBA
+	db 3, CATERPIE
 	db 4, LEDYBA
 	db 4, CATERPIE
-	db 3, CATERPIE
-	db 4, WEEDLE
-	db 4, WEEDLE
+	db 3, PIDGEY
+	db 4, SUNKERN
+	db 4, SUNKERN
 	; day
-	db 3, PIDGEY
-	db 3, PIDGEY
+	db 3, LEDYBA
+	db 3, CATERPIE
 	db 4, LEDYBA
 	db 4, CATERPIE
-	db 3, CATERPIE
-	db 4, WEEDLE
-	db 4, WEEDLE
+	db 3, PIDGEY
+	db 4, SUNKERN
+	db 4, SUNKERN
 	; nite
 	db 3, SPINARAK
 	db 3, HOOTHOOT
-	db 4, POLIWAG
-	db 4, ZUBAT
-	db 3, ZUBAT
 	db 4, SPINARAK
 	db 4, HOOTHOOT
+	db 3, SUNKERN
+	db 4, POLIWAG
+	db 4, POLIWAG
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_31
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, PIDGEY
-	db 4, SENTRET
+	db 4, CATERPIE
 	db 5, BELLSPROUT
-	db 5, NATU
-	db 4, SENTRET
+	db 5, PIDGEY
+	db 4, CATERPIE
 	db 5, HOPPIP
 	db 5, HOPPIP
 	; day
 	db 4, PIDGEY
-	db 4, SENTRET
+	db 4, CATERPIE
 	db 5, BELLSPROUT
-	db 5, NATU
-	db 4, SENTRET
+	db 5, PIDGEY
+	db 4, CATERPIE
 	db 5, HOPPIP
 	db 5, HOPPIP
 	; nite
-	db 4, NATU
+	db 4, HOOTHOOT
 	db 4, POLIWAG
 	db 5, BELLSPROUT
 	db 5, HOOTHOOT
-	db 4, MISDREAVUS
+	db 4, POLIWAG
 	db 5, GASTLY
 	db 5, GASTLY
 	end_grass_wildmons
@@ -1320,29 +1320,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, SUNKERN
-	db 5, YANMA
-	db 7, BELLSPROUT
-	db 6, WOOPER
-	db 7, WOOPER
-	db 7, EKANS
-	db 7, EKANS
+	db 4, SENTRET
+	db 5, EKANS
+	db 7, METAPOD
+	db 6, YANMA
+	db 7, SENTRET
+	db 7, MAREEP
+	db 7, SENTRET
 	; day
-	db 4, SUNKERN
-	db 5, YANMA
-	db 7, BELLSPROUT
+	db 4, SENTRET
+	db 5, EKANS
+	db 7, METAPOD
 	db 6, WOOPER
-	db 7, WOOPER
-	db 7, EKANS
-	db 7, EKANS
+	db 7, YANMA
+	db 7, MAREEP
+	db 7, SENTRET
 	; nite
-	db 4, SPINARAK
-	db 5, GRIMER
-	db 7, ZUBAT
-	db 6, ZUBAT
-	db 7, HOOTHOOT
+	db 4, HOOTHOOT
+	db 5, WOOPER
+	db 7, WOOPER
+	db 6, HOOTHOOT
 	db 7, GASTLY
 	db 7, GASTLY
+	db 7, HOUNDOUR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_33

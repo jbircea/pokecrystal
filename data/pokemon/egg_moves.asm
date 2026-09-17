@@ -43,11 +43,10 @@ PidgeyEggMoves:
 	db -1 ; end
 
 RattataEggMoves:
-	db SCREECH
+	db BODY_SLAM
 	db FLAME_WHEEL
-	db FURY_SWIPES
-	db BITE
-	db COUNTER
+	db DOUBLE_EDGE
+	db MAGNITUDE
 	db REVERSAL
 	db -1 ; end
 
@@ -306,13 +305,12 @@ ExeggcuteEggMoves:
 	db -1 ; end
 
 CuboneEggMoves:
-	db ROCK_SLIDE
-	db ANCIENTPOWER
-	db BELLY_DRUM
-	db SCREECH
-	db SKULL_BASH
+	db AGILITY
+	db HAZE
+	db PURSUIT
+	db NASTY_PLOT
+	db MOON_BLAST
 	db PERISH_SONG
-	db SWORDS_DANCE
 	db -1 ; end
 
 LickitungEggMoves:
@@ -377,9 +375,12 @@ GoldeenEggMoves:
 	db -1 ; end
 
 MrMimeEggMoves:
-	db FUTURE_SIGHT
-	db HYPNOSIS
-	db MIMIC
+	db HAZE
+	db HYDRO_PUMP
+	db MIRROR_COAT
+	db ROCK_SLIDE
+	db CONSTRICT
+	db TWISTER
 	db -1 ; end
 
 ScytherEggMoves:

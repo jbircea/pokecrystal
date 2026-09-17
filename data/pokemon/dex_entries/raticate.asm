@@ -1,10 +1,9 @@
-	db "RAT@" ; species name
-	dw 204, 410 ; height, weight
+	db "DRAFTHORSE@" ; species name
+	dw 98, 20282 ; height, weight
 
-	db   "The webs on its"
-	next "hind legs enable"
-	next "it to cross"
+	db   "Its mud resists"
+	next "wind and rain."
+	next "Old houses were"
 
-	page "rivers. It search-"
-	next "es wide areas for"
-	next "food.@"
+	page "often coated"
+	next "with it.@"

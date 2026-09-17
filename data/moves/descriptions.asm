@@ -1053,8 +1053,8 @@ DragonClawDescription:
 	next "with sharp claws.@"
 
 BoneRushDescription:
-	db   "An attack that"
-	next "hits 2-5 times.@"
+	db   "An attack that may"
+	next "raise all stats.@"
 
 LockOnDescription:
 	db   "Ensures the next"

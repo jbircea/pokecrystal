@@ -1,10 +1,10 @@
-	db "LONELY@" ; species name
-	dw 104, 140 ; height, weight
+	db "COTTONBIRD@" ; species name
+	dw 104, 26 ; height, weight
 
-	db   "It lost its mother"
-	next "after its birth."
-	next "It wears its"
+	db   "Its wings"
+	next "bring cottony"
+	next "clouds to mind."
 
-	page "mother's skull,"
-	next "never revealing"
-	next "its true face.@"
+	page "It grooms with"
+	next "springwater to"
+	next "get clean.@"
