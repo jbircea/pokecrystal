@@ -285,6 +285,7 @@ HandleBetweenTurnEffects:
 
 .NoMoreFaintingConditions:
 	call HandleLeftovers
+	call HandleAquaRing
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -1325,6 +1326,67 @@ HandleLeftovers:
 	ld hl, BattleText_TargetRecoveredWithItem
 	jp StdBattleTextbox
 
+HandleAquaRing:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .DoEnemyFirst
+
+	call SetPlayerTurn
+	call .do_it
+	call SetEnemyTurn
+	jp .do_it
+
+.DoEnemyFirst:
+	call SetEnemyTurn
+	call .do_it
+	call SetPlayerTurn
+
+.do_it
+	; Is Aqua Ring active for this Pokemon?
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerAquaRing
+	jr z, .got_ring
+	ld hl, wEnemyAquaRing
+
+.got_ring
+	ld a, [hl]
+	and a
+	ret z
+
+	; Don't heal if already at maximum HP.
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+
+.got_hp
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .restore
+	ld a, [hl]
+	cp c
+	ret z
+
+.restore
+	call GetSixteenthMaxHP
+
+	; RestoreHP works on the opposing battler relative to
+	; hBattleTurn, just like vanilla Leftovers does.
+	call SwitchTurnCore
+	call RestoreHP
+
+	; Restore our original turn so <USER> is correct.
+	call SwitchTurnCore
+
+	ld hl, RegainedHealthText
+	jp StdBattleTextbox
+	
 HandleMysteryberry:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
@@ -3610,6 +3672,7 @@ endr
 	ld [wEnemyDisableCount], a
 	ld [wEnemyFuryCutterCount], a
 	ld [wEnemyProtectCount], a
+	ld [wEnemyAquaRing], a
 	ld [wEnemyRageCounter], a
 	ld [wEnemyDisabledMove], a
 	ld [wEnemyMinimized], a
@@ -4097,6 +4160,7 @@ endr
 	ld [wPlayerDisableCount], a
 	ld [wPlayerFuryCutterCount], a
 	ld [wPlayerProtectCount], a
+	ld [wPlayerAquaRing], a
 	ld [wPlayerRageCounter], a
 	ld [wDisabledMove], a
 	ld [wPlayerMinimized], a

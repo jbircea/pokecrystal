@@ -420,6 +420,9 @@ wEnemyPerishCount:: db
 wEnemyFuryCutterCount:: db
 wEnemyProtectCount:: db
 
+wPlayerAquaRing:: db
+wEnemyAquaRing:: db
+
 wPlayerDamageTaken:: dw
 wEnemyDamageTaken::  dw
 

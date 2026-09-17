@@ -216,6 +216,9 @@ PidgeyEvosAttacks:
 	db EVOLVE_LEVEL, 18, PIDGEOTTO
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, BONEMERANG
+	db 1, REFLECT
+	db 1, LIGHT_SCREEN
 	db 5, SAND_ATTACK
 	db 9, GUST
 	db 13, QUICK_ATTACK
@@ -2249,9 +2252,9 @@ FurretEvosAttacks:
 HoothootEvosAttacks:
 	db EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	db 1, SPLASH
-	db 1, GROWL
-	db 6, FORESIGHT
+	db 1,  SPLASH
+	db 1,  GROWL
+	db 6,  FORESIGHT
 	db 11, PECK
 	db 16, HYPNOSIS
 	db 20, CONFUSION

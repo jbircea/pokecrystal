@@ -156,7 +156,7 @@ BattleAnimations::
 	dw BattleAnim_Crabhammer
 	dw BattleAnim_Explosion
 	dw BattleAnim_FurySwipes
-	dw BattleAnim_BugBuzz
+	dw BattleAnim_RockSmash
 	dw BattleAnim_Rest
 	dw BattleAnim_RockSlide
 	dw BattleAnim_HyperFang

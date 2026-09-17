@@ -22,6 +22,27 @@ NormalHit:
 	kingsrock
 	endmove
 
+BrickBreak:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	breakscreens
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
 DoSleep:
 	checkobedience
 	usedmovetext
@@ -1081,6 +1102,13 @@ SkyAttack:
 	kingsrock
 	endmove
 
+AquaRing:
+	checkobedience
+	usedmovetext
+	doturn
+	aquaring
+	endmove
+	
 Substitute:
 	checkobedience
 	usedmovetext

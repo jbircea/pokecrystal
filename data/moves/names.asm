@@ -154,7 +154,7 @@ MoveNames::
 	li "CRABHAMMER"
 	li "EXPLOSION"
 	li "FURY SWIPES"
-	li "BUG BUZZ"
+	li "BRICK BREAK"
 	li "REST"
 	li "ROCK SLIDE"
 	li "HYPER FANG"

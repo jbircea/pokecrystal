@@ -38,13 +38,13 @@ MoveEffectsPointers:
 	dw PayDay
 	dw LightScreen
 	dw TriAttack
-	dw NormalHit
+	dw BrickBreak
 	dw OHKOHit
 	dw RazorWind
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
-	dw NormalHit
+	dw AquaRing
 	dw MultiHit
 	dw NormalHit
 	dw Mist

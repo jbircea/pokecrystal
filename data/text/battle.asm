@@ -664,6 +664,12 @@ DestinyBondEffectText:
 	cont "opponent with it!"
 	prompt
 
+AquaRingEffectText:
+	text "<USER>"
+	line "was surrounded by"
+	cont "a veil of water!"
+	prompt
+	
 SpiteEffectText:
 	text "<TARGET>'s"
 	line "@"

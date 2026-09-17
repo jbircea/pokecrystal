@@ -6710,6 +6710,110 @@ BattleCommand_MoveDelay:
 	ld c, 40
 	jp DelayFrames
 
+BattleCommand_BreakScreens:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_attacking
+
+	; Enemy is attacking, so break the player's screens.
+	ld hl, wPlayerScreens
+	ld de, wPlayerLightScreenCount
+	jr .clear_screens
+
+.player_attacking
+	; Player is attacking, so break the enemy's screens.
+	ld hl, wEnemyScreens
+	ld de, wEnemyLightScreenCount
+
+.clear_screens
+	; Remember which screens were actually active.
+	ld a, [hl]
+	push af
+
+	; Remove both screen effects.
+	res SCREENS_LIGHT_SCREEN, [hl]
+	res SCREENS_REFLECT, [hl]
+
+	; Reset their turn counters.
+	xor a
+	ld [de], a ; Light Screen counter
+	inc de
+	ld [de], a ; Reflect counter
+
+	; The existing battle text expects "Your" or "Enemy"
+	; in wStringBuffer1.
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .copy_enemy
+
+	ld de, .Your
+	jr .copy_name
+
+.copy_enemy
+	ld de, .Enemy
+
+.copy_name
+	ld hl, wStringBuffer1
+	call CopyName2
+
+	; Restore the original screen flags.
+	pop af
+
+	; Only print the Light Screen message if it was active.
+	bit SCREENS_LIGHT_SCREEN, a
+	jr z, .check_reflect
+
+	push af
+	ld hl, BattleText_MonsLightScreenFell
+	call StdBattleTextbox
+	pop af
+
+.check_reflect
+	; Only print the Reflect message if it was active.
+	bit SCREENS_REFLECT, a
+	ret z
+
+	ld hl, BattleText_MonsReflectFaded
+	jp StdBattleTextbox
+
+.Your:
+	db "Your@"
+
+.Enemy:
+	db "Enemy@"
+
+BattleCommand_AquaRing:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+
+	; Enemy is using Aqua Ring.
+	ld hl, wEnemyAquaRing
+	jr .check_active
+
+.player
+	; Player is using Aqua Ring.
+	ld hl, wPlayerAquaRing
+
+.check_active
+	ld a, [hl]
+	and a
+	jr nz, .failed
+
+	; Turn Aqua Ring on.
+	ld [hl], 1
+	call AnimateCurrentMove
+	ld hl, AquaRingEffectText
+	jp StdBattleTextbox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
 BattleCommand_ClearText:
 ; Used in multi-hit moves.
 	ld hl, .text

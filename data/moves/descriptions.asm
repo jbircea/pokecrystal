@@ -155,7 +155,7 @@ MoveDescriptions::
 	dw CrabhammerDescription
 	dw ExplosionDescription
 	dw FurySwipesDescription
-	dw BugBuzzDescription
+	dw BonemerangDescription
 	dw RestDescription
 	dw RockSlideDescription
 	dw HyperFangDescription
@@ -880,9 +880,9 @@ FurySwipesDescription:
 	db   "Quickly scratches"
 	next "2-5 times.@"
 
-BugBuzzDescription:
-	db   "A loud attack that"
-	next "may lower SP.DEF.@"
+BonemerangDescription:
+	db   "Breaks REFLECT and"
+	next "LIGHT SCREEN@"
 
 RestDescription:
 	db   "Sleep for 2 turns"
