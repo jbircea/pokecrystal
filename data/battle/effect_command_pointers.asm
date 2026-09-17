@@ -183,4 +183,6 @@ BattleCommandPointers:
 	dw BattleCommand_BreakScreens
 	dw BattleCommand_AquaRing
 	dw BattleCommand_EchoedVoice
+	dw BattleCommand_Recycle 
+	
 	assert_table_length NUM_EFFECT_COMMANDS

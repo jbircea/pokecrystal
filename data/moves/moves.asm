@@ -103,7 +103,7 @@ Moves:
 	move THUNDER,      EFFECT_THUNDER,           120, ELECTRIC,      70, 10,  30
 	move ROCK_THROW,   EFFECT_NORMAL_HIT,         50, ROCK,          90, 15,   0
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,       100, 10,   0
-	move FISSURE,      EFFECT_OHKO,                1, GROUND,        30,  5,   0
+	move FISSURE,      EFFECT_AQUA_RING,           0, WATER,        100, 20,   0
 	move DIG,          EFFECT_FLY,                60, GROUND,       100, 10,   0
 	move TOXIC,        EFFECT_TOXIC,               0, POISON,        85, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE, 100, 25,  10
@@ -112,7 +112,7 @@ Moves:
 	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE, 100, 40,   0
 	move AGILITY,      EFFECT_SPEED_UP_2,          0, PSYCHIC_TYPE, 100, 30,   0
 	move QUICK_ATTACK, EFFECT_PRIORITY_HIT,       40, NORMAL,       100, 30,   0
-	move RAGE,         EFFECT_RAGE,               20, NORMAL,       100, 20,   0
+	move RAGE,         EFFECT_ECHOED_VOICE,       40, FAIRY,        100, 15,   0
 	move TELEPORT,     EFFECT_TELEPORT,            0, PSYCHIC_TYPE, 100, 20,   0
 	move NIGHT_SHADE,  EFFECT_LEVEL_DAMAGE,        1, GHOST,        100, 15,   0
 	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,       100, 10,   0

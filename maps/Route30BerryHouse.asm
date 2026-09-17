@@ -10,15 +10,24 @@ Route30BerryHousePokefanMScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
-	iftrue .GotBerry
+	iftrue .Shop
+
 	writetext Route30BerrySpeechHouseMonEatBerriesText
 	promptbutton
 	verbosegiveitem BERRY
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
-.GotBerry:
+
 	writetext Route30BerrySpeechHouseCheckTreesText
 	waitbutton
+	closetext
+	end
+
+.Shop:
+	pokemart MARTTYPE_STANDARD, MART_ROUTE_30_BERRY_HOUSE
+	closetext
+	end
+
 .NoRoom:
 	closetext
 	end

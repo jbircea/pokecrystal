@@ -5334,6 +5334,23 @@ BattleCommand_EndLoop:
 	ret
 
 BattleCommand_FakeOut:
+	; Fake Out only works on the user's first turn after entering battle.
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPlayerTurnsTaken
+	jr z, .check_first_turn
+	ld hl, wEnemyTurnsTaken
+
+.check_first_turn
+	ld a, [hl]
+	cp 1
+	jr z, .first_turn_ok
+
+	call AnimateFailedMove
+	call PrintButItFailed
+	jp EndMoveEffect
+
+.first_turn_ok
 	ld a, [wAttackMissed]
 	and a
 	ret nz
@@ -5354,6 +5371,20 @@ BattleCommand_FakeOut:
 	ld [wAttackMissed], a
 	ret
 
+BattleCommand_Recycle:
+	farcall TryRecycleItem
+	ld a, [wEffectFailed]
+	and a
+	jr nz, .failed
+
+	call AnimateCurrentMove
+	farcall ShowRecycleMessage
+	ret
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+	
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp
 	ret nz

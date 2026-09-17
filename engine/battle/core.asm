@@ -8,6 +8,8 @@ DoBattle:
 	ld [wBattleEnded], a
 	ld [wEchoedVoiceCount], a
 	ld [wEchoedVoiceUsed], a
+	ld [wPlayerRecycleItem], a
+	ld [wEnemyRecycleItem], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -249,7 +251,7 @@ Stubbed_Increments5_a89a:
 .finish
 	call CloseSRAM
 	ret
-	
+
 HandleEchoedVoiceStreak:
 	ld a, [wEchoedVoiceUsed]
 	ld b, a
@@ -4404,6 +4406,17 @@ HandleHPHealingItem:
 	ld a, b
 	cp HELD_BERRY
 	ret nz
+
+	; Gold Berry restores 1/4 max HP instead of a flat amount.
+	ld a, [hl]
+	cp GOLD_BERRY
+	jr nz, .got_heal_amount
+
+	call SwitchTurnCore
+	call GetQuarterMaxHP
+	call SwitchTurnCore
+
+.got_heal_amount
 	ld de, wEnemyMonHP + 1
 	ld hl, wEnemyMonMaxHP
 	ldh a, [hBattleTurn]

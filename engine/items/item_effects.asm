@@ -1668,6 +1668,20 @@ ItemRestoreHP:
 	xor a
 	ld [wLowHealthAlarm], a
 	call GetHealingItemAmount
+
+	; Gold Berry restores 1/4 max HP.
+	ld a, [wCurItem]
+	cp GOLD_BERRY
+	jr nz, .got_heal_amount
+
+	call LoadMaxHPIntoBuffer1
+	call LoadHPFromBuffer1
+	srl d
+	rr e
+	srl d
+	rr e
+
+.got_heal_amount
 	call RestoreHealth
 	call BattlemonRestoreHealth
 	call HealHP_SFX_GFX

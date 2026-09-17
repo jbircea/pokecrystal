@@ -91,7 +91,7 @@ BattleAnimations::
 	dw BattleAnim_Thunder
 	dw BattleAnim_RockThrow
 	dw BattleAnim_Earthquake
-	dw BattleAnim_Fissure
+	dw BattleAnim_Recover
 	dw BattleAnim_Dig
 	dw BattleAnim_Toxic
 	dw BattleAnim_Confusion
@@ -100,7 +100,7 @@ BattleAnimations::
 	dw BattleAnim_Meditate
 	dw BattleAnim_Agility
 	dw BattleAnim_QuickAttack
-	dw BattleAnim_Rage
+	dw BattleAnim_Supersonic
 	dw BattleAnim_Teleport
 	dw BattleAnim_NightShade
 	dw BattleAnim_Mimic

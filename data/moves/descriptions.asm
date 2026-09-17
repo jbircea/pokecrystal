@@ -621,8 +621,8 @@ EarthquakeDescription:
 	next "vs. flying foes.@"
 
 FissureDescription:
-	db   "A ground-type,"
-	next "one-hit KO attack.@"
+	db   "Restores HP a bit"
+	next "on every turn.@"
 
 DigDescription:
 	db   "1st turn: Burrow"
@@ -657,8 +657,8 @@ QuickAttackDescription:
 	next "in the first hit.@"
 
 RageDescription:
-	db   "Raises ATTACK if"
-	next "the user is hit.@"
+	db   "Gets stronger each"
+	next "turn it is used.@"
 
 TeleportDescription:
 	db   "A move for fleeing"

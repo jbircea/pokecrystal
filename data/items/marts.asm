@@ -35,6 +35,7 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartRoute30BerryHouse
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -400,6 +401,17 @@ MartUnderground:
 	db REVIVAL_HERB
 	db -1 ; end
 
+MartRoute30BerryHouse:
+	db 7 ; # items
+	db BERRY
+	db PSNCUREBERRY
+	db PRZCUREBERRY
+	db MINT_BERRY
+	db BITTER_BERRY
+	db ICE_BERRY
+	db BURNT_BERRY
+	db -1 ; end
+	
 DefaultMart:
 	db 2 ; # items
 	db POKE_BALL

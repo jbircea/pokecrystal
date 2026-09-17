@@ -2267,7 +2267,6 @@ HoothootEvosAttacks:
 
 NoctowlEvosAttacks:
 	db 0 ; no more evolutions
-	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, GROWL
 	db 6, FORESIGHT

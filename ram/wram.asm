@@ -445,7 +445,8 @@ wPlayerDefense:: dw
 wPlayerSpeed::   dw
 wPlayerSpAtk::   dw
 wPlayerSpDef::   dw
-	ds 1
+
+wPlayerRecycleItem:: ds 1
 
 wEnemyStats::
 wEnemyAttack::  dw
@@ -453,7 +454,8 @@ wEnemyDefense:: dw
 wEnemySpeed::   dw
 wEnemySpAtk::   dw
 wEnemySpDef::   dw
-	ds 1
+
+wEnemyRecycleItem:: ds 1
 
 wPlayerStatLevels::
 wPlayerAtkLevel::  db

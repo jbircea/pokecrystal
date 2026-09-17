@@ -669,7 +669,15 @@ AquaRingEffectText:
 	line "was surrounded by"
 	cont "a veil of water!"
 	prompt
-	
+
+BattleText_UserRecycledItem:
+	text "<USER>"
+	line "recovered its"
+	cont "@"
+	text_ram wStringBuffer1
+	text "!"
+	prompt
+
 SpiteEffectText:
 	text "<TARGET>'s"
 	line "@"
