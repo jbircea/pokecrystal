@@ -6814,6 +6814,66 @@ BattleCommand_AquaRing:
 	call AnimateFailedMove
 	jp PrintButItFailed
 
+BattleCommand_EchoedVoice:
+	; Record that this side used Echoed Voice this round.
+	ld hl, wEchoedVoiceUsed
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_used
+
+	set 1, [hl] ; enemy used Echoed Voice
+	jr .get_count
+
+.player_used
+	set 0, [hl] ; player used Echoed Voice
+
+.get_count
+	; wEchoedVoiceCount:
+	; low nibble  = player streak (0-4)
+	; high nibble = enemy streak (0-4)
+	ld a, [wEchoedVoiceCount]
+	ld b, a
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_count
+
+	ld a, b
+	swap a
+	and $f
+	jr .got_count
+
+.player_count
+	ld a, b
+	and $f
+
+.got_count
+	; Clamp to 4, then convert:
+	; 0 -> 40
+	; 1 -> 80
+	; 2 -> 120
+	; 3 -> 160
+	; 4 -> 200
+	cp 5
+	jr c, .count_ok
+	ld a, 4
+
+.count_ok
+	inc a
+	ld b, a
+	xor a
+
+.power_loop
+	add a, 40
+	dec b
+	jr nz, .power_loop
+
+	ld c, a
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	ld [hl], c
+	ret
+
 BattleCommand_ClearText:
 ; Used in multi-hit moves.
 	ld hl, .text

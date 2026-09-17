@@ -22,6 +22,27 @@ NormalHit:
 	kingsrock
 	endmove
 
+EchoedVoice:
+	checkobedience
+	usedmovetext
+	doturn
+	echoedvoice
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
 BrickBreak:
 	checkobedience
 	usedmovetext
@@ -1108,7 +1129,7 @@ AquaRing:
 	doturn
 	aquaring
 	endmove
-	
+
 Substitute:
 	checkobedience
 	usedmovetext

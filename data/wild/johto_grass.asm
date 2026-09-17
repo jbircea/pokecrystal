@@ -1572,18 +1572,18 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, SENTRET
-	db 16, PIDGEOTTO
+	db 40, SENTRET
+	db 40, PIDGEOTTO
 	db 16, SUDOWOODO
-	db 15, FURRET
+	db 40, FURRET
 	db 17, TEDDIURSA
 	db 17, FURRET
 	db 17, HERACROSS
 	; day
-	db 15, SENTRET
-	db 16, PIDGEOTTO
+	db 40, SENTRET
+	db 40, PIDGEOTTO
 	db 16, SUDOWOODO
-	db 15, FURRET
+	db 40, FURRET
 	db 17, TEDDIURSA
 	db 17, FURRET
 	db 17, HERACROSS

@@ -436,6 +436,7 @@ wBattleScriptBufferAddress:: dw
 
 wTurnEnded:: db
 
+wEchoedVoiceCount::
 	ds 1
 
 wPlayerStats::
@@ -476,6 +477,8 @@ wEnemyEvaLevel::  db
 
 wEnemyTurnsTaken::  db
 wPlayerTurnsTaken:: db
+
+wEchoedVoiceUsed::
 	ds 1
 
 wPlayerSubstituteHP:: db

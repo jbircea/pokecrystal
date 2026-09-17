@@ -6,6 +6,8 @@ DoBattle:
 	ld [wBattleParticipantsIncludingFainted], a
 	ld [wBattlePlayerAction], a
 	ld [wBattleEnded], a
+	ld [wEchoedVoiceCount], a
+	ld [wEchoedVoiceUsed], a
 	inc a
 	ld [wBattleHasJustStarted], a
 	ld hl, wOTPartyMon1HP
@@ -159,6 +161,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 
 BattleTurn:
 .loop
+	call HandleEchoedVoiceStreak
 	call Stubbed_Increments5_a89a
 	call CheckContestBattleOver
 	jp c, .quit
@@ -245,6 +248,69 @@ Stubbed_Increments5_a89a:
 
 .finish
 	call CloseSRAM
+	ret
+	
+HandleEchoedVoiceStreak:
+	ld a, [wEchoedVoiceUsed]
+	ld b, a
+
+	ld a, [wEchoedVoiceCount]
+	ld c, a
+
+	; PLAYER
+	; Low nibble stores the player's streak.
+	bit 0, b
+	jr z, .reset_player
+
+	ld a, c
+	and $0f
+	cp 4
+	jr nc, .enemy
+	inc a
+	ld d, a
+	ld a, c
+	and $f0
+	or d
+	ld c, a
+	jr .enemy
+
+.reset_player
+	ld a, c
+	and $f0
+	ld c, a
+
+.enemy
+	; ENEMY
+	; High nibble stores the enemy's streak.
+	bit 1, b
+	jr z, .reset_enemy
+
+	ld a, c
+	swap a
+	and $0f
+	cp 4
+	jr nc, .save
+	inc a
+	swap a
+	ld d, a
+	ld a, c
+	and $0f
+	or d
+	ld c, a
+	jr .save
+
+.reset_enemy
+	ld a, c
+	and $0f
+	ld c, a
+
+.save
+	ld a, c
+	ld [wEchoedVoiceCount], a
+
+	; Start the new round with neither side marked as having used it.
+	xor a
+	ld [wEchoedVoiceUsed], a
 	ret
 
 HandleBetweenTurnEffects:
@@ -1386,7 +1452,7 @@ HandleAquaRing:
 
 	ld hl, RegainedHealthText
 	jp StdBattleTextbox
-	
+
 HandleMysteryberry:
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
