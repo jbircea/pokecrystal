@@ -67,7 +67,7 @@ BattleAnimations::
 	dw BattleAnim_HyperBeam
 	dw BattleAnim_Peck
 	dw BattleAnim_DrillPeck
-	dw BattleAnim_Submission
+	dw BattleAnim_ShadowBall
 	dw BattleAnim_LowKick
 	dw BattleAnim_Counter
 	dw BattleAnim_SeismicToss
@@ -141,7 +141,7 @@ BattleAnimations::
 	dw BattleAnim_Glare
 	dw BattleAnim_DreamEater
 	dw BattleAnim_PoisonGas
-	dw BattleAnim_Barrage
+	dw BattleAnim_LovelyKiss
 	dw BattleAnim_LeechLife
 	dw BattleAnim_LovelyKiss
 	dw BattleAnim_SkyAttack
@@ -150,7 +150,7 @@ BattleAnimations::
 	dw BattleAnim_DizzyPunch
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
-	dw BattleAnim_Psywave
+	dw BattleAnim_Screech
 	dw BattleAnim_Astonish
 	dw BattleAnim_AcidArmor
 	dw BattleAnim_Crabhammer
@@ -159,8 +159,8 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Rest
 	dw BattleAnim_RockSlide
-	dw BattleAnim_HyperFang
-	dw BattleAnim_Sharpen
+	dw BattleAnim_QuickAttack
+	dw BattleAnim_Conversion
 	dw BattleAnim_Conversion
 	dw BattleAnim_TriAttack
 	dw BattleAnim_SuperFang

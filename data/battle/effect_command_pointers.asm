@@ -185,5 +185,6 @@ BattleCommandPointers:
 	dw BattleCommand_EchoedVoice
 	dw BattleCommand_Recycle 
 	dw BattleCommand_Fling
+	dw BattleCommand_FlingEffect
 
 	assert_table_length NUM_EFFECT_COMMANDS

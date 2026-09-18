@@ -5372,13 +5372,7 @@ BattleCommand_FakeOut:
 	ret
 
 BattleCommand_Recycle:
-	farcall TryRecycleItem
-	ld a, [wEffectFailed]
-	and a
-	jr nz, .failed
-
-	call AnimateCurrentMove
-	farcall ShowRecycleMessage
+	farcall DoRecycleCommand
 	ret
 
 .failed
@@ -5427,6 +5421,10 @@ BattleCommand_Fling:
 	call AnimateFailedMove
 	call PrintButItFailed
 	jp EndMoveEffect
+
+BattleCommand_FlingEffect:
+	farcall DoFlingEffect
+	ret
 
 BattleCommand_HeldFlinch:
 ; kingsrock

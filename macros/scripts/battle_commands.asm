@@ -185,6 +185,7 @@ ENDM
 	command echoedvoice				; b2
 	command recycle 				; b3
 	command fling 					; b4
+	command flingeffect 			; b5
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

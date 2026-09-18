@@ -1916,9 +1916,10 @@ Fling:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	flingeffect
 	kingsrock
 	endmove
-	
+
 BellyDrum:
 	checkobedience
 	usedmovetext

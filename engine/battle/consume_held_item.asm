@@ -161,6 +161,22 @@ ShowRecycleMessage:
 	ld hl, BattleText_UserRecycledItem
 	jp StdBattleTextbox
 
+DoRecycleCommand:
+	call TryRecycleItem
+
+	ld a, [wEffectFailed]
+	and a
+	jr nz, .failed
+
+	farcall AnimateCurrentMove
+	call ShowRecycleMessage
+	ret
+
+.failed
+	farcall AnimateFailedMove
+	farcall PrintButItFailed
+	ret
+
 TryFlingItem:
 	; Assume success.
 	xor a
@@ -217,17 +233,81 @@ TryFlingItem:
 	ld [hl], a
 
 .set_power
-	; Temporary test power: 60 BP.
+	; Get the item that was just thrown.
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player_fling_item
+
+	ld a, [wEnemyRecycleItem]
+	jr .got_fling_item
+
+.player_fling_item
+	ld a, [wPlayerRecycleItem]
+
+.got_fling_item
+	; Status berries use 50 BP.
+	cp PSNCUREBERRY
+	jr z, .status_berry
+	cp PRZCUREBERRY
+	jr z, .status_berry
+	cp BITTER_BERRY
+	jr z, .status_berry
+
+	; Everything else uses 60 BP.
+	ld c, 60
+	jr .apply_fling_power
+
+.status_berry
+	ld c, 50
+
+.apply_fling_power
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVarAddr
-	ld [hl], 60
-	and a ; clear carry = success
+	ld [hl], c
+	and a
 	ret
 
 .failed
 	ld a, 1
 	ld [wEffectFailed], a
 	scf ; carry = failure
+	ret
+
+DoFlingEffect:
+	; Get the item that was just flung.
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+
+	ld a, [wEnemyRecycleItem]
+	jr .check_item
+
+.player
+	ld a, [wPlayerRecycleItem]
+
+.check_item
+	cp PSNCUREBERRY
+	jr z, .poison
+
+	cp PRZCUREBERRY
+	jr z, .paralyze
+
+	cp BITTER_BERRY
+	jr z, .confuse
+
+	; All other items have no secondary effect.
+	ret
+
+.poison
+	farcall BattleCommand_PoisonTarget
+	ret
+
+.paralyze
+	farcall BattleCommand_ParalyzeTarget
+	ret
+
+.confuse
+	farcall BattleCommand_ConfuseTarget
 	ret
 
 INCLUDE "data/battle/held_consumables.asm"

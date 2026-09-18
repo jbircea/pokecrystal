@@ -525,8 +525,8 @@ DrillPeckDescription:
 	next "ning-peck attack.@"
 
 SubmissionDescription:
-	db   "An attack that al-"
-	next "so hurts the user.@"
+	db   "Throws held item."
+	next "Effect may vary.@"
 
 LowKickDescription:
 	db   "An attack that may"
@@ -821,8 +821,8 @@ PoisonGasDescription:
 	next "poison the foe.@"
 
 BarrageDescription:
-	db   "Throws orbs to hit"
-	next "2-5 times.@"
+	db   "Steals HP equal"
+	next "to 1/2 damage.@"
 
 LeechLifeDescription:
 	db   "Steals 1/2 of the"
@@ -857,8 +857,8 @@ FlashDescription:
 	next "reduce accuracy.@"
 
 PsywaveDescription:
-	db   "An attack with"
-	next "variable power.@"
+	db   "An eerie surrounded"
+	next "lowers SP.ATK.@"
 
 AstonishDescription:
 	db   "Shocking attack"
@@ -893,12 +893,12 @@ RockSlideDescription:
 	next "cause flinching.@"
 
 HyperFangDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+	db   "A first-turn hit"
+	next "that causes flinch.@"
 
 SharpenDescription:
-	db   "A move that raises"
-	next "the user's ATTACK.@"
+	db   "Restores a used"
+	next "held item.@"
 
 ConversionDescription:
 	db   "Change user's type"
