@@ -184,6 +184,7 @@ ENDM
 	command aquaring                ; b1
 	command echoedvoice				; b2
 	command recycle 				; b3
+	command fling 					; b4
 DEF NUM_EFFECT_COMMANDS EQU const_value - 1
 
 	const_def -1, -1

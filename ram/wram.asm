@@ -486,7 +486,7 @@ wEchoedVoiceUsed::
 wPlayerSubstituteHP:: db
 wEnemySubstituteHP::  db
 
-wUnusedPlayerLockedMove:: db
+wUnusedPlayerLockedMove::
 	ds 1
 
 wCurPlayerMove:: db

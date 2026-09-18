@@ -160,5 +160,74 @@ ShowRecycleMessage:
 	call GetItemName
 	ld hl, BattleText_UserRecycledItem
 	jp StdBattleTextbox
-	
+
+TryFlingItem:
+	; Assume success.
+	xor a
+	ld [wEffectFailed], a
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .player
+
+.enemy
+	; Fling fails if the enemy is holding nothing.
+	ld a, [wEnemyMonItem]
+	and a
+	jr z, .failed
+
+	; Remember the flung item for Recycle.
+	ld [wEnemyRecycleItem], a
+
+	; Remove it from the active enemy.
+	xor a
+	ld [wEnemyMonItem], a
+
+	; Wild Pokemon have no trainer-party item entry.
+	ld a, [wBattleMode]
+	dec a
+	jr z, .set_power
+
+	; Remove it from the trainer's party data too.
+	ld hl, wOTPartyMon1Item
+	ld a, [wCurOTMon]
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+	jr .set_power
+
+.player
+	; Fling fails if the player is holding nothing.
+	ld a, [wBattleMonItem]
+	and a
+	jr z, .failed
+
+	; Remember the flung item for Recycle.
+	ld [wPlayerRecycleItem], a
+
+	; Remove it from the active battle mon.
+	xor a
+	ld [wBattleMonItem], a
+
+	; Remove it from the actual party Pokemon too.
+	ld hl, wPartyMon1Item
+	ld a, [wCurBattleMon]
+	call GetPartyLocation
+	xor a
+	ld [hl], a
+
+.set_power
+	; Temporary test power: 60 BP.
+	ld a, BATTLE_VARS_MOVE_POWER
+	call GetBattleVarAddr
+	ld [hl], 60
+	and a ; clear carry = success
+	ret
+
+.failed
+	ld a, 1
+	ld [wEffectFailed], a
+	scf ; carry = failure
+	ret
+
 INCLUDE "data/battle/held_consumables.asm"

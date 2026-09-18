@@ -68,7 +68,7 @@ Moves:
 	move EMBER,        EFFECT_BURN_HIT,           40, FIRE,         100, 25,  10
 	move FLAMETHROWER, EFFECT_BURN_HIT,           95, FIRE,         100, 15,  10
 	move MIST,         EFFECT_MIST,                0, ICE,          100, 30,   0
-	move WATER_GUN,    EFFECT_NORMAL_HIT,         40, WATER,        100, 25,   0
+	move WATER_GUN,    EFFECT_FLING,              40, WATER,        100, 25,   0
 	move HYDRO_PUMP,   EFFECT_NORMAL_HIT,        120, WATER,         80,  5,   0
 	move SURF,         EFFECT_NORMAL_HIT,         95, WATER,        100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         95, ICE,          100, 10,  10
@@ -121,7 +121,7 @@ Moves:
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,       100, 20,   0
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,       100, 30,   0
 	move MINIMIZE,     EFFECT_EVASION_UP,          0, NORMAL,       100, 20,   0
-	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,       100, 20,   0
+	move SMOKESCREEN,  EFFECT_RECYCLE,             0, NORMAL,       100, 20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,        100, 10,   0
 	move WITHDRAW,     EFFECT_DEFENSE_UP,          0, WATER,        100, 40,   0
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,       100, 40,   0

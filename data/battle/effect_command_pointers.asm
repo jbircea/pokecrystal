@@ -184,5 +184,6 @@ BattleCommandPointers:
 	dw BattleCommand_AquaRing
 	dw BattleCommand_EchoedVoice
 	dw BattleCommand_Recycle 
-	
+	dw BattleCommand_Fling
+
 	assert_table_length NUM_EFFECT_COMMANDS

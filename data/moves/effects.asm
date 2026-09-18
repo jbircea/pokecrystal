@@ -1897,6 +1897,27 @@ Recycle:
 	doturn
 	recycle
 	endmove
+
+Fling:
+	checkobedience
+	usedmovetext
+	doturn
+	fling
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
 	
 BellyDrum:
 	checkobedience

@@ -5420,6 +5420,14 @@ CheckOpponentWentFirst:
 	pop bc
 	ret
 
+BattleCommand_Fling:
+	farcall TryFlingItem
+	ret nc
+
+	call AnimateFailedMove
+	call PrintButItFailed
+	jp EndMoveEffect
+
 BattleCommand_HeldFlinch:
 ; kingsrock
 
