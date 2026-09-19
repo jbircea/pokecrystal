@@ -153,7 +153,7 @@ Text_ReceivedTM09: ; unreferenced
 Jasmine_IronTailSpeech:
 	text "…You could use"
 	line "that TM to teach"
-	cont "IRON TAIL."
+	cont "IRON HEAD."
 	done
 
 Jasmine_GoodLuck:

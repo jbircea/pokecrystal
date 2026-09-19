@@ -179,13 +179,13 @@ Text_ReceivedTM13: ; unreferenced
 
 FarmerFText_SnoreSpeech:
 	text "That there's"
-	line "SNORE."
+	line "ECHOED VOICE."
 
 	para "It's a rare move"
-	line "that only works"
+	line "that grows in"
 
-	para "while the #MON"
-	line "is asleep."
+	para "power the more"
+	line "its used."
 
 	para "You best think how"
 	line "you ought to use"

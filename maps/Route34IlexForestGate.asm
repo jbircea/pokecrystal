@@ -88,24 +88,24 @@ Route34IlexForestGateTeacherReturnsMovement:
 	step_end
 
 Route34IlexForestGateTeacherText:
-	text "Oh, honey. You're"
-	line "making a #DEX?"
+	text "O what can ail"
+	line "thee,"
+	cont "knight-at-arms,"
 
-	para "It must be hard if"
-	line "#MON won't"
+	para "Alone and palely"
+	line "loitering?"
 
-	para "appear. Try using"
-	line "this TM."
+	para "The sedge has"
+	line "withered from the"
+	cont "lake,"
+
+	para "And no birds sing."
 	done
 
 Route34IlexForestGateTeacher_GotSweetScent:
-	text "It's SWEET SCENT."
+	text "It's DRAIN KISS."
 
-	para "Use it wherever"
-	line "#MON appear."
-
-	para "#MON will be"
-	line "enticed by it."
+	para "Beware of fairies."
 	done
 
 Route34IlexForestGateTeacher_ForestIsRestless:

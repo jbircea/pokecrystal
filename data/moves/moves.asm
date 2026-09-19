@@ -112,7 +112,7 @@ Moves:
 	move MEDITATE,     EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE, 100, 40,   0
 	move AGILITY,      EFFECT_SPEED_UP_2,          0, PSYCHIC_TYPE, 100, 30,   0
 	move QUICK_ATTACK, EFFECT_PRIORITY_HIT,       40, NORMAL,       100, 30,   0
-	move RAGE,         EFFECT_ECHOED_VOICE,       40, FAIRY,        100, 15,   0
+	move RAGE,         EFFECT_ECHOED_VOICE,       40, NORMAL,        100, 15,   0
 	move TELEPORT,     EFFECT_TELEPORT,            0, PSYCHIC_TYPE, 100, 20,   0
 	move NIGHT_SHADE,  EFFECT_LEVEL_DAMAGE,        1, GHOST,        100, 15,   0
 	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,       100, 10,   0
@@ -162,7 +162,7 @@ Moves:
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,       100, 10,  20
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,        100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,        70, 20,   0
-	move PSYWAVE,      EFFECT_SP_ATK_DOWN_HIT,    55, GHOST,         100,15, 100
+	move PSYWAVE,      EFFECT_SP_ATK_DOWN_HIT,    55, GHOST,        100, 15, 100
 	move SPLASH,       EFFECT_FLINCH_HIT,         30, GHOST,        100, 30,  30
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,       100, 40,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,         90, WATER,         85, 10,   0
@@ -211,7 +211,7 @@ Moves:
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,       100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,           95, 15, 100
 	move DETECT,       EFFECT_NORMAL_HIT,         80, DRAGON,       100, 15,   0
-	move BONE_RUSH,    EFFECT_ALL_UP_HIT,         60, GHOST,        100, 5,   10
+	move BONE_RUSH,    EFFECT_ALL_UP_HIT,         60, GHOST,        100,  5,  10
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,       100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,       100, 15,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,         100, 10,   0
