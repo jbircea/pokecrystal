@@ -495,7 +495,7 @@ ClefairyEvosAttacks:
 	db 9, KINESIS
 	db 13, SING
 	db 17, DOUBLESLAP
-	db 21, MINIMIZE
+	db 21, BARRAGE
 	db 25, METRONOME
 	db 29, DEFENSE_CURL
 	db 33, MOONLIGHT
@@ -713,11 +713,12 @@ DugtrioEvosAttacks:
 MeowthEvosAttacks:
 	db EVOLVE_LEVEL, 28, PERSIAN
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 6, GROWL
-	db 11, BITE
+	db 1,  SCRATCH
+	db 1,  GROWL
+	db 6,  BITE
+	db 11, FURY_SWIPES
 	db 16, PAY_DAY
-	db 21, FURY_SWIPES
+	db 21, HYPER_FANG
 	db 25, CHARM
 	db 28, FAINT_ATTACK
 	db 31, SLASH
@@ -727,11 +728,12 @@ MeowthEvosAttacks:
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 6, GROWL
-	db 11, BITE
+	db 1,  SCRATCH
+	db 1,  GROWL
+	db 6,  BITE
+	db 11, FURY_SWIPES
 	db 16, PAY_DAY
-	db 21, FURY_SWIPES
+	db 21, HYPER_FANG
 	db 25, CHARM
 	db 28, FAINT_ATTACK
 	db 31, SLASH
@@ -1258,6 +1260,7 @@ GastlyEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
+	db 25, PSYWAVE
 	db 31, CONFUSE_RAY
 	db 37, SHADOW_BALL
 	db 43, DREAM_EATER
@@ -1273,6 +1276,7 @@ HaunterEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
+	db 25, PSYWAVE
 	db 31, CONFUSE_RAY
 	db 37, SHADOW_BALL
 	db 43, DREAM_EATER
@@ -1287,6 +1291,7 @@ GengarEvosAttacks:
 	db 13, MEAN_LOOK
 	db 16, CURSE
 	db 21, NIGHT_SHADE
+	db 25, PSYWAVE
 	db 31, CONFUSE_RAY
 	db 37, SHADOW_BALL
 	db 43, DREAM_EATER
@@ -2224,7 +2229,7 @@ SentretEvosAttacks:
 	db 1, TACKLE
 	db 3, DEFENSE_CURL
 	db 9, QUICK_ATTACK
-	db 13, KINESIS
+	db 13, HYPER_FANG
 	db 17, FURY_SWIPES
 	db 22, CHARM
 	db 25, SLAM
@@ -2241,7 +2246,7 @@ FurretEvosAttacks:
 	db 5, DEFENSE_CURL
 	db 11, QUICK_ATTACK
 	db 18, FURY_SWIPES
-	db 18, KINESIS
+	db 18, HYPER_FANG
 	db 28, SLAM
 	db 33, REST
 	db 38, MOON_BLAST
@@ -2257,7 +2262,7 @@ HoothootEvosAttacks:
 	db 11, PECK
 	db 16, HYPNOSIS
 	db 20, CONFUSION
-	db 24, REFLECT
+	db 24, LIGHT_SCREEN
 	db 28, ROOST
 	db 34, BONE_RUSH
 	db 40, DREAM_EATER
@@ -2422,7 +2427,8 @@ TogepiEvosAttacks:
 	db 7, METRONOME
 	db 12, KINESIS
 	db 18, SWEET_KISS
-	db 25, ENCORE
+	db 22, ENCORE
+	db 26, BARRAGE
 	db 31, SAFEGUARD
 	db 37, ANCIENTPOWER
 	db 43, ROOST
@@ -2436,7 +2442,8 @@ TogeticEvosAttacks:
 	db 7, METRONOME
 	db 12, KINESIS
 	db 18, SWEET_KISS
-	db 25, ENCORE
+	db 22, ENCORE
+	db 26, BARRAGE
 	db 31, SAFEGUARD
 	db 37, ANCIENTPOWER
 	db 43, ROOST
@@ -2631,7 +2638,7 @@ AipomEvosAttacks:
 	db  5, TAIL_WHIP
 	db 10, SAND_ATTACK
 	db 15, SPLASH
-	db 20, FURY_SWIPES
+	db 20, HYPER_FANG
 	db 25, BATON_PASS
 	db 30, SUBMISSION
 	db 35, SHARPEN
@@ -2766,16 +2773,17 @@ SlowkingEvosAttacks:
 
 MisdreavusEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GROWL
-	db 1, SPLASH
-	db 6, SPITE
+	db 1,  GROWL
+	db 1,  SPLASH
+	db 6,  SPITE
 	db 12, CONFUSE_RAY
-	db 18, MEAN_LOOK
-	db 26, PSYBEAM
-	db 32, BONE_RUSH
-	db 36, PAIN_SPLIT
-	db 42, NASTY_PLOT
+	db 18, PSYWAVE
+	db 26, MEAN_LOOK
+	db 32, PSYBEAM
+	db 36, BONE_RUSH
+	db 42, PAIN_SPLIT
 	db 46, PERISH_SONG
+	db 52, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 UnownEvosAttacks:
@@ -2967,8 +2975,9 @@ SneaselEvosAttacks:
 	db  9, QUICK_ATTACK
 	db 13, ICE_PUNCH
 	db 18, SUBMISSION
-	db 23, FAINT_ATTACK
-	db 29, SCREECH
+	db 23, HYPER_FANG
+	db 26, FAINT_ATTACK
+	db 30, SCREECH
 	db 35, SLASH
 	db 41, BEAT_UP
 	db 47, AGILITY
@@ -3287,6 +3296,7 @@ SmoochumEvosAttacks:
 	db 13, POWDER_SNOW
 	db 21, CONFUSION
 	db 25, SING
+	db 30, BARRAGE
 	db 33, MEAN_LOOK
 	db 37, PSYCHIC_M
 	db 45, PERISH_SONG
