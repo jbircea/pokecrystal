@@ -25,64 +25,64 @@ FishGroups:
 	assert_table_length NUM_FISHGROUPS
 
 .Shore_Old:
-	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, KRABBY,     10
-	db 100 percent,     DWEBBLE,    10
+	db  70 percent + 1, MAGIKARP,   5
+	db  85 percent + 1, KRABBY,     5
+	db 100 percent,     TENTACOOL,  6
 .Shore_Good:
-	db  35 percent,     KRABBY,     20
-	db  70 percent,     DWEBBLE,    20
-	db  90 percent + 1, HORSEA,     20
+	db  35 percent,     KRABBY,     10
+	db  70 percent,     HORSEA,     11
+	db  90 percent + 1, CORSOLA,    12
 	db 100 percent,     time_group 0
 .Shore_Super:
-	db  40 percent,     DWEBBLE,     40
+	db  40 percent,     KINGLER,    20
 	db  70 percent,     time_group 1
-	db  90 percent + 1, KRABBY,     40
-	db 100 percent,     KINGLER,    40
+	db  90 percent + 1, CORSOLA,    19
+	db 100 percent,     MR__MIME,   20
 
 .Ocean_Old:
-	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, CORSOLA,    10
-	db 100 percent,     TENTACOOL,  10
+	db  70 percent + 1, TENTACOOL,   5
+	db  85 percent + 1, MAGIKARP,    5
+	db 100 percent,     CORSOLA,     6  
 .Ocean_Good:
-	db  35 percent,     CORSOLA,    20
-	db  70 percent,     TENTACOOL,  20
-	db  90 percent + 1, CHINCHOU,   20
-	db 100 percent,     time_group 2
+	db  35 percent,     TENTACOOL,  10
+	db  70 percent,     CHINCHOU,   11
+	db  90 percent + 1, HORSEA,     12
+	db 100 percent,     MR__MIME,   12
 .Ocean_Super:
-	db  40 percent,     CORSOLA,    40
-	db  70 percent,     time_group 3
-	db  90 percent + 1, TENTACRUEL, 40
-	db 100 percent,     LANTURN,    40
+	db  40 percent,     CHINCHOU,   19
+	db  70 percent,     MR__MIME,   20
+	db  90 percent + 1, TENTACRUEL, 22
+	db 100 percent,     LANTURN,    24
 
 .Lake_Old:
-	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, GOLDEEN,    10
-	db 100 percent,     REMORAID,   10
+	db  70 percent + 1, MAGIKARP,    5
+	db  85 percent + 1, GOLDEEN,     6
+	db 100 percent,     POLIWAG,     5
 .Lake_Good:
-	db  35 percent,     GOLDEEN,    20
-	db  70 percent,     GOLDEEN,    20
-	db  90 percent + 1, REMORAID,   20
+	db  35 percent,     GOLDEEN,    10
+	db  70 percent,     POLIWAG,    10
+	db  90 percent + 1, REMORAID,   12
 	db 100 percent,     time_group 4
 .Lake_Super:
-	db  40 percent,     SEAKING,    40
-	db  70 percent,     time_group 5
-	db  90 percent + 1, OCTILLERY,  40
-	db 100 percent,     OCTILLERY,  40
+	db  40 percent,     SEAKING,    20
+	db  70 percent,     POLIWHIRL,  19
+	db  90 percent + 1, OCTILLERY,  22
+	db 100 percent,     time_group 5
 
 .Pond_Old:
-	db  70 percent + 1, SUNKERN,    10
-	db  85 percent + 1, POLIWAG,    10
-	db 100 percent,     POLIWAG,    10
+	db  70 percent + 1, SUNKERN,     5
+	db  85 percent + 1, POLIWAG,     5
+	db 100 percent,     MAGIKARP,    5
 .Pond_Good:
-	db  35 percent,     SUNKERN,    20
-	db  70 percent,     POLIWAG,    20
-	db  90 percent + 1, STARYU,     20
+	db  35 percent,     SUNKERN,    10
+	db  70 percent,     POLIWAG,    10
+	db  90 percent + 1, WOOPER,     11
 	db 100 percent,     time_group 6
 .Pond_Super:
-	db  40 percent,     POLIWHIRL,  40
-	db  70 percent,     time_group 7
-	db  90 percent + 1, SUNKERN,    40
-	db 100 percent,     POLITOED,   40
+	db  40 percent,     POLIWHIRL,  18
+	db  70 percent,     QUAGSIRE,   19
+	db  90 percent + 1, STARYU,     20
+	db 100 percent,     POLITOED,   22
 
 .Dratini_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -209,13 +209,13 @@ FishGroups:
 
 TimeFishGroups:
 	;  day              nite
-	db CORSOLA,    20,  STARYU,     20 ; 0
-	db CORSOLA,    40,  STARYU,     40 ; 1
+	db CORSOLA,    12,  STARYU,     12 ; 0
+	db SEADRA,     22,  STARYU,     22 ; 1
 	db SHELLDER,   20,  SHELLDER,   20 ; 2
 	db SHELLDER,   40,  SHELLDER,   40 ; 3
-	db GOLDEEN,    20,  GOLDEEN,    20 ; 4
-	db GOLDEEN,    40,  GOLDEEN,    40 ; 5
-	db POLIWAG,    20,  POLIWAG,    20 ; 6
+	db SUNKERN,    11,  POLIWAG,    11 ; 4
+	db SEAKING,    22,  STARYU,     22 ; 5
+	db PSYDUCK,    11,  POLIWAG,    11 ; 6
 	db POLIWAG,    40,  POLIWAG,    40 ; 7
 	db DRATINI,    20,  DRATINI,    20 ; 8
 	db DRATINI,    40,  DRATINI,    40 ; 9

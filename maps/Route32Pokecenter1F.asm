@@ -14,18 +14,18 @@ Route32Pokecenter1FNurseScript:
 Route32Pokecenter1FFishingGuruScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_OLD_ROD
+	checkevent EVENT_GOT_GOOD_ROD
 	iftrue .GotOldRod
 	writetext Route32Pokecenter1FFishingGuruText_Question
 	yesorno
 	iffalse .Refused
 	writetext Route32Pokecenter1FFishingGuruText_Yes
 	promptbutton
-	verbosegiveitem OLD_ROD
+	verbosegiveitem GOOD_ROD
 	writetext Route32Pokecenter1FFishingGuruText_GiveOldRod
 	waitbutton
 	closetext
-	setevent EVENT_GOT_OLD_ROD
+	setevent EVENT_GOT_GOOD_ROD
 	end
 
 .Refused:

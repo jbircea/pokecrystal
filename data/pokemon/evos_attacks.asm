@@ -195,15 +195,17 @@ KakunaEvosAttacks:
 	db EVOLVE_LEVEL, 10, BEEDRILL
 	db 0 ; no more evolutions
 	db 1, HARDEN
+	db 1, POISON_STING
 	db 7, HARDEN
 	db 0 ; no more level-up moves
 
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_ATTACK
+	db 1,  FURY_ATTACK
+	db 1,  POISON_STING
 	db 10, FURY_ATTACK
 	db 12, FOCUS_ENERGY
-	db 16, POISON_STING
+	db 16, QUICK_ATTACK
 	db 20, PURSUIT
 	db 24, FURY_CUTTER
 	db 28, PIN_MISSILE
@@ -1429,7 +1431,7 @@ CuboneEvosAttacks:
 	db 1, PECK
 	db 6, KINESIS
 	db 12, SING
-	db 16, FURY_ATTACK
+	db 16, BARRAGE
 	db 21, WING_ATTACK
 	db 28, SAFEGUARD
 	db 36, MIST
@@ -1445,7 +1447,7 @@ MarowakEvosAttacks:
 	db 1, PECK
 	db 6, KINESIS
 	db 12, SING
-	db 16, FURY_ATTACK
+	db 16, BARRAGE
 	db 21, WING_ATTACK
 	db 28, SAFEGUARD
 	db 36, MIST
@@ -1709,7 +1711,7 @@ ScytherEvosAttacks:
 	db 1, LEER
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT
-	db 18, FALSE_SWIPE
+	db 18, FURY_CUTTER
 	db 24, WING_ATTACK
 	db 30, SLASH
 	db 36, AGILITY
@@ -3279,6 +3281,7 @@ HitmontopEvosAttacks:
 	db 7, FOCUS_ENERGY
 	db 13, PURSUIT
 	db 19, QUICK_ATTACK
+	db 20, ROLLING_KICK
 	db 25, RAPID_SPIN
 	db 31, COUNTER
 	db 34, BONEMERANG

@@ -9,16 +9,16 @@ Route12SuperRodHouse_MapScripts:
 Route12SuperRodHouseFishingGuruScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SUPER_ROD
+	checkevent EVENT_GOT_WATER_STONE_FROM_FISHING_GURU
 	iftrue .GotSuperRod
 	writetext OfferSuperRodText
 	yesorno
 	iffalse .Refused
 	writetext GiveSuperRodText
 	promptbutton
-	verbosegiveitem SUPER_ROD
+	verbosegiveitem WATER_STONE
 	iffalse .NoRoom
-	setevent EVENT_GOT_SUPER_ROD
+	setevent EVENT_GOT_WATER_STONE_FROM_FISHING_GURU
 .GotSuperRod:
 	writetext GaveSuperRodText
 	waitbutton
@@ -56,19 +56,16 @@ GiveSuperRodText:
 
 	para "Here, fishing fan!"
 	line "Take this--it's a"
-	cont "SUPER ROD."
+	cont "WATER STONE."
 	done
 
 GaveSuperRodText:
-	text "Try your hand at"
-	line "fishing wherever"
-	cont "there is water."
+	text "A WATER STONE can"
+	line "make certain"
+	cont "#MON evolve."
 
-	para "Remember--you can"
-	line "catch different"
-
-	para "#MON using"
-	line "different RODS."
+	para "A fine prize for"
+	line "a seasoned angler!"
 	done
 
 DontWantSuperRodText:

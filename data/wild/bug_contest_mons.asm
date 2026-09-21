@@ -1,13 +1,19 @@
 ContestMons:
 	;   %, species,   min, max
-	db 20, CATERPIE,    7, 18
-	db 20, WEEDLE,      7, 18
-	db 10, METAPOD,     9, 18
-	db 10, KAKUNA,      9, 18
-	db  5, BUTTERFREE, 12, 15
-	db  5, BEEDRILL,   12, 15
-	db 10, VENONAT,    10, 16
-	db 10, PARAS,      10, 17
-	db  5, SCYTHER,    13, 14
-	db  5, PINSIR,     13, 14
+	db 10, CATERPIE,    7, 18
+	db 10, WEEDLE,      7, 18
+	db 10, LEDYBA,      8, 18
+	db 10, SPINARAK,    8, 18
+	db 10, SUNKERN,     8, 18
+	db  8, VENONAT,    10, 16
+	db  6, PARAS,      10, 17
+	db  5, METAPOD,     9, 18
+	db  5, KAKUNA,      9, 18
+	db  4, LEDIAN,     13, 16
+	db  4, ARIADOS,    12, 15
+	db  4, SUNFLORA,   11, 14
+	db  3, BUTTERFREE, 12, 15
+	db  3, BEEDRILL,   12, 15
+	db  4, SCYTHER,    13, 14
+	db  4, PINSIR,     13, 14
 	db -1, VENOMOTH,   30, 40

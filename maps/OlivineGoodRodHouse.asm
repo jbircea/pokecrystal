@@ -9,18 +9,18 @@ OlivineGoodRodHouse_MapScripts:
 GoodRodGuru:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_GOOD_ROD
+	checkevent EVENT_GOT_SUPER_ROD
 	iftrue .AlreadyGotItem
 	writetext OfferGoodRodText
 	yesorno
 	iffalse .DontWantIt
 	writetext GiveGoodRodText
 	promptbutton
-	verbosegiveitem GOOD_ROD
+	verbosegiveitem SUPER_ROD
 	writetext GaveGoodRodText
 	waitbutton
 	closetext
-	setevent EVENT_GOT_GOOD_ROD
+	setevent EVENT_GOT_SUPER_ROD
 	end
 
 .DontWantIt:
