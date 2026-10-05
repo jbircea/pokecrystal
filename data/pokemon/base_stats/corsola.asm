@@ -1,6 +1,6 @@
 	db CORSOLA ; 222
 
-	db  60,  55,  100,  30,  65,  100
+	db  65,  55,  100,  30,  75,  100
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, GHOST ; type

@@ -260,7 +260,7 @@ Route31FruitTree:
 	fruittree FRUITTREE_ROUTE_31
 
 Route31Potion:
-	itemball POTION
+	itemball EXP_SHARE
 
 Route31PokeBall:
 	itemball POKE_BALL

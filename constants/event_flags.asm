@@ -320,8 +320,8 @@
 	const_skip ; unused in Crystal
 	const EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
-	const_skip ; unused
-	const_skip ; unused
+	const EVENT_BEAT_SCHOOLBOY_MAX
+	const EVENT_BEAT_SCHOOLBOY_MILES
 	const EVENT_DANA_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_CHAD_ASKED_FOR_PHONE_NUMBER

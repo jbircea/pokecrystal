@@ -151,6 +151,8 @@ DEF KRIS EQU __trainer_class__
 	const ALAN5
 	const CHAD4
 	const CHAD5
+	const MAX1
+	const MILES
 
 	trainerclass BIRD_KEEPER ; 18
 	const ROD

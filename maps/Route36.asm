@@ -148,18 +148,24 @@ Route36RockSmashGuyScript:
 	closetext
 	end
 
-Route36LassScript:
-	faceplayer
+TrainerSchoolboyMax:
+	trainer SCHOOLBOY, MAX1, EVENT_BEAT_SCHOOLBOY_MAX, SchoolboyMaxSeenText, SchoolboyMaxBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
 	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .ClearedSudowoodo
-	writetext Route36LassText
+	writetext SchoolboyMaxAfterText
 	waitbutton
 	closetext
 	end
 
-.ClearedSudowoodo:
-	writetext Route36LassText_ClearedSudowoodo
+TrainerSchoolboyMiles:
+	trainer SCHOOLBOY, MILES, EVENT_BEAT_SCHOOLBOY_MILES, SchoolboyMilesSeenText, SchoolboyMilesBeatenText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SchoolboyMilesAfterText
 	waitbutton
 	closetext
 	end
@@ -521,25 +527,43 @@ UnusedOddTreeText: ; unreferenced
 	line "opened…"
 	done
 
-Route36LassText:
-	text "An odd tree is"
-	line "blocking the way"
-	cont "to GOLDENROD CITY."
+SchoolboyMaxSeenText:
+	text "EARL sent us out"
+	line "for field training!"
 
-	para "It's preventing"
-	line "me from shopping."
-
-	para "Something should"
-	line "be done about it."
+	para "Let's see what"
+	line "I've learned!"
 	done
 
-Route36LassText_ClearedSudowoodo:
-	text "That odd tree dis-"
-	line "appeared without a"
-	cont "trace."
+SchoolboyMaxBeatenText:
+	text "I need to study"
+	line "some more!"
+	done
 
-	para "Oh! That tree was"
-	line "really a #MON?"
+SchoolboyMaxAfterText:
+	text "Battling outside"
+	line "is different from"
+	cont "studying in class."
+	done
+
+SchoolboyMilesSeenText:
+	text "We're students at"
+	line "VIOLET's TRAINER"
+	cont "SCHOOL!"
+
+	para "Want to help me"
+	line "practice?"
+	done
+
+SchoolboyMilesBeatenText:
+	text "That was good"
+	line "practice!"
+	done
+
+SchoolboyMilesAfterText:
+	text "EARL says a good"
+	line "TRAINER learns by"
+	cont "doing."
 	done
 
 PsychicMarkSeenText:
@@ -680,7 +704,8 @@ Route36_MapEvents:
 	object_event 20, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
 	object_event 35,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
-	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
+    object_event 51,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyMiles, -1	
+	object_event 49,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyMax, -1
 	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
