@@ -184,15 +184,12 @@ OlivineGymGuideWinText:
 
 OlivineGymGuidePreText:
 	text "JASMINE, the GYM"
-	line "LEADER, is at the"
-	cont "LIGHTHOUSE."
+	line "LEADER, isn't"
+	cont "here right now."
 
-	para "She's been tending"
-	line "to a sick #MON."
-
-	para "A strong trainer"
-	line "has to be compas-"
-	cont "sionate."
+	para "You'll have to"
+	line "come back another"
+	cont "time."
 	done
 
 OlivineGym_MapEvents:
