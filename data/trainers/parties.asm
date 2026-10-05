@@ -3561,6 +3561,12 @@ GruntFGroup:
 	db 18, GLOOM,      ABSORB, SWEET_SCENT, STUN_SPORE, SLEEP_POWDER
 	db -1 ; end
 
+CowgirlGroup:
+	; COWGIRL (1)
+	db "ANNIE@", TRAINERTYPE_NORMAL
+	db 8, TEDDIURSA
+	db -1 ; end
+
 MysticalmanGroup:
 	; MYSTICALMAN (1)
 	db "EUSINE@", TRAINERTYPE_MOVES
