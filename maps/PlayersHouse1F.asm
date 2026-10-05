@@ -211,40 +211,24 @@ MomWalksBackMovement:
 	step_end
 
 ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
+	text "Oh, <PLAYER>…!"
 
-	para "ELM, was looking"
-	line "for you."
+	para "They were asking"
+	line "about you up at"
+	cont "MOOMOO FARM."
 
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
-
-	para "Oh! I almost for-"
-	line "got! Your #MON"
-
-	para "GEAR is back from"
-	line "the repair shop."
-
-	para "Here you go!"
+	para "You'd better head"
+	line "up there."
 	done
 
 MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
+	text "I bought you a"
+	line "#GEAR for your"
+	cont "journey."
 
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
-
-	para "Oh, the day of the"
-	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
+	para "Isn't that great?"
 	done
-
+	
 IsItDSTText:
 	text "Is it Daylight"
 	line "Saving Time now?"
@@ -291,10 +275,11 @@ InstructionsNextText:
 	done
 
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
-	line "ing for you."
+	text "You should head"
+	line "up to MOOMOO FARM."
 
-	para "Hurry up, baby!"
+	para "They're waiting"
+	line "for you."
 	done
 
 SoWhatWasProfElmsErrandText:
