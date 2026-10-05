@@ -292,7 +292,7 @@ OlivineCity_MapEvents:
 	def_warp_events
 	warp_event 13, 21, OLIVINE_POKECENTER_1F, 1
 	warp_event 10, 11, OLIVINE_GYM, 1
-	warp_event 25, 11, OLIVINE_TIMS_HOUSE, 1
+    warp_event 25, 11, PLAYERS_HOUSE_1F, 1
 	warp_event  0,  0, OLIVINE_HOUSE_BETA, 1 ; inaccessible
 	warp_event 29, 11, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1
 	warp_event 13, 15, OLIVINE_GOOD_ROD_HOUSE, 1
