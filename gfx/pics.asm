@@ -720,6 +720,9 @@ KinglerFrontpic:     INCBIN "gfx/pokemon/kingler/front.animated.2bpp.lz"
 AriadosFrontpic:     INCBIN "gfx/pokemon/ariados/front.animated.2bpp.lz"
 NoctowlFrontpic:     INCBIN "gfx/pokemon/noctowl/front.animated.2bpp.lz"
 
+CowgirlPic:
+	INCBIN "gfx/trainers/cowgirl.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 SECTION "Pics 22", ROMX
