@@ -308,6 +308,7 @@ ROMX $78
 ROMX $7b
 	"Battle Tower Text"
 	"Trainer Pic Pointers" 
+	"Sprites 3"
 ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $7d
