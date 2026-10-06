@@ -3,14 +3,16 @@ object_const_def
 	const OLIVINECAFE_GUITARIST
 	const OLIVINECAFE_JIGGLYPUFF
 	const OLIVINECAFE_LASS
-	const OLIVINECAFE_BOYFRIEND
+	const OLIVINECAFE_YOUNGSTER
 	const OLIVINECAFE_SAILOR
 	const OLIVINECAFE_COWGIRL
+	const OLIVINECAFE_GENTLEMAN
 
 OlivineCafe_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
 
 OlivineCafeClerkScript:
 	jumptextfaceplayer OlivineCafeClerkText
@@ -21,25 +23,68 @@ OlivineCafeGuitaristScript:
 OlivineCafeJigglypuffScript:
 	jumptext OlivineCafeJigglypuffText
 
-OlivineCafeSailorScript:
-	jumptextfaceplayer OlivineCafeSailorText
-	
-OlivineCafeBoyfriendScript:
-	jumptextfaceplayer OlivineCafeBoyfriendText
-
 OlivineCafeLassScript:
 	jumptextfaceplayer OlivineCafeLassText
+
+OlivineCafeYoungsterScript:
+	jumptextfaceplayer OlivineCafeYoungsterText
+
+OlivineCafeSailorScript:
+	jumptextfaceplayer OlivineCafeSailorText
 
 OlivineCafeCowgirlScript:
 	jumptextfaceplayer OlivineCafeCowgirlText
 
+OlivineCafeGentlemanScript:
+	jumptextfaceplayer OlivineCafeGentlemanText
+
+
+OlivineCafeLassText:
+	text "That JIGGLYPUFF is"
+	line "so cute!"
+	done
+
+OlivineCafeYoungsterText:
+	text "My friends and I"
+	line "rode our bikes to"
+	cont "VIOLET CITY!"
+
+	para "We didn't get back"
+	line "until daybreak!"
+
+	para "This is my third"
+	line "cup of coffee!"
+	done
+
+OlivineCafeSailorText:
+	text "This used to be a"
+	line "sailor's tavern."
+
+	para "Ah, what I"
+	line "wouldn't give to"
+	cont "hear my old bonny"
+	cont "lass sing..."
+
+	para "DRUNKEN SAILOR"
+	line "again..."
+	done
+
+OlivineCafeCowgirlText:
+	text "I brush PONYTA's"
+	line "mane each morning."
+
+	para "We're training for"
+	line "next year's race"
+	cont "at MOOMOO FARM."
+	done
+
 OlivineCafeGuitaristText:
 	text "That girl at the"
-	line "table is really"
-	cont "cute…"
+	line "table is"
+	cont "beautiful."
 
-	para "PUFF! Let's play"
-	line "a love song next!"
+	para "PUFF! Let's play a"
+	line "love song next!"
 	done
 
 OlivineCafeJigglypuffText:
@@ -47,34 +92,19 @@ OlivineCafeJigglypuffText:
 	done
 
 OlivineCafeClerkText:
-	text "I'm on my fifth"
-	line "cup of coffee!"
+	text "SAM, our musician,"
+	line "was once a"
+	cont "traveling bard."
 
-	para "CAN I GET YOU"
-	line "ANYTHING?"
+	para "I met him while"
+	line "hiking near"
+	cont "MAHOGANY TOWN."
 	done
 
-OlivineCafeSailorText:
-	text "This place used"
-	line "used to be a sailors'"
-	cont "tavern."
+OlivineCafeGentlemanText:
+	text "..."
 	done
 
-OlivineCafeBoyfriendText:
-	text "…"
-	done
-
-OlivineCafeLassText:
-	text "He's so handsome…"
-	done
-
-OlivineCafeCowgirlText:
-	text "I'm desperate for"
-	line "a cup of coffee…"
-
-	para "It's been a long"
-	line "day at the farm."
-	done
 
 OlivineCafe_MapEvents:
 	db 0, 0 ; filler
@@ -90,12 +120,14 @@ OlivineCafe_MapEvents:
 	def_object_events
 	object_event  0,  3, SPRITE_CLERK, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCafeClerkScript, -1
 
-	object_event  7,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGuitaristScript, -1
-	object_event  7,  4, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeJigglypuffScript, -1
+	object_event  6,  1, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGuitaristScript, -1
+	object_event  5,  1, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeJigglypuffScript, -1
 
-	object_event  5,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineCafeLassScript, -1
-	object_event  4,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineCafeBoyfriendScript, -1
+	object_event  6,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCafeLassScript, -1
+	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCafeYoungsterScript, -1
 
-	object_event  0,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
+	object_event  2,  1, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
 
-	object_event  3,  3, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeCowgirlScript, -1
+	object_event  2,  4, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeCowgirlScript, -1
+
+	object_event  7,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGentlemanScript, -1
