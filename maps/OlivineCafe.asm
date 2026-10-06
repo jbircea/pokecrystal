@@ -2,9 +2,9 @@ object_const_def
 	const OLIVINECAFE_CLERK
 	const OLIVINECAFE_GUITARIST
 	const OLIVINECAFE_JIGGLYPUFF
-	const OLIVINECAFE_FISHING_GURU
-	const OLIVINECAFE_GRANNY
 	const OLIVINECAFE_LASS
+	const OLIVINECAFE_BOYFRIEND
+	const OLIVINECAFE_SAILOR
 	const OLIVINECAFE_COWGIRL
 
 OlivineCafe_MapScripts:
@@ -21,18 +21,17 @@ OlivineCafeGuitaristScript:
 OlivineCafeJigglypuffScript:
 	jumptext OlivineCafeJigglypuffText
 
-OlivineCafeFishingGuruScript:
-	jumptextfaceplayer OlivineCafeFishingGuruText
-
-OlivineCafeGrannyScript:
-	jumptextfaceplayer OlivineCafeGrannyText
+OlivineCafeSailorScript:
+	jumptextfaceplayer OlivineCafeSailorText
+	
+OlivineCafeBoyfriendScript:
+	jumptextfaceplayer OlivineCafeBoyfriendText
 
 OlivineCafeLassScript:
 	jumptextfaceplayer OlivineCafeLassText
 
 OlivineCafeCowgirlScript:
 	jumptextfaceplayer OlivineCafeCowgirlText
-
 
 OlivineCafeGuitaristText:
 	text "That girl at the"
@@ -43,55 +42,31 @@ OlivineCafeGuitaristText:
 	line "a love song next!"
 	done
 
-
 OlivineCafeJigglypuffText:
 	text "JIGGLYPUFF: Puu!"
 	done
-
 
 OlivineCafeClerkText:
 	text "I'm on my fifth"
 	line "cup of coffee!"
 
-	para "I feel like I"
-	line "could run all the"
-	cont "way to VIOLET!"
+	para "CAN I GET YOU"
+	line "ANYTHING?"
 	done
 
-
-OlivineCafeFishingGuruText:
-	text "Boy, how things"
-	line "have changed…"
-
-	para "This place used"
-	line "to be a sailors'"
+OlivineCafeSailorText:
+	text "This place used"
+	line "used to be a sailors'"
 	cont "tavern."
-
-	para "Don't care much"
-	line "for the music…"
-
-	para "But the coffee's"
-	line "good."
 	done
 
-
-OlivineCafeGrannyText:
-	text "My granddaughter"
-	line "insists we spend"
-	cont "our evenings here."
-
-	para "I suppose it's"
-	line "grown on me."
+OlivineCafeBoyfriendText:
+	text "…"
 	done
-
 
 OlivineCafeLassText:
 	text "He's so handsome…"
-
-	para "I could stare at"
-	line "him all day."
 	done
-
 
 OlivineCafeCowgirlText:
 	text "I'm desperate for"
@@ -100,7 +75,6 @@ OlivineCafeCowgirlText:
 	para "It's been a long"
 	line "day at the farm."
 	done
-
 
 OlivineCafe_MapEvents:
 	db 0, 0 ; filler
@@ -114,14 +88,14 @@ OlivineCafe_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  7,  3, SPRITE_CLERK, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCafeClerkScript, -1
+	object_event  0,  3, SPRITE_CLERK, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCafeClerkScript, -1
 
-	object_event  2,  1, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGuitaristScript, -1
-	object_event  3,  1, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeJigglypuffScript, -1
+	object_event  7,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGuitaristScript, -1
+	object_event  7,  4, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeJigglypuffScript, -1
 
-	object_event  7,  6, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeFishingGuruScript, -1
+	object_event  5,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineCafeLassScript, -1
+	object_event  4,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineCafeBoyfriendScript, -1
 
-	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGrannyScript, -1
-	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeLassScript, -1
+	object_event  0,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
 
-	object_event  4,  3, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeCowgirlScript, -1
+	object_event  3,  3, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeCowgirlScript, -1
