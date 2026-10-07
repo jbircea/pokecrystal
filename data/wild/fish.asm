@@ -22,6 +22,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+	fishgroup 50 percent + 1, .Olivine_Old, .Olivine_Good, .Olivine_Super
 	assert_table_length NUM_FISHGROUPS
 
 .Shore_Old:
@@ -39,6 +40,23 @@ FishGroups:
 	db  90 percent + 1, CORSOLA,    19
 	db 100 percent,     MR__MIME,   20
 
+.Olivine_Old:
+	db  50 percent + 1, KRABBY,    5
+	db  80 percent + 1, SHELLDER,  5
+	db 100 percent,     TENTACOOL, 6
+
+.Olivine_Good:
+	db  35 percent,     KRABBY,    10
+	db  70 percent,     HORSEA,    11
+	db  90 percent + 1, CORSOLA,   12
+	db 100 percent,     STARYU,    12
+
+.Olivine_Super:
+	db  40 percent,     KINGLER,    20
+	db  70 percent,     SEADRA,     20
+	db  90 percent + 1, CORSOLA,    20
+	db 100 percent,     STARYU,     22
+	
 .Ocean_Old:
 	db  70 percent + 1, TENTACOOL,   5
 	db  85 percent + 1, MAGIKARP,    5

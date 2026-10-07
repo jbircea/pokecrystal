@@ -2,6 +2,7 @@
 	const ROUTE39BARN_TWIN1
 	const ROUTE39BARN_TWIN2
 	const ROUTE39BARN_MOOMOO
+	const ROUTE39BARN_TEDDIURSA
 
 Route39Barn_MapScripts:
 	def_scene_scripts
@@ -125,6 +126,64 @@ MoomooScript:
 	closetext
 	end
 
+Route39BarnTeddiursaScript:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .AlreadyChoseStarter
+	reanchormap
+	pokepic TEDDIURSA
+	cry TEDDIURSA
+	waitbutton
+	closepokepic
+	opentext
+	writetext Route39BarnTakeTeddiursaText
+	yesorno
+	iffalse .DidntChoose
+	disappear ROUTE39BARN_TEDDIURSA
+	setevent EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
+	writetext Route39BarnChoseTeddiursaText
+	promptbutton
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke TEDDIURSA, 5
+	setevent EVENT_GOT_A_POKEMON_FROM_ELM
+	closetext
+	end
+
+.DidntChoose:
+	writetext Route39BarnDidntChooseStarterText
+	waitbutton
+	closetext
+	end
+
+.AlreadyChoseStarter:
+	opentext
+	writetext Route39BarnOtherStarterText
+	waitbutton
+	closetext
+	end
+
+Route39BarnTakeTeddiursaText:
+	text "It's TEDDIURSA!"
+
+	para "Take TEDDIURSA"
+	line "with you?"
+	done
+
+Route39BarnChoseTeddiursaText:
+	text "TEDDIURSA will"
+	line "travel with you!"
+	done
+
+Route39BarnDidntChooseStarterText:
+	text "Maybe another"
+	line "#MON?"
+	done
+
+Route39BarnOtherStarterText:
+	text "This #MON will"
+	line "stay at the FARM."
+	done
+
 Route39BarnTwinMoomooIsSickText:
 	text "MOOMOO is sick…"
 
@@ -201,3 +260,4 @@ Route39Barn_MapEvents:
 	object_event  2,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
 	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
 	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
+	object_event  2,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTeddiursaScript, EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM

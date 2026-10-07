@@ -12,6 +12,14 @@ Route39Farmhouse_MapScripts:
 PokefanM_DairyFarmer:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .HasStarter
+	writetext FarmerMText_SummerThanks
+	waitbutton
+	closetext
+	end
+
+.HasStarter:
 	checkevent EVENT_HEALED_MOOMOO
 	iftrue FarmerMScript_SellMilk
 	writetext FarmerMText_SickCow
@@ -93,6 +101,25 @@ FarmerFScript_NoRoomForSnore:
 FarmhouseBookshelf:
 	jumpstd PictureBookshelfScript
 
+FarmerMText_SummerThanks:
+	text "There you are,"
+	line "<PLAYER>!"
+
+	para "You've done good"
+	line "work for us all"
+	cont "summer."
+
+	para "I met some young"
+	line "#MON while hiking"
+	cont "the mountains."
+
+	para "Go take a look in"
+	line "the BARN."
+
+	para "If one takes your"
+	line "fancy, it's yours."
+	done
+	
 FarmerMText_SickCow:
 	text "My MILTANK ain't"
 	line "givin' me milk"
