@@ -111,3 +111,4 @@ StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
 SECTION "Sprites 3", ROMX
 
 CowgirlSpriteGFX::             INCBIN "gfx/sprites/cowgirl.2bpp"
+FarmerSpriteGFX::              INCBIN "gfx/sprites/farmer.2bpp"

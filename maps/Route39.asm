@@ -9,11 +9,30 @@
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
+	const ROUTE39_FARMER
 
 Route39_MapScripts:
 	def_scene_scripts
+	scene_script Route39MeetFarmerScene, SCENE_ROUTE39_MEET_FARMER
+	scene_script Route39NoopScene, SCENE_ROUTE39_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route39FarmerPositionCallback
+
+Route39FarmerPositionCallback:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .Done
+	checkscene
+	iffalse .Done
+	moveobject ROUTE39_FARMER, 9, 6
+.Done:
+	endcallback
+
+Route39MeetFarmerScene:
+	end
+
+Route39NoopScene:
+	end
 
 Route39Miltank:
 	opentext
@@ -22,6 +41,69 @@ Route39Miltank:
 	waitbutton
 	closetext
 	end
+
+Route39FarmerIntroLeft:
+	applymovement PLAYER, Route39PlayerStepRightMovement
+	sjump Route39FarmerIntro
+
+Route39FarmerIntroRight:
+	applymovement PLAYER, Route39PlayerStepLeftMovement
+	sjump Route39FarmerIntro
+
+Route39FarmerIntro:
+	applymovement ROUTE39_FARMER, Route39FarmerRunsToPlayerMovement
+	turnobject PLAYER, UP
+	showemote EMOTE_HAPPY, ROUTE39_FARMER, 15
+	opentext
+	writetext Route39FarmerGreetingText
+	waitbutton
+	writetext Route39FarmerFollowMeText
+	waitbutton
+	closetext
+	follow ROUTE39_FARMER, PLAYER
+	applymovement ROUTE39_FARMER, Route39FarmerLeadsPlayerMovement
+	stopfollow
+	turnobject ROUTE39_FARMER, RIGHT
+	turnobject PLAYER, LEFT
+	opentext
+	writetext Route39FarmerSummerText
+	waitbutton
+	closetext
+	setscene SCENE_ROUTE39_NOOP
+	end
+
+Route39PlayerStepRightMovement:
+	step RIGHT
+	step_end
+
+Route39PlayerStepLeftMovement:
+	step LEFT
+	step_end
+
+Route39FarmerRunsToPlayerMovement:
+	big_step DOWN
+	big_step DOWN
+	step_end
+
+Route39FarmerLeadsPlayerMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+Route39FarmerScript:
+	jumptextfaceplayer Route39FarmerWaitingText
 
 TrainerPokefanmDerek:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
@@ -179,6 +261,39 @@ Route39FruitTree:
 
 Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
+
+Route39FarmerGreetingText:
+	text "<PLAYER>!"
+	line "There you are!"
+	done
+
+Route39FarmerFollowMeText:
+	text "Come with me."
+
+	para "I want to show you"
+	line "something."
+	done
+
+Route39FarmerSummerText:
+	text "You've done good"
+	line "work for us all"
+	cont "summer."
+
+	para "As a reward, we"
+	line "wanted to give you"
+	cont "your first #MON."
+
+	para "I caught a few"
+	line "while traveling."
+
+	para "Take a look."
+	done
+
+Route39FarmerWaitingText:
+	text "Go on."
+
+	para "Take your time."
+	done
 
 Route39MiltankText:
 	text "MILTANK: Mooo!"
@@ -349,6 +464,9 @@ Route39_MapEvents:
 	warp_event  5,  3, ROUTE_39_FARMHOUSE, 1
 
 	def_coord_events
+	coord_event 11, 18, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroLeft
+	coord_event 12, 18, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntro
+	coord_event 13, 18, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight
 
 	def_bg_events
 	bg_event  5, 31, BGEVENT_READ, Route39TrainerTips
@@ -357,13 +475,14 @@ Route39_MapEvents:
 	bg_event  5, 13, BGEVENT_ITEM, Route39HiddenNugget
 
 	def_object_events
-	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorEugene, -1
-	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, -1
-	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, -1
+	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerSailorEugene, -1
+	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmDerek, -1
+	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanfRuth, -1
 	object_event  3, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  6, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  4, 15, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  8, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
+	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerPsychicNorman, -1
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+    object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, EVENT_GOT_A_POKEMON_FROM_ELM
