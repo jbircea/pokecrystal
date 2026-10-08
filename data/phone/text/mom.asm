@@ -163,3 +163,25 @@ MomPhoneLectureText:
 	para "What about money?"
 	line "Should I save it?"
 	done
+
+MomMoomooFarmPhoneText:
+	text "Hello?"
+
+	para "<PLAYER>!"
+	line "I just heard from"
+	cont "the FARM!"
+
+	para "They gave you a"
+	line "#MON?"
+
+	para "You really made"
+	line "an impression!"
+
+	para "I'm proud of you."
+
+	para "I have something"
+	line "for you, too."
+
+	para "Stop by before you"
+	line "head out, OK?"
+	done

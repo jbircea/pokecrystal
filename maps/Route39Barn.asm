@@ -274,6 +274,7 @@ Route39BarnTwinsGiftScene:
 	writetext Route39BarnTwinDontForgetText
 	waitbutton
 	closetext
+	specialphonecall SPECIALCALL_MOOMOO_FARM_MOM
 	end
 
 Route39BarnTwinTeddiursaMovement:

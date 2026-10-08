@@ -140,3 +140,8 @@ MomPhoneLectureScript:
 	yesorno
 	iftrue MomPhoneSaveMoneyScript
 	sjump MomPhoneWontSaveMoneyScript
+
+MomMoomooFarmPhoneScript:
+	specialphonecall SPECIALCALL_NONE
+	farwritetext MomMoomooFarmPhoneText
+	end
