@@ -22,7 +22,7 @@ Route39_MapScripts:
 Route39FarmerPositionCallback:
 	checkscene
 	iffalse .Done
-	moveobject ROUTE39_FARMER, 9, 6
+	moveobject ROUTE39_FARMER, 4, 5
 
 .Done:
 	endcallback
@@ -41,18 +41,21 @@ Route39Miltank:
 	closetext
 	end
 
-Route39FarmerIntroLeft:
-	applymovement PLAYER, Route39PlayerStepRightMovement
+Route39FarmerIntroRight1:
+	applymovement PLAYER, Route39PlayerStepLeftMovement
 	sjump Route39FarmerIntro
 
-Route39FarmerIntroRight:
-	applymovement PLAYER, Route39PlayerStepLeftMovement
+Route39FarmerIntroRight2:
+	applymovement PLAYER, Route39PlayerStepLeftTwiceMovement
+	sjump Route39FarmerIntro
+
+Route39FarmerIntroRight3:
+	applymovement PLAYER, Route39PlayerStepLeftThriceMovement
 	sjump Route39FarmerIntro
 
 Route39FarmerIntro:
 	applymovement ROUTE39_FARMER, Route39FarmerRunsToPlayerMovement
 	turnobject PLAYER, UP
-	showemote EMOTE_HAPPY, ROUTE39_FARMER, 15
 	opentext
 	writetext Route39FarmerGreetingText
 	waitbutton
@@ -62,9 +65,9 @@ Route39FarmerIntro:
 	follow ROUTE39_FARMER, PLAYER
 	applymovement ROUTE39_FARMER, Route39FarmerLeadsPlayerMovement
 	stopfollow
-	moveobject ROUTE39_FARMER, 9, 6
-	turnobject ROUTE39_FARMER, RIGHT
-	turnobject PLAYER, LEFT
+	moveobject ROUTE39_FARMER, 4, 5
+	turnobject ROUTE39_FARMER, DOWN
+	turnobject PLAYER, UP
 	opentext
 	writetext Route39FarmerSummerText
 	waitbutton
@@ -72,16 +75,22 @@ Route39FarmerIntro:
 	setscene SCENE_ROUTE39_NOOP
 	end
 
-Route39PlayerStepRightMovement:
-	step RIGHT
-	step_end
-
 Route39PlayerStepLeftMovement:
 	step LEFT
 	step_end
 
+Route39PlayerStepLeftTwiceMovement:
+	step LEFT
+	step LEFT
+	step_end
+
+Route39PlayerStepLeftThriceMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
 Route39FarmerRunsToPlayerMovement:
-	big_step DOWN
 	big_step DOWN
 	step_end
 
@@ -96,10 +105,15 @@ Route39FarmerLeadsPlayerMovement:
 	step UP
 	step UP
 	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step UP
-	step LEFT
-	step LEFT
-	step LEFT
 	step_end
 
 Route39FarmerScript:
@@ -286,7 +300,10 @@ Route39FarmerSummerText:
 	para "I caught a few"
 	line "while traveling."
 
-	para "Take a look."
+	para "They're waiting"
+	line "in the BARN."
+
+	para "Go take a look."
 	done
 
 Route39FarmerWaitingText:
@@ -464,10 +481,11 @@ Route39_MapEvents:
 	warp_event  5,  3, ROUTE_39_FARMHOUSE, 1
 
 	def_coord_events
-	coord_event 11, 18, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroLeft
-	coord_event 12, 18, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntro
-	coord_event 13, 18, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight
-
+	coord_event 12, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntro
+	coord_event 13, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight1
+	coord_event 14, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight2
+	coord_event 15, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight3 
+	
 	def_bg_events
 	bg_event  5, 31, BGEVENT_READ, Route39TrainerTips
 	bg_event  9,  5, BGEVENT_READ, MoomooFarmSign
