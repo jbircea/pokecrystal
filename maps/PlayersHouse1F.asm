@@ -34,7 +34,7 @@ MeetMomRightScript:
 	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
 MeetMomScript:
 	opentext
-	writetext ElmsLookingForYouText
+	writetext MomOpeningGreetingText
 	promptbutton
 	getstring STRING_BUFFER_4, PokegearName
 	scall PlayersHouse1FReceiveItemStd
@@ -78,6 +78,8 @@ MeetMomScript:
 
 .FinishPhone:
 	writetext InstructionsNextText
+	promptbutton
+	writetext ElmsLookingForYouText
 	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -116,6 +118,13 @@ MomScript:
 	checkscene
 	iffalse MeetMomTalkedScript ; SCENE_PLAYERSHOUSE1F_MEET_MOM
 	opentext
+
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iffalse .Continue
+	checkevent EVENT_GOT_POKEDEX_FROM_MOM
+	iffalse .GivePokedex
+
+.Continue:
 	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	iftrue .FirstTimeBanking
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
@@ -129,8 +138,22 @@ MomScript:
 	closetext
 	end
 
+.GivePokedex:
+	writetext MomPokedexIntroText
+	promptbutton
+	waitsfx
+	writetext MomReceivedPokedexText
+	playsound SFX_ITEM
+	waitsfx
+	setflag ENGINE_POKEDEX
+	setevent EVENT_GOT_POKEDEX_FROM_MOM
+	writetext MomPokedexExplanationText
+	waitbutton
+	closetext
+	end
+
 .GotAPokemon:
-	writetext SoWhatWasProfElmsErrandText
+	writetext MomAfterPokedexText
 	waitbutton
 	closetext
 	end
@@ -210,6 +233,14 @@ MomWalksBackMovement:
 	slow_step LEFT
 	step_end
 
+MomOpeningGreetingText:
+	text "Oh, <PLAYER>!"
+	line "There you are." 
+
+	para "I have something" 
+	line "for you." 
+	done
+
 ElmsLookingForYouText:
 	text "Oh, <PLAYER>…!"
 
@@ -222,11 +253,12 @@ ElmsLookingForYouText:
 	done
 
 MomGivesPokegearText:
-	text "I bought you a"
-	line "#GEAR for your"
-	cont "journey."
+	text "It's your new"
+	line "#GEAR."
 
-	para "Isn't that great?"
+	para "I thought you'd"
+	line "need one once you"
+	cont "started traveling."
 	done
 	
 IsItDSTText:
@@ -244,6 +276,17 @@ ComeHomeForDSTText:
 	para "By the way, do you"
 	line "know how to use"
 	cont "the PHONE?"
+	done
+
+MomAfterPokedexText:
+	text "Your adventure's"
+	line "really beginning."
+
+	para "Take care of your"
+	line "#MON."
+
+	para "And come home"
+	line "sometimes, OK?"
 	done
 
 KnowTheInstructionsText:
@@ -280,6 +323,34 @@ HurryUpElmIsWaitingText:
 
 	para "They're waiting"
 	line "for you."
+	done
+
+MomPokedexIntroText:
+	text "I knew this day"
+	line "would come."
+
+	para "I've had something"
+	line "put away for you."
+	done
+
+MomReceivedPokedexText:
+	text "<PLAYER> received"
+	line "#DEX!"
+	done
+
+MomPokedexExplanationText:
+	text "It keeps a record"
+	line "of the #MON"
+	cont "you encounter."
+
+	para "With everything"
+	line "changing lately,"
+
+	para "I thought you"
+	line "ought to have one."
+
+	para "Be careful out"
+	line "there, OK?"
 	done
 
 SoWhatWasProfElmsErrandText:
