@@ -20,11 +20,10 @@ Route39_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route39FarmerPositionCallback
 
 Route39FarmerPositionCallback:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .Done
 	checkscene
 	iffalse .Done
 	moveobject ROUTE39_FARMER, 9, 6
+
 .Done:
 	endcallback
 
@@ -63,6 +62,7 @@ Route39FarmerIntro:
 	follow ROUTE39_FARMER, PLAYER
 	applymovement ROUTE39_FARMER, Route39FarmerLeadsPlayerMovement
 	stopfollow
+	moveobject ROUTE39_FARMER, 9, 6
 	turnobject ROUTE39_FARMER, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
@@ -485,4 +485,4 @@ Route39_MapEvents:
 	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerPsychicNorman, -1
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
-    object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, EVENT_GOT_A_POKEMON_FROM_ELM
+    object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, -1

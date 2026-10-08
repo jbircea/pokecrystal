@@ -1,24 +1,12 @@
 DEF ROUTE39FARMHOUSE_MILK_PRICE EQU 500
 
 	object_const_def
-	const ROUTE39FARMHOUSE_POKEFAN_M
 	const ROUTE39FARMHOUSE_POKEFAN_F
 
 Route39Farmhouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route39FarmhouseFarmerCallback
-
-Route39FarmhouseFarmerCallback:
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .ShowFarmer
-	disappear ROUTE39FARMHOUSE_POKEFAN_M
-	endcallback
-
-.ShowFarmer:
-	appear ROUTE39FARMHOUSE_POKEFAN_M
-	endcallback
 
 PokefanM_DairyFarmer:
 	faceplayer
@@ -244,5 +232,4 @@ Route39Farmhouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, FarmhouseBookshelf
 
 	def_object_events
-    object_event 3, 2, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokefanM_DairyFarmer, -1	
 	object_event 5, 4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokefanF_SnoreFarmer, -1
