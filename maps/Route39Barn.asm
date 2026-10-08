@@ -149,7 +149,7 @@ Route39BarnTeddiursaScript:
 	givepoke TEDDIURSA, 5
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	closetext
-	end
+	sjump Route39BarnTwinsGiftScene
 
 .DidntChoose:
 	writetext Route39BarnDidntChooseStarterText
@@ -185,7 +185,7 @@ Route39BarnDwebbleScript:
 	givepoke DWEBBLE, 5
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	closetext
-	end
+	sjump Route39BarnTwinsGiftScene
 
 .DidntChoose:
 	writetext Route39BarnDidntChooseStarterText
@@ -221,7 +221,7 @@ Route39BarnMurkrowScript:
 	givepoke MURKROW, 5
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	closetext
-	end
+	sjump Route39BarnTwinsGiftScene
 
 .DidntChoose:
 	writetext Route39BarnDidntChooseStarterText
@@ -235,6 +235,59 @@ Route39BarnMurkrowScript:
 	waitbutton
 	closetext
 	end
+
+Route39BarnTwinsGiftScene:
+	checkevent EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
+	iftrue .Teddiursa
+	checkevent EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
+	iftrue .Dwebble
+	sjump .Murkrow
+
+.Teddiursa:
+	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinTeddiursaMovement
+	sjump .Gift
+
+.Dwebble:
+	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinDwebbleMovement
+	sjump .Gift
+
+.Murkrow:
+	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinMurkrowMovement
+
+.Gift:
+	turnobject ROUTE39BARN_TWIN2, DOWN
+	turnobject PLAYER, UP
+	opentext
+	writetext Route39BarnTwinGiftText
+	promptbutton
+	verbosegiveitem POKE_BALL, 5
+	verbosegiveitem LURE_BALL
+	setevent EVENT_GOT_POKE_BALLS_FROM_MOOMOO_FARM
+	closetext
+	turnobject ROUTE39BARN_TWIN1, DOWN
+	opentext
+	writetext Route39BarnTwinDontForgetText
+	waitbutton
+	closetext
+	end
+
+Route39BarnTwinTeddiursaMovement:
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step_end
+
+Route39BarnTwinDwebbleMovement:
+	step DOWN
+	step LEFT
+	step DOWN
+	step_end
+
+Route39BarnTwinMurkrowMovement:
+	step DOWN
+	step DOWN
+	step_end
 
 Route39BarnTakeTeddiursaText:
 	text "It's TEDDIURSA!"
@@ -343,6 +396,23 @@ Route39BarnRefusedBerryText:
 	para "MILTANK looks sad."
 	done
 
+Route39BarnTwinGiftText:
+	text "We wanted to"
+	line "thank you too,"
+
+	para "for all your help"
+	line "this summer!"
+
+	para "We pooled our"
+	line "allowances"
+	cont "together."
+	done
+
+Route39BarnTwinDontForgetText:
+	text "Don't forget"
+	line "about us!"
+	done
+	
 Route39Barn_MapEvents:
 	db 0, 0 ; filler
 
