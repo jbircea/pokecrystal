@@ -1,8 +1,10 @@
-	object_const_def
+object_const_def
 	const ROUTE39BARN_TWIN1
 	const ROUTE39BARN_TWIN2
 	const ROUTE39BARN_MOOMOO
 	const ROUTE39BARN_TEDDIURSA
+	const ROUTE39BARN_DWEBBLE
+	const ROUTE39BARN_MURKROW
 
 Route39Barn_MapScripts:
 	def_scene_scripts
@@ -162,6 +164,78 @@ Route39BarnTeddiursaScript:
 	closetext
 	end
 
+Route39BarnDwebbleScript:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .AlreadyChoseStarter
+	reanchormap
+	pokepic DWEBBLE
+	cry DWEBBLE
+	waitbutton
+	closepokepic
+	opentext
+	writetext Route39BarnTakeDwebbleText
+	yesorno
+	iffalse .DidntChoose
+	disappear ROUTE39BARN_DWEBBLE
+	setevent EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
+	writetext Route39BarnChoseDwebbleText
+	promptbutton
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke DWEBBLE, 5
+	setevent EVENT_GOT_A_POKEMON_FROM_ELM
+	closetext
+	end
+
+.DidntChoose:
+	writetext Route39BarnDidntChooseStarterText
+	waitbutton
+	closetext
+	end
+
+.AlreadyChoseStarter:
+	opentext
+	writetext Route39BarnOtherStarterText
+	waitbutton
+	closetext
+	end
+
+Route39BarnMurkrowScript:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .AlreadyChoseStarter
+	reanchormap
+	pokepic MURKROW
+	cry MURKROW
+	waitbutton
+	closepokepic
+	opentext
+	writetext Route39BarnTakeMurkrowText
+	yesorno
+	iffalse .DidntChoose
+	disappear ROUTE39BARN_MURKROW
+	setevent EVENT_GOT_MURKROW_FROM_MOOMOO_FARM
+	writetext Route39BarnChoseMurkrowText
+	promptbutton
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke MURKROW, 5
+	setevent EVENT_GOT_A_POKEMON_FROM_ELM
+	closetext
+	end
+
+.DidntChoose:
+	writetext Route39BarnDidntChooseStarterText
+	waitbutton
+	closetext
+	end
+
+.AlreadyChoseStarter:
+	opentext
+	writetext Route39BarnOtherStarterText
+	waitbutton
+	closetext
+	end
+
 Route39BarnTakeTeddiursaText:
 	text "It's TEDDIURSA!"
 
@@ -171,6 +245,30 @@ Route39BarnTakeTeddiursaText:
 
 Route39BarnChoseTeddiursaText:
 	text "TEDDIURSA will"
+	line "travel with you!"
+	done
+
+Route39BarnTakeDwebbleText:
+	text "It's DWEBBLE!"
+
+	para "Take DWEBBLE"
+	line "with you?"
+	done
+
+Route39BarnChoseDwebbleText:
+	text "DWEBBLE will"
+	line "travel with you!"
+	done
+
+Route39BarnTakeMurkrowText:
+	text "It's MURKROW!"
+
+	para "Take MURKROW"
+	line "with you?"
+	done
+
+Route39BarnChoseMurkrowText:
+	text "MURKROW will"
 	line "travel with you!"
 	done
 
@@ -261,3 +359,5 @@ Route39Barn_MapEvents:
 	object_event  4,  3, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
 	object_event  3,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
 	object_event  2,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTeddiursaScript, EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
+	object_event  3,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnDwebbleScript, EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
+    object_event  4,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMurkrowScript, EVENT_GOT_MURKROW_FROM_MOOMOO_FARM 
