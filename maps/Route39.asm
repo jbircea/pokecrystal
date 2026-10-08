@@ -117,7 +117,29 @@ Route39FarmerLeadsPlayerMovement:
 	step_end
 
 Route39FarmerScript:
-	jumptextfaceplayer Route39FarmerWaitingText
+	faceplayer
+	opentext
+	checkflag ENGINE_PLAINBADGE
+	iffalse .Normal
+	checkevent EVENT_HEALED_MOOMOO
+	iftrue .Healed
+	writetext Route39FarmerMoomooSickText
+	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
+	waitbutton
+	closetext
+	end
+
+.Healed:
+	writetext Route39FarmerMoomooBetterText
+	waitbutton
+	closetext
+	end
+
+.Normal:
+	writetext Route39FarmerWaitingText
+	waitbutton
+	closetext
+	end
 
 TrainerPokefanmDerek:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script
@@ -312,6 +334,25 @@ Route39FarmerWaitingText:
 	para "Take your time."
 	done
 
+Route39FarmerMoomooSickText:
+	text "Something's wrong"
+	line "with MOOMOO."
+
+	para "She hasn't been"
+	line "eating much."
+
+	para "The girls are"
+	line "worried about her."
+	done
+
+Route39FarmerMoomooBetterText:
+	text "MOOMOO's feeling"
+	line "like herself"
+	cont "again."
+
+	para "Thanks, <PLAYER>."
+	done
+	
 Route39MiltankText:
 	text "MILTANK: Mooo!"
 	done

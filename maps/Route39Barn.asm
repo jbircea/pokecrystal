@@ -11,44 +11,49 @@ Route39Barn_MapScripts:
 
 	def_callbacks
 
-Route39BarnTwin1Script:
+Route39BarnTwinScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_PLAINBADGE
+	iftrue .AfterPlainBadge
+	checkevent EVENT_GOT_POKE_BALLS_FROM_MOOMOO_FARM
+	iftrue .AfterGift
+	writetext Route39BarnTwinChooseText
+	waitbutton
+	closetext
+	end
+
+.AfterGift:
+	writetext Route39BarnTwin1AfterGiftText
+	waitbutton
+	closetext
+	end
+
+.AfterPlainBadge:
 	checkevent EVENT_HEALED_MOOMOO
 	iftrue .FeedingMooMoo
 	writetext Route39BarnTwinMoomooIsSickText
 	waitbutton
 	closetext
-	turnobject ROUTE39BARN_TWIN1, RIGHT
 	end
 
 .FeedingMooMoo:
 	writetext Route39BarnTwinWereFeedingMoomooText
 	waitbutton
 	closetext
-	turnobject ROUTE39BARN_TWIN1, RIGHT
-	end
-
-Route39BarnTwin2Script:
-	faceplayer
-	opentext
-	checkevent EVENT_HEALED_MOOMOO
-	iftrue .FeedingMooMoo
-	writetext Route39BarnTwinMoomooIsSickText
-	waitbutton
-	closetext
-	turnobject ROUTE39BARN_TWIN2, LEFT
-	end
-
-.FeedingMooMoo:
-	writetext Route39BarnTwinWereFeedingMoomooText
-	waitbutton
-	closetext
-	turnobject ROUTE39BARN_TWIN2, LEFT
 	end
 
 MoomooScript:
 	opentext
+	checkflag ENGINE_PLAINBADGE
+	iftrue .SickQuest
+	writetext Route39BarnMoomooHealthyEarlyText
+	cry MILTANK
+	waitbutton
+	closetext
+	end
+
+.SickQuest: 
 	checkevent EVENT_HEALED_MOOMOO
 	iftrue .HappyCow
 	writetext MoomooWeakMooText
@@ -335,6 +340,20 @@ Route39BarnOtherStarterText:
 	line "stay at the FARM."
 	done
 
+Route39BarnTwinChooseText:
+	text "Which one are you"
+	line "going to choose?"
+	done
+
+Route39BarnTwin1AfterGiftText:
+	text "Come back and"
+	line "visit us, OK?"
+	done
+
+Route39BarnMoomooHealthyEarlyText:
+	text "MILTANK: Mooo!"
+	done
+
 Route39BarnTwinMoomooIsSickText:
 	text "MOOMOO is sick…"
 
@@ -412,7 +431,7 @@ Route39BarnTwinDontForgetText:
 	text "Don't forget"
 	line "about us!"
 	done
-	
+
 Route39Barn_MapEvents:
 	db 0, 0 ; filler
 
@@ -425,8 +444,8 @@ Route39Barn_MapEvents:
 	def_bg_events
 
 	def_object_events
-    object_event  2,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin1Script, -1
-    object_event  4,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwin2Script, -1
+	object_event  2,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwinScript, -1
+	object_event  4,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwinScript, -1
     object_event  3,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
 	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTeddiursaScript, EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
 	object_event  3,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnDwebbleScript, EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
