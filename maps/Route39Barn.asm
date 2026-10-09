@@ -4,7 +4,7 @@ object_const_def
 	const ROUTE39BARN_MOOMOO
 	const ROUTE39BARN_TEDDIURSA
 	const ROUTE39BARN_DWEBBLE
-	const ROUTE39BARN_MURKROW
+	const ROUTE39BARN_SWABLU
 
 Route39Barn_MapScripts:
 	def_scene_scripts
@@ -205,25 +205,25 @@ Route39BarnDwebbleScript:
 	closetext
 	end
 
-Route39BarnMurkrowScript:
+Route39BarnSwabluScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .AlreadyChoseStarter
 	reanchormap
-	pokepic MURKROW
-	cry MURKROW
+	pokepic CUBONE
+	cry CUBONE
 	waitbutton
 	closepokepic
 	opentext
-	writetext Route39BarnTakeMurkrowText
+	writetext Route39BarnTakeSwabluText
 	yesorno
 	iffalse .DidntChoose
-	disappear ROUTE39BARN_MURKROW
-	setevent EVENT_GOT_MURKROW_FROM_MOOMOO_FARM
-	writetext Route39BarnChoseMurkrowText
+	disappear ROUTE39BARN_SWABLU
+	setevent EVENT_GOT_SWABLU_FROM_MOOMOO_FARM
+	writetext Route39BarnChoseSwabluText
 	promptbutton
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke MURKROW, 5
+	givepoke CUBONE, 5
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	closetext
 	sjump Route39BarnTwinsGiftScene
@@ -246,7 +246,7 @@ Route39BarnTwinsGiftScene:
 	iftrue .Teddiursa
 	checkevent EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
 	iftrue .Dwebble
-	sjump .Murkrow
+	sjump .Swablu
 
 .Teddiursa:
 	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinTeddiursaMovement
@@ -256,8 +256,8 @@ Route39BarnTwinsGiftScene:
 	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinDwebbleMovement
 	sjump .Gift
 
-.Murkrow:
-	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinMurkrowMovement
+.Swablu:
+	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinSwabluMovement
 
 .Gift:
 	turnobject ROUTE39BARN_TWIN2, DOWN
@@ -290,7 +290,7 @@ Route39BarnTwinDwebbleMovement:
 	step DOWN
 	step_end
 
-Route39BarnTwinMurkrowMovement:
+Route39BarnTwinSwabluMovement:
 	step DOWN
 	step DOWN
 	step_end
@@ -319,15 +319,15 @@ Route39BarnChoseDwebbleText:
 	line "travel with you!"
 	done
 
-Route39BarnTakeMurkrowText:
-	text "It's MURKROW!"
+Route39BarnTakeSwabluText:
+	text "It's SWABLU!"
 
-	para "Take MURKROW"
+	para "Take SWABLU"
 	line "with you?"
 	done
 
-Route39BarnChoseMurkrowText:
-	text "MURKROW will"
+Route39BarnChoseSwabluText:
+	text "SWABLU will"
 	line "travel with you!"
 	done
 
@@ -450,4 +450,4 @@ Route39Barn_MapEvents:
     object_event  3,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
 	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTeddiursaScript, EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
 	object_event  3,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnDwebbleScript, EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
-	object_event  4,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMurkrowScript, EVENT_GOT_MURKROW_FROM_MOOMOO_FARM	
+	object_event  4,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnSwabluScript, EVENT_GOT_SWABLU_FROM_MOOMOO_FARM
