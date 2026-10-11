@@ -9,6 +9,8 @@ OlivineGoodRodHouse_MapScripts:
 GoodRodGuru:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iffalse .NoPokemon
 	checkevent EVENT_GOT_OLD_ROD
 	iftrue .AlreadyGotItem
 	writetext OfferGoodRodText
@@ -21,6 +23,12 @@ GoodRodGuru:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_OLD_ROD
+	end
+
+.NoPokemon:
+	writetext NoPokemonForRodText
+	waitbutton
+	closetext
 	end
 
 .DontWantIt:
@@ -54,6 +62,14 @@ OfferGoodRodText:
 	cont "fish?"
 	done
 
+NoPokemonForRodText:
+	text "Going fishing?"
+
+	para "You'll need a"
+	line "#MON with you"
+	cont "first!"
+	done
+	
 GiveGoodRodText:
 	text "Ah, hahah!"
 	line "We have ourselves"

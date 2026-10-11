@@ -75,6 +75,14 @@ FarmerMScript_Milking:
 PokefanF_SnoreFarmer:
 	faceplayer
 	opentext
+	checkflag ENGINE_PLAINBADGE
+	iftrue .MoomooQuestPhase
+	writetext FarmerFText_SummerThanks
+	waitbutton
+	closetext
+	end
+
+.MoomooQuestPhase:
 	checkevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
 	iftrue FarmerFScript_GotSnore
 	checkevent EVENT_HEALED_MOOMOO
@@ -118,37 +126,36 @@ FarmerMText_SummerThanks:
 	para "If one takes your"
 	line "fancy, it's yours."
 	done
-	
+
+FarmerFText_SummerThanks:
+	text "It's been wonderful"
+	line "having you help"
+	cont "around the farm."
+
+	para "The girls are"
+	line "awfully fond of"
+	cont "you."
+	done
+
 FarmerMText_SickCow:
-	text "My MILTANK ain't"
-	line "givin' me milk"
-	cont "n'more."
+	text "Our MILTANK isn't"
+	line "giving milk."
 
-	para "This here FARM's"
-	line "got famous milk."
+	para "The farm depends"
+	line "on her."
 
-	para "Most everyone"
-	line "wants a drink."
-
-	para "It'll give me lots"
-	line "o' milk if'n I"
-
-	para "feed it lots o'"
-	line "BERRIES, I reckon."
+	para "Maybe some BERRIES"
+	line "would help."
 	done
 
 FarmerMText_BuyMilk:
-	text "How'd you like my"
+	text "Would you like some"
 	line "MOOMOO MILK?"
 
-	para "It's my pride and"
-	line "joy, there."
+	para "It restores a"
+	line "#MON's HP."
 
-	para "Give it to #MON"
-	line "to restore HP!"
-
-	para "I'll give it to ya"
-	line "fer just ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
+	para "It's ¥{d:ROUTE39FARMHOUSE_MILK_PRICE}."
 	done
 
 FarmerMText_GotMilk:

@@ -1,6 +1,5 @@
 	object_const_def
 	const ROUTE39_SAILOR
-	const ROUTE39_POKEFAN_M
 	const ROUTE39_POKEFAN_F1
 	const ROUTE39_MILTANK1
 	const ROUTE39_MILTANK2
@@ -171,7 +170,15 @@ Route39FarmerScript:
 	end
 
 .Normal:
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .HasStarter
 	writetext Route39FarmerWaitingText
+	waitbutton
+	closetext
+	end
+
+.HasStarter:
+	writetext Route39FarmerAfterStarterText
 	waitbutton
 	closetext
 	end
@@ -407,8 +414,9 @@ Route39FarmerSummerText:
 	line "wanted to give you"
 	cont "your first #MON."
 
-	para "I caught a few"
-	line "while traveling."
+	para "I found some rare"
+	line "#MON on a hike"
+	cont "near MT.SILVER."
 
 	para "They're waiting"
 	line "in the BARN."
@@ -417,9 +425,21 @@ Route39FarmerSummerText:
 	done
 
 Route39FarmerWaitingText:
-	text "Go on."
+	text "They're waiting in"
+	line "the BARN."
 
-	para "Take your time."
+	para "Go take a look."
+	done
+
+Route39FarmerAfterStarterText:
+	text "Looks like you two"
+	line "suit each other."
+
+	para "Take care out"
+	line "there, <PLAYER>."
+
+	para "Come back and see"
+	line "us sometime."
 	done
 
 Route39FarmerMoomooSickText:
@@ -656,7 +676,6 @@ Route39_MapEvents:
 
 	def_object_events
 	object_event 11, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route39SailorScript, -1
-	object_event  8, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmDerek, -1
 	object_event  8, 19, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39CowgirlScript, -1
 	object_event  3, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  6, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1

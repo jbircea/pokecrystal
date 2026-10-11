@@ -70,6 +70,9 @@ OlivineCityRivalSceneBottom:
 	special LoadUsedSpritesGFX
 	end
 
+OlivineCityFisherScript:
+	jumptext OlivineCityFisherText
+
 OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
@@ -112,6 +115,12 @@ OlivineCityPokecenterSign:
 
 OlivineCityMartSign:
 	jumpstd MartSignScript
+
+OlivinePlayersHouseSign:
+	jumptext OlivinePlayersHouseSignText
+
+OlivineNeighborHouseSign:
+	jumptext OlivineNeighborHouseSignText
 
 OlivineCityRivalApproachesTopMovement:
 	step DOWN
@@ -223,19 +232,34 @@ OlivineCitySailor1Text:
 	line "ship can sail."
 	done
 
+OlivineCityFisherText:
+	text "They say the coral"
+	line "near CIANWOOD has"
+	cont "turned ghostly"
+	cont "white."
+
+	para "The CORSOLA that"
+	line "lived there have"
+	cont "all but vanished."
+
+	para "Haven't seen one"
+	line "in a long time."
+	done
+
 OlivineCityStandingYoungsterPokegearText:
-	text "That thing you"
-	line "have--it's a #-"
-	cont "GEAR, right? Wow,"
-	cont "that's cool."
+	text "MOOMOO FARM is"
+	line "up ahead."
+
+	para "But you knew that!"
 	done
 
 OlivineCityStandingYoungsterPokedexText:
-	text "Wow, you have a"
-	line "#DEX!"
+	text "My mom says if I"
+	line "drink MOOMOO MILK"
+	cont "every day, I'll"
 
-	para "That is just so"
-	line "awesome."
+	para "grow big and"
+	line "strong like Dad!"
 	done
 
 OlivineCitySailor2Text:
@@ -276,6 +300,21 @@ OlivineLighthouseSignText:
 	cont "GLITTER LIGHTHOUSE"
 	done
 
+OlivineHarborCafeSign:
+	jumptext OlivineHarborCafeSignText
+
+OlivineHarborCafeSignText:
+	text "HARBOR CAFE"
+	done
+
+OlivinePlayersHouseSignText:
+	text "YOUR HOUSE"
+	done
+
+OlivineNeighborHouseSignText:
+	text "OLIVINE RESIDENCE"
+	done
+
 OlivineCityBattleTowerSignText:
 	text "BATTLE TOWER AHEAD"
 	line "Opening Now!"
@@ -312,8 +351,12 @@ OlivineCity_MapEvents:
 	bg_event  3, 23, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 14, 21, BGEVENT_READ, OlivineCityPokecenterSign
 	bg_event  8, 21, BGEVENT_READ, OlivineCityMartSign
+	bg_event 18, 18, BGEVENT_READ, OlivineHarborCafeSign
+	bg_event 24, 12, BGEVENT_READ, OlivinePlayersHouseSign
+	bg_event 28, 12, BGEVENT_READ, OlivineNeighborHouseSign
 
 	def_object_events
 	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 19, 12, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 15, 23, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
+	object_event 23, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCityFisherScript, -1
