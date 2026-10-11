@@ -8,7 +8,6 @@
 	const ROUTE39_MILTANK4
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
-	const ROUTE39_POKEFAN_F2
 	const ROUTE39_FARMER
 
 Route39_MapScripts:
@@ -116,6 +115,42 @@ Route39FarmerLeadsPlayerMovement:
 	step UP
 	step_end
 
+Route39RoadblockTopApproach:
+	step UP
+	turn_head LEFT
+	step_end
+
+Route39RoadblockTopReturn:
+	step DOWN
+	turn_head LEFT
+	step_end
+
+Route39RoadblockBottom1Approach:
+	step DOWN
+	turn_head LEFT
+	step_end
+
+Route39RoadblockBottom1Return:
+	step UP
+	turn_head LEFT
+	step_end
+
+Route39RoadblockBottom2Approach:
+	step DOWN
+	step DOWN
+	turn_head LEFT
+	step_end
+
+Route39RoadblockBottom2Return:
+	step UP
+	step UP
+	turn_head LEFT
+	step_end
+
+Route39RoadblockPlayerBack:
+	step LEFT
+	step_end
+	
 Route39FarmerScript:
 	faceplayer
 	opentext
@@ -139,6 +174,53 @@ Route39FarmerScript:
 	writetext Route39FarmerWaitingText
 	waitbutton
 	closetext
+	end
+
+Route39RoadblockScript:
+	jumptextfaceplayer Route39RoadblockText
+
+Route39RoadblockTop:
+	checkevent EVENT_GOT_POKEDEX_FROM_MOM
+	iftrue .Done
+	applymovement ROUTE39_PSYCHIC_NORMAN, Route39RoadblockTopApproach
+	scall Route39RoadblockIntercept
+	applymovement ROUTE39_PSYCHIC_NORMAN, Route39RoadblockTopReturn
+.Done:
+	end
+
+Route39RoadblockMiddle:
+	checkevent EVENT_GOT_POKEDEX_FROM_MOM
+	iftrue .Done
+	turnobject ROUTE39_PSYCHIC_NORMAN, LEFT
+	scall Route39RoadblockIntercept
+.Done:
+	end
+
+Route39RoadblockBottom1:
+	checkevent EVENT_GOT_POKEDEX_FROM_MOM
+	iftrue .Done
+	applymovement ROUTE39_PSYCHIC_NORMAN, Route39RoadblockBottom1Approach
+	scall Route39RoadblockIntercept
+	applymovement ROUTE39_PSYCHIC_NORMAN, Route39RoadblockBottom1Return
+.Done:
+	end
+
+Route39RoadblockBottom2:
+	checkevent EVENT_GOT_POKEDEX_FROM_MOM
+	iftrue .Done
+	applymovement ROUTE39_PSYCHIC_NORMAN, Route39RoadblockBottom2Approach
+	scall Route39RoadblockIntercept
+	applymovement ROUTE39_PSYCHIC_NORMAN, Route39RoadblockBottom2Return
+.Done:
+	end
+
+Route39RoadblockIntercept:
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext Route39RoadblockText
+	waitbutton
+	closetext
+	applymovement PLAYER, Route39RoadblockPlayerBack
 	end
 
 TrainerPokefanmDerek:
@@ -241,6 +323,12 @@ TrainerSailorEugene:
 	waitbutton
 	closetext
 	end
+
+Route39CowgirlScript:
+	jumptextfaceplayer Route39CowgirlText
+
+Route39SailorScript:
+	jumptextfaceplayer Route39SailorText
 
 TrainerPsychicNorman:
 	trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
@@ -355,6 +443,35 @@ Route39FarmerMoomooBetterText:
 	
 Route39MiltankText:
 	text "MILTANK: Mooo!"
+	done
+
+Route39CowgirlText:
+	text "If a MILTANK"
+	line "raises its head"
+	cont "and sniffs the wind,"
+
+	para "a storm is on"
+	line "its way."
+	done
+
+Route39SailorText:
+	text "The sea's been"
+	line "rougher lately."
+
+	para "We get storms now"
+	line "that never used"
+	cont "to reach OLIVINE."
+	done
+
+Route39RoadblockText:
+	text "Hold on."
+
+	para "You're not quite"
+	line "ready for the road"
+	cont "ahead."
+
+	para "Have you stopped"
+	line "by home yet?"
 	done
 
 SailorEugeneSeenText:
@@ -525,7 +642,11 @@ Route39_MapEvents:
 	coord_event 12, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntro
 	coord_event 13, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight1
 	coord_event 14, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight2
-	coord_event 15, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight3 
+	coord_event 15, 17, SCENE_ROUTE39_MEET_FARMER, Route39FarmerIntroRight3
+		coord_event 16,  8, SCENE_ROUTE39_NOOP, Route39RoadblockTop
+	coord_event 16,  9, SCENE_ROUTE39_NOOP, Route39RoadblockMiddle
+	coord_event 16, 10, SCENE_ROUTE39_NOOP, Route39RoadblockBottom1
+	coord_event 16, 11, SCENE_ROUTE39_NOOP, Route39RoadblockBottom2
 	
 	def_bg_events
 	bg_event  5, 31, BGEVENT_READ, Route39TrainerTips
@@ -534,14 +655,13 @@ Route39_MapEvents:
 	bg_event  5, 13, BGEVENT_ITEM, Route39HiddenNugget
 
 	def_object_events
-	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerSailorEugene, -1
-	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmDerek, -1
-	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanfRuth, -1
+	object_event 11, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route39SailorScript, -1
+	object_event  8, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerPokefanmDerek, -1
+	object_event  8, 19, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39CowgirlScript, -1
 	object_event  3, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  6, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  4, 15, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  8, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
-	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerPsychicNorman, -1
+	object_event 17, 9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route39RoadblockScript, EVENT_GOT_POKEDEX_FROM_MOM
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
-	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
-    object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, -1
+	object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, -1
