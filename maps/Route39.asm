@@ -8,6 +8,8 @@
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_FARMER
+	const ROUTE39_TRAINING_LASS
+	const ROUTE39_TRAINING_POLIWAG
 
 Route39_MapScripts:
 	def_scene_scripts
@@ -228,6 +230,17 @@ Route39RoadblockIntercept:
 	waitbutton
 	closetext
 	applymovement PLAYER, Route39RoadblockPlayerBack
+	end
+
+Route39TrainingLassScript:
+	jumptextfaceplayer Route39TrainingLassText
+
+Route39TrainingPoliwagScript:
+	opentext
+	writetext Route39TrainingPoliwagText
+	cry POLIWAG
+	waitbutton
+	closetext
 	end
 
 TrainerPokefanmDerek:
@@ -466,9 +479,9 @@ Route39MiltankText:
 	done
 
 Route39CowgirlText:
-	text "If a MILTANK"
-	line "raises its head"
-	cont "and sniffs the wind,"
+	text "They say that if a"
+	line "MILTANK raises its"
+	cont "head to the sky,"
 
 	para "a storm is on"
 	line "its way."
@@ -492,6 +505,18 @@ Route39RoadblockText:
 
 	para "Have you stopped"
 	line "by home yet?"
+	done
+
+Route39TrainingLassText:
+	text "The LIGHTHOUSE is"
+	line "closed for repairs"
+
+	para "so we're training"
+	line "out here."
+	done
+
+Route39TrainingPoliwagText:
+	text "POLIWAG: Poli!"
 	done
 
 SailorEugeneSeenText:
@@ -684,3 +709,5 @@ Route39_MapEvents:
 	object_event 17, 9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route39RoadblockScript, EVENT_GOT_POKEDEX_FROM_MOM
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, -1
+	object_event  4, 27, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39TrainingLassScript, EVENT_GOT_POKEDEX_FROM_MOM
+	object_event  5, 27, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39TrainingPoliwagScript, EVENT_GOT_POKEDEX_FROM_MOM

@@ -6,7 +6,6 @@ object_const_def
 	const OLIVINECAFE_YOUNGSTER
 	const OLIVINECAFE_SAILOR
 	const OLIVINECAFE_COWGIRL
-	const OLIVINECAFE_GENTLEMAN
 
 OlivineCafe_MapScripts:
 	def_scene_scripts
@@ -35,8 +34,6 @@ OlivineCafeSailorScript:
 OlivineCafeCowgirlScript:
 	jumptextfaceplayer OlivineCafeCowgirlText
 
-OlivineCafeGentlemanScript:
-	jumptextfaceplayer OlivineCafeGentlemanText
 
 
 OlivineCafeLassText:
@@ -51,22 +48,18 @@ OlivineCafeYoungsterText:
 
 	para "We didn't get back"
 	line "until daybreak!"
-
-	para "This is my third"
-	line "cup of coffee!"
 	done
 
 OlivineCafeSailorText:
-	text "This used to be a"
-	line "sailor's tavern."
+	text "We're a busy"
+	line "port town."
 
-	para "Ah, what I"
-	line "wouldn't give to"
-	cont "hear my old bonny"
-	cont "lass sing..."
+	para "This CAFE is one"
+	line "of the few places"
+	cont "we have to"
 
-	para "DRUNKEN SAILOR"
-	line "again..."
+	para "wind down and"
+	line "relax a bit."
 	done
 
 OlivineCafeCowgirlText:
@@ -101,11 +94,6 @@ OlivineCafeClerkText:
 	cont "MAHOGANY TOWN."
 	done
 
-OlivineCafeGentlemanText:
-	text "..."
-	done
-
-
 OlivineCafe_MapEvents:
 	db 0, 0 ; filler
 
@@ -120,14 +108,13 @@ OlivineCafe_MapEvents:
 	def_object_events
 	object_event  0,  3, SPRITE_CLERK, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCafeClerkScript, -1
 
-	object_event  5,  1, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGuitaristScript, -1
-	object_event  6,  1, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeJigglypuffScript, -1
+	object_event  6,  1, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGuitaristScript, -1
+	object_event  5,  1, SPRITE_JIGGLYPUFF, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeJigglypuffScript, -1
 
-	object_event  6,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCafeLassScript, -1
-	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCafeYoungsterScript, -1
+	object_event  6,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCafeLassScript, -1
+	object_event  2,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCafeYoungsterScript, -1
 
-	object_event  2,  1, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
+	object_event  2,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeSailorScript, -1
 
-	object_event  2,  4, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeCowgirlScript, -1
+	object_event  5,  5, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeCowgirlScript, -1
 
-	object_event  2,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCafeGentlemanScript, -1

@@ -1,6 +1,5 @@
 	object_const_def
-	const ROUTE40_OLIVINE_RIVAL1
-	const ROUTE40_OLIVINE_RIVAL2
+	const ROUTE40_SWIMMER_GUY2
 	const ROUTE40_SWIMMER_GIRL1
 	const ROUTE40_SWIMMER_GIRL2
 	const ROUTE40_ROCK1
@@ -8,7 +7,6 @@
 	const ROUTE40_ROCK3
 	const ROUTE40_LASS1
 	const ROUTE40_MONICA
-	const ROUTE40_POKEFAN_M
 	const ROUTE40_LASS2
 	const ROUTE40_STANDING_YOUNGSTER
 
@@ -258,32 +256,42 @@ Route40PokefanMText_Mobile:
 	done
 
 Route40Lass2Text:
-	text "I came to OLIVINE"
-	line "by ship to see the"
+	text "As if the Sea"
+	line "should part"
+	cont "And show a"
 
-	para "sights and soak up"
-	line "the atmosphere."
+	para "further Sea --"
+	line "And that -- a"
+	cont "further -- and the"
 
-	para "Being a port, it"
-	line "feels so different"
-	cont "from a big city."
+	para "Three"
+	line "But a presumption"
+	cont "be --"
+
+	para "Of Periods of"
+	line "Seas --"
+	cont "Unvisited of"
+
+	para "Shores --"
+	line "Themselves the"
+	cont "Verge of Seas"
+
+	para "to be --"
+	line "Eternity -- is"
+	cont "Those --"
+
+	para "EMILY DICKINSON"
+	line "is my favorite"
+	cont "poet."
 	done
 
 Route40StandingYoungsterText:
-	text "Have you gone to"
-	line "the BATTLE TOWER?"
+	text "My dad is a"
+	line "fisherman."
 
-	para "I think a lot of"
-	line "tough trainers"
-
-	para "have gathered"
-	line "there already."
-
-	para "But since you have"
-	line "so many BADGES,"
-
-	para "you shouldn't do"
-	line "badly at all."
+	para "I come here every"
+	line "morning to watch"
+	cont "him go out to sea."
 	done
 
 MeetMonicaText:
@@ -348,8 +356,7 @@ Route40_MapEvents:
 	bg_event  7,  8, BGEVENT_ITEM, Route40HiddenHyperPotion
 
 	def_object_events
-	object_event 14, 15, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSimon, -1
-	object_event 18, 30, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerSwimmermRandall, -1
+	object_event 18, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerSwimmermRandall, -1
 	object_event  3, 19, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfElaine, -1
 	object_event 10, 25, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfPaula, -1
 	object_event  7, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Rock, -1
@@ -357,6 +364,5 @@ Route40_MapEvents:
 	object_event  7,  8, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Rock, -1
 	object_event 11, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40Lass1Script, -1
 	object_event  8, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MonicaScript, EVENT_ROUTE_40_MONICA_OF_MONDAY
-	object_event  7,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route40PokefanMScript, -1
 	object_event 13,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40Lass2Script, -1
 	object_event 16,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route40StandingYoungsterScript, EVENT_BATTLE_TOWER_OPEN_CIVILIANS

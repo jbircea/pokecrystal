@@ -316,8 +316,10 @@ OlivineNeighborHouseSignText:
 	done
 
 OlivineCityBattleTowerSignText:
-	text "BATTLE TOWER AHEAD"
-	line "Opening Now!"
+	text "ROUTE 40 AHEAD"
+
+	para "CIANWOOD CITY"
+	line "across the sea."
 	done
 
 OlivineCityBattleTowerSignText_NotYetOpen: ; unreferenced
