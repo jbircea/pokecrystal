@@ -167,15 +167,14 @@ MartGoldenrod5F4:
 	db -1 ; end
 
 MartOlivine:
-	db 9 ; # items
-	db GREAT_BALL
-	db SUPER_POTION
-	db HYPER_POTION
+	db 8 ; # items
+	db POKE_BALL
+	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db ICE_HEAL
-	db SUPER_REPEL
+	db REPEL
+	db ESCAPE_ROPE
 	db SURF_MAIL
 	db -1 ; end
 

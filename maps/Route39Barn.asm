@@ -2,7 +2,7 @@ object_const_def
 	const ROUTE39BARN_TWIN1
 	const ROUTE39BARN_TWIN2
 	const ROUTE39BARN_MOOMOO
-	const ROUTE39BARN_TEDDIURSA
+	const ROUTE39BARN_MUDBRAY
 	const ROUTE39BARN_DWEBBLE
 	const ROUTE39BARN_SWABLU
 
@@ -133,25 +133,25 @@ MoomooScript:
 	closetext
 	end
 
-Route39BarnTeddiursaScript:
+Route39BarnMudbrayScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .AlreadyChoseStarter
 	reanchormap
-	pokepic TEDDIURSA
-	cry TEDDIURSA
+	pokepic RATTATA
+	cry RATTATA
 	waitbutton
 	closepokepic
 	opentext
-	writetext Route39BarnTakeTeddiursaText
+	writetext Route39BarnTakeMudbrayText
 	yesorno
 	iffalse .DidntChoose
-	disappear ROUTE39BARN_TEDDIURSA
+	disappear ROUTE39BARN_MUDBRAY
 	setevent EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
-	writetext Route39BarnChoseTeddiursaText
+	writetext Route39BarnChoseMudbrayText
 	promptbutton
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke TEDDIURSA, 5
+	givepoke RATTATA, 5
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	closetext
 	sjump Route39BarnTwinsGiftScene
@@ -243,13 +243,13 @@ Route39BarnSwabluScript:
 
 Route39BarnTwinsGiftScene:
 	checkevent EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
-	iftrue .Teddiursa
+	iftrue .Mudbray
 	checkevent EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
 	iftrue .Dwebble
 	sjump .Swablu
 
-.Teddiursa:
-	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinTeddiursaMovement
+.Mudbray:
+	applymovement ROUTE39BARN_TWIN2, Route39BarnTwinMudbrayMovement
 	sjump .Gift
 
 .Dwebble:
@@ -277,7 +277,7 @@ Route39BarnTwinsGiftScene:
 	specialphonecall SPECIALCALL_MOOMOO_FARM_MOM
 	end
 
-Route39BarnTwinTeddiursaMovement:
+Route39BarnTwinMudbrayMovement:
 	step DOWN
 	step LEFT
 	step LEFT
@@ -295,15 +295,15 @@ Route39BarnTwinSwabluMovement:
 	step DOWN
 	step_end
 
-Route39BarnTakeTeddiursaText:
-	text "It's TEDDIURSA!"
+Route39BarnTakeMudbrayText:
+	text "It's MUDBRAY!"
 
-	para "Take TEDDIURSA"
+	para "Take MUDBRAY"
 	line "with you?"
 	done
 
-Route39BarnChoseTeddiursaText:
-	text "TEDDIURSA will"
+Route39BarnChoseMudbrayText:
+	text "MUDBRAY will"
 	line "travel with you!"
 	done
 
@@ -448,6 +448,6 @@ Route39Barn_MapEvents:
 	object_event  2,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTwinScript, -1
 	object_event  4,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39BarnTwinScript, -1
     object_event  3,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoomooScript, -1
-	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnTeddiursaScript, EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
+	object_event  2, 3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnMudbrayScript, EVENT_GOT_TEDDIURSA_FROM_MOOMOO_FARM
 	object_event  3,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnDwebbleScript, EVENT_GOT_DWEBBLE_FROM_MOOMOO_FARM
 	object_event  4,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39BarnSwabluScript, EVENT_GOT_SWABLU_FROM_MOOMOO_FARM

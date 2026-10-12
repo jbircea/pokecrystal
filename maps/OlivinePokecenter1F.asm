@@ -13,7 +13,7 @@ OlivinePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 OlivinePokecenter1FFishingGuruScript:
-	jumpstd HappinessCheckScript
+	jumptextfaceplayer OlivinePokecenter1FFishingGuruText
 
 OlivinePokecenter1FFisherScript:
 	jumptextfaceplayer OlivinePokecenter1FFisherText
@@ -22,17 +22,14 @@ OlivinePokecenter1FTeacherScript:
 	jumptextfaceplayer OlivinePokecenter1FTeacherText
 
 OlivinePokecenter1FFisherText:
-	text "The SAILOR in the"
-	line "OLIVINE CAFE next"
+	text "I'm from NEW BARK"
+	line "TOWN."
 
-	para "door is really"
-	line "generous."
+	para "The last flood"
+	line "swept my home away"
 
-	para "He taught my"
-	line "#MON STRENGTH."
-
-	para "Now it can move"
-	line "big boulders."
+	para "Lucky for me, my"
+	line "brother lives here."
 	done
 
 OlivinePokecenter1FTeacherText:
@@ -43,6 +40,18 @@ OlivinePokecenter1FTeacherText:
 	para "I heard him brag-"
 	line "ging about his"
 	cont "rare #MON."
+	done
+
+OlivinePokecenter1FFishingGuruText:
+	text "OLIVINE's changed"
+	line "a lot lately."
+
+	para "Bad weather in"
+	line "southern JOHTO has"
+	cont "led many people"
+
+	para "to start new lives"
+	line "here."
 	done
 
 OlivinePokecenter1F_MapEvents:

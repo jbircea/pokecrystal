@@ -269,6 +269,7 @@ RattataEvosAttacks:
 	db EVOLVE_LEVEL, 30, RATICATE
 	db 0 ; no more evolutions
 	db 1,  MUD_SLAP
+	db 1,  TACKLE
 	db 1,  TAIL_WHIP
 	db 7,  BIDE
 	db 13, DOUBLE_KICK

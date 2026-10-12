@@ -13,29 +13,55 @@ RouteBattleTowerGateShowSailorCallback:
 	endcallback
 
 Route40BattleTowerGateRockerScript:
-	jumptextfaceplayer Route40BattleTowerGateRockerText
+	faceplayer
+	opentext
+	checkflag ENGINE_FOGBADGE
+	iftrue .Open
+	writetext Route40BattleTowerGateClosedRockerText
+	waitbutton
+	closetext
+	end
+
+.Open:
+	writetext Route40BattleTowerGateRockerText
+	waitbutton
+	closetext
+	end
+
+Route40BattleTowerClosed:
+	checkflag ENGINE_FOGBADGE
+	iftrue .Open
+	opentext
+	writetext Route40BattleTowerClosedText
+	waitbutton
+	closetext
+	applymovement PLAYER, Route40BattleTowerStepBack
+	end
+
+.Open:
+	end
 
 Route40BattleTowerGateTwinScript:
 	jumptextfaceplayer Route40BattleTowerGateTwinText
 
-Route40BattleTowerGateUnusedText1: ; unreferenced
-	text "Did you come to"
-	line "see the BATTLE"
-	cont "TOWER too?"
+Route40BattleTowerStepBack:
+	step DOWN
+	step_end
 
-	para "But I guess you"
-	line "can't go in yet."
+Route40BattleTowerClosedText:
+	text "The BATTLE TOWER"
+	line "isn't accepting"
+	cont "challengers yet."
+
+	para "Come back later."
 	done
 
-Route40BattleTowerGateUnusedText2: ; unreferenced
-	text "BATTLE TOWER has"
-	line "opened."
+Route40BattleTowerGateClosedRockerText:
+	text "The BATTLE TOWER"
+	line "isn't taking"
+	cont "challengers yet."
 
-	para "I want to go, but"
-	line "I haven't thought"
-
-	para "up a cool line for"
-	line "when I win."
+	para "I'm waiting too."
 	done
 
 Route40BattleTowerGateRockerText:
@@ -47,14 +73,6 @@ Route40BattleTowerGateRockerText:
 
 	para "whole lot, you can"
 	line "win special gifts."
-	done
-
-Route40BattleTowerGateUnusedText3: ; unreferenced
-	text "I'm going to train"
-	line "my #MON so I'll"
-
-	para "be all ready for"
-	line "the BATTLE TOWER."
 	done
 
 Route40BattleTowerGateTwinText:
@@ -78,7 +96,8 @@ Route40BattleTowerGate_MapEvents:
 	warp_event  5,  0, BATTLE_TOWER_OUTSIDE, 2
 
 	def_coord_events
-
+	coord_event 4, 1, SCENE_ALWAYS, Route40BattleTowerClosed
+	coord_event 5, 1, SCENE_ALWAYS, Route40BattleTowerClosed
 	def_bg_events
 
 	def_object_events
