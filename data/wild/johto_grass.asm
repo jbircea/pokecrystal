@@ -1495,7 +1495,7 @@ def_grass_wildmons ROUTE_29
 	db 16, SPEAROW
 	db 16, MAREEP
 	db 16, MILTANK
-	db 15, RATTATA
+	db 15, HOPPIP
 	db 16, FEAROW
 	db 15, TAUROS
 	db 18, RATICATE
