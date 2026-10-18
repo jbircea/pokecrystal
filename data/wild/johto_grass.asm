@@ -1464,57 +1464,57 @@ def_grass_wildmons ROUTE_29
 	def_grass_wildmons ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, MAREEP
-	db 15, RATTATA
-	db 16, MILTANK
-	db 16, TAUROS
-	db 17, FLAAFFY
-	db 16, PONYTA
-	db 18, RATICATE
+	db 2, SPEAROW
+	db 2, HOPPIP
+	db 2, MAREEP
+	db 3, PONYTA
+	db 3, MAREEP
+	db 3, TAUROS
+	db 3, MILTANK
 	; day
-	db 16, MAREEP
-	db 15, RATTATA
-	db 16, TAUROS
-	db 16, MILTANK
-	db 17, FLAAFFY
-	db 16, PONYTA
-	db 18, RATICATE
+	db 2, SPEAROW
+	db 2, HOPPIP
+	db 2, MAREEP
+	db 3, PONYTA
+	db 3, MAREEP
+	db 3, TAUROS
+	db 3, MILTANK
 	; nite
-	db 16, MEOWTH
-	db 16, RATTATA
-	db 16, MILTANK
-	db 16, NOCTOWL
-	db 16, RATICATE
-	db 16, MAREEP
-	db 16, TAUROS
+	db 2, MAREEP
+	db 2, HOOTHOOT
+	db 3, MEOWTH
+	db 3, PONYTA
+	db 3, HOOTHOOT
+	db 3, TAUROS
+	db 3, MILTANK
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, SPEAROW
-	db 16, MAREEP
-	db 16, MILTANK
-	db 15, HOPPIP
-	db 16, FEAROW
-	db 15, TAUROS
-	db 18, RATICATE
+	db 2, SPEAROW
+	db 2, HOPPIP
+	db 2, MAREEP
+	db 3, PONYTA
+	db 3, MAREEP
+	db 3, HOPPIP
+	db 3, MILTANK
 	; day
-	db 16, SPEAROW
-	db 15, TAUROS
-	db 16, MAREEP
-	db 15, RATTATA
-	db 16, FEAROW
-	db 15, MILTANK
-	db 18, RATICATE
+	db 2, SPEAROW
+	db 2, HOPPIP
+	db 2, MAREEP
+	db 3, PONYTA
+	db 3, MAREEP
+	db 3, HOPPIP
+	db 3, MILTANK
 	; nite
-	db 16, MEOWTH
-	db 16, RATTATA
-	db 16, MAREEP
-	db 16, NOCTOWL
-	db 18, PONYTA
-	db 18, RATICATE
-	db 18, MILTANK
+	db 2, MAREEP
+	db 2, HOOTHOOT
+	db 3, MEOWTH
+	db 3, PONYTA
+	db 3, MAREEP
+	db 3, HOOTHOOT
+	db 3, MILTANK
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42

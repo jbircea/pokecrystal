@@ -500,7 +500,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (10)
 	db "CHAD@", TRAINERTYPE_NORMAL
-	db 20, RATTATA
+	db 4, MEOWTH
 	db -1 ; end
 
 	; SCHOOLBOY (11)
@@ -636,8 +636,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (5)
 	db "TOBY@", TRAINERTYPE_NORMAL
-	db 20, SPEAROW
-	db 20, DODUO
+	db 3, SPEAROW
 	db -1 ; end
 
 	; BIRD_KEEPER (6)
@@ -783,8 +782,8 @@ LassGroup:
 
 	; LASS (10)
 	db "DANA@", TRAINERTYPE_MOVES
-	db 20, FLAAFFY,    TACKLE, GROWL, THUNDERSHOCK, THUNDER_WAVE
-	db 21, PSYDUCK,    ICE_PUNCH, BUBBLEBEAM, DISABLE, CONFUSION
+	db  3, HOPPIP, TACKLE, DEFENSE_CURL, NO_MOVE, NO_MOVE
+	db  3, MAREEP, TACKLE, GROWL, NO_MOVE, NO_MOVE
 	db -1 ; end
 
 	; LASS (11)
@@ -2142,8 +2141,7 @@ SailorGroup:
 
 	; SAILOR (10)
 	db "HARRY@", TRAINERTYPE_NORMAL
-	db 21, KRABBY
-	db 21, POLIWHIRL
+	db  5, POLIWAG
 	db -1 ; end
 
 	; SAILOR (11)
@@ -3564,7 +3562,7 @@ GruntFGroup:
 CowgirlGroup:
 	; COWGIRL (1)
 	db "ANNIE@", TRAINERTYPE_NORMAL
-	db 8, TEDDIURSA
+	db 5, PONYTA
 	db -1 ; end
 
 MysticalmanGroup:

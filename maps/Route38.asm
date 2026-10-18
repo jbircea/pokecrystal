@@ -2,15 +2,19 @@
 	const ROUTE38_STANDING_YOUNGSTER1
 	const ROUTE38_LASS
 	const ROUTE38_STANDING_YOUNGSTER2
-	const ROUTE38_BEAUTY1
+	const ROUTE38_COWGIRL_TRAINER
 	const ROUTE38_SAILOR
 	const ROUTE38_FRUIT_TREE
-	const ROUTE38_BEAUTY2
+	const ROUTE38_COWGIRL_NPC
+	const ROUTE38_ITEM
 
 Route38_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+Route38Item:
+	itemball POTION
 
 TrainerBirdKeeperToby:
 	trainer BIRD_KEEPER, TOBY, EVENT_BEAT_BIRD_KEEPER_TOBY, BirdKeeperTobySeenText, BirdKeeperTobyBeatenText, 0, .Script
@@ -311,6 +315,20 @@ TrainerBeautyOlivia:
 	closetext
 	end
 
+TrainerCowgirlAnnie:
+	trainer COWGIRL, ANNIE, EVENT_BEAT_BEAUTY_VALERIE, CowgirlAnnieSeenText, CowgirlAnnieBeatenText, 0, .Script
+
+.Script
+	endifjustbattled
+	opentext
+	writetext CowgirlAnnieAfterBattleText
+	waitbutton
+	closetext
+	end
+
+Route38CowgirlScript:
+	jumptextfaceplayer Route38CowgirlText
+
 Route38Sign:
 	jumptext Route38SignText
 
@@ -425,6 +443,23 @@ SailorHarryAfterBattleText:
 	line "with #MON."
 	done
 
+CowgirlAnnieSeenText:
+	text "Let's battle!"
+	done
+
+CowgirlAnnieBeatenText:
+	text "You got me!"
+	done
+
+CowgirlAnnieAfterBattleText:
+	text "Good battle!"
+	done
+
+Route38CowgirlText:
+	text "Nice weather"
+	line "today."
+	done
+
 BeautyOliviaSeenText:
 	text "Don't you think my"
 	line "#MON and I are"
@@ -481,13 +516,13 @@ Route38_MapEvents:
 
 	def_bg_events
 	bg_event 33,  7, BGEVENT_READ, Route38Sign
-	bg_event  5, 13, BGEVENT_READ, Route38TrainerTips
 
 	def_object_events
-	object_event  4,  1, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
-	object_event 15,  3, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassDana1, -1
-	object_event 12, 15, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperToby, -1
-	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, -1
-	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
+	object_event  4,  1, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
+	object_event 15,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassDana1, -1
+	object_event 21,  9, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperToby, -1
+	object_event 12, 15, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerCowgirlAnnie, -1
+	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
-	object_event  5,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
+	object_event  5,  8, SPRITE_COWGIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route38CowgirlScript, -1
+	object_event  8, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route38Item, EVENT_ROUTE38_ITEM
