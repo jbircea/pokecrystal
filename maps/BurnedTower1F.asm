@@ -51,7 +51,7 @@ BurnedTowerFloorCollapseScript:
 
 	; Vanilla reaches this point after reloading the map from battle.
 	; Recreate that clean map state without having a battle.
-	reloadmap
+	newloadmap MAPSETUP_RELOADMAP_NOFADE
 
 	setscene SCENE_BURNEDTOWER1F_NOOP
 	setevent EVENT_RIVAL_BURNED_TOWER

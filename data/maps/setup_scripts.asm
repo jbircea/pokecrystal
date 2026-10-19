@@ -13,6 +13,7 @@ MapSetupScripts:
 	dw MapSetupScript_Submenu
 	dw MapSetupScript_BadWarp
 	dw MapSetupScript_Fly
+	dw MapSetupScript_ReloadMapNoFade
 	assert_table_length NUM_MAPSETUP_SCRIPTS
 
 ; valid commands are listed in MapSetupCommands (see data/maps/setup_script_pointers.asm)
@@ -142,6 +143,21 @@ MapSetupScript_ReloadMap:
 	mapsetup LoadWildMonData
 	db -1 ; end
 
+MapSetupScript_ReloadMapNoFade:
+	mapsetup DisableLCD
+	mapsetup InitSound
+	mapsetup LoadBlockData
+	mapsetup LoadConnectionBlockData
+	mapsetup LoadMapGraphics
+	mapsetup LoadMapTimeOfDay
+	mapsetup EnableLCD
+	mapsetup LoadMapPalettes
+	mapsetup RefreshMapSprites
+	mapsetup ForceMapMusic
+	mapsetup ActivateMapAnims
+	mapsetup LoadWildMonData
+	db -1 ; end
+	
 MapSetupScript_LinkReturn:
 	mapsetup FadeMapMusicAndPalettes
 	mapsetup DisableLCD
