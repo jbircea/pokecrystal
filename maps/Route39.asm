@@ -9,7 +9,7 @@
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_FARMER
 	const ROUTE39_TRAINING_LASS
-	const ROUTE39_TRAINING_POLIWAG
+	const ROUTE39_TRAINING_MILKTANK
 
 Route39_MapScripts:
 	def_scene_scripts
@@ -235,10 +235,10 @@ Route39RoadblockIntercept:
 Route39TrainingLassScript:
 	jumptextfaceplayer Route39TrainingLassText
 
-Route39TrainingPoliwagScript:
+Route39TrainingMiltankScript:
 	opentext
-	writetext Route39TrainingPoliwagText
-	cry POLIWAG
+	writetext Route39TrainingMiltankText
+	cry MILTANK
 	waitbutton
 	closetext
 	end
@@ -515,8 +515,8 @@ Route39TrainingLassText:
 	line "out here."
 	done
 
-Route39TrainingPoliwagText:
-	text "POLIWAG: Poli!"
+Route39TrainingMiltankText:
+	text "MILTANK: Mooo!"
 	done
 
 SailorEugeneSeenText:
@@ -710,4 +710,4 @@ Route39_MapEvents:
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event 12, 15, SPRITE_FARMER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route39FarmerScript, -1
 	object_event  4, 27, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39TrainingLassScript, EVENT_GOT_POKEDEX_FROM_MOM
-	object_event  5, 27, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39TrainingPoliwagScript, EVENT_GOT_POKEDEX_FROM_MOM
+	object_event  5, 27, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39TrainingMiltankScript, EVENT_GOT_POKEDEX_FROM_MOM

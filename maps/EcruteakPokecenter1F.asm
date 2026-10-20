@@ -11,6 +11,11 @@ EcruteakPokecenter1F_MapScripts:
 	scene_script EcruteakPokecenter1FNoopScene,     SCENE_ECRUTEAKPOKECENTER1F_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, EcruteakPokecenter1FVisitCallback
+
+EcruteakPokecenter1FVisitCallback:
+	setevent EVENT_VISITED_ECRUTEAK_POKECENTER
+	endcallback
 
 EcruteakPokecenter1FMeetBillScene:
 	sdefer EcruteakPokcenter1FBillActivatesTimeCapsuleScript

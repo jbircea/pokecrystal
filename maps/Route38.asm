@@ -5,7 +5,7 @@
 	const ROUTE38_COWGIRL_TRAINER
 	const ROUTE38_SAILOR
 	const ROUTE38_FRUIT_TREE
-	const ROUTE38_COWGIRL_NPC
+	const ROUTE38_WHITNEY
 	const ROUTE38_ITEM
 
 Route38_MapScripts:
@@ -326,8 +326,89 @@ TrainerCowgirlAnnie:
 	closetext
 	end
 
-Route38CowgirlScript:
-	jumptextfaceplayer Route38CowgirlText
+Route38WhitneyScript:
+	jumptextfaceplayer Route38WhitneyAfterText
+
+Route38WhitneyEncounterUpper:
+	checkevent EVENT_MET_WHITNEY_ROUTE_38
+	iftrue .Done
+	applymovement ROUTE38_WHITNEY, Route38WhitneyApproachUpper
+	sjump Route38WhitneyEncounter
+
+.Done:
+	end
+
+Route38WhitneyEncounterLower:
+	checkevent EVENT_MET_WHITNEY_ROUTE_38
+	iftrue .Done
+	applymovement ROUTE38_WHITNEY, Route38WhitneyApproachLower
+	sjump Route38WhitneyEncounter
+
+.Done:
+	end
+
+Route38WhitneyEncounter:
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext Route38WhitneyThanksText
+	waitbutton
+	writetext Route38WhitneyGiftText
+	waitbutton
+	verbosegiveitem EXP_SHARE
+	iffalse .NoRoom
+
+	writetext Route38WhitneyInviteText
+	waitbutton
+	closetext
+	setevent EVENT_MET_WHITNEY_ROUTE_38
+
+	readvar VAR_YCOORD
+	ifequal 8, .ReturnUpper
+	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnLower
+	end
+
+.ReturnUpper:
+	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnUpper
+	end
+
+.NoRoom:
+	closetext
+	readvar VAR_YCOORD
+	ifequal 8, .ReturnUpperNoRoom
+	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnLower
+	end
+
+.ReturnUpperNoRoom:
+	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnUpper
+	end
+
+Route38WhitneyApproachUpper:
+	step LEFT
+	step LEFT
+	step LEFT
+	turn_head LEFT
+	step_end
+
+Route38WhitneyReturnUpper:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+Route38WhitneyApproachLower:
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	turn_head LEFT
+	step_end
+
+Route38WhitneyReturnLower:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
 
 Route38Sign:
 	jumptext Route38SignText
@@ -337,6 +418,36 @@ Route38TrainerTips:
 
 Route38FruitTree:
 	fruittree FRUITTREE_ROUTE_38
+
+Route38WhitneyThanksText:
+	text "Hey, <PLAYER>!"
+
+	para "Thanks for helping"
+	line "out at the farm."
+
+	para "My dad really"
+	line "appreciated it!"
+	done
+
+Route38WhitneyGiftText:
+	text "Here! I want you"
+	line "to have this."
+	done
+
+Route38WhitneyInviteText:
+	text "I'm WHITNEY!"
+
+	para "I run the GYM in"
+	line "GOLDENROD CITY."
+
+	para "Come challenge me"
+	line "sometime!"
+	done
+
+Route38WhitneyAfterText:
+	text "I'll see you in"
+	line "GOLDENROD!"
+	done
 
 BirdKeeperTobySeenText:
 	text "Fly high into the"
@@ -455,11 +566,6 @@ CowgirlAnnieAfterBattleText:
 	text "Good battle!"
 	done
 
-Route38CowgirlText:
-	text "Nice weather"
-	line "today."
-	done
-
 BeautyOliviaSeenText:
 	text "Don't you think my"
 	line "#MON and I are"
@@ -513,6 +619,8 @@ Route38_MapEvents:
 	warp_event 35,  9, ROUTE_38_ECRUTEAK_GATE, 2
 
 	def_coord_events
+	coord_event  1,  8, SCENE_ALWAYS, Route38WhitneyEncounterUpper
+	coord_event  1,  9, SCENE_ALWAYS, Route38WhitneyEncounterLower
 
 	def_bg_events
 	bg_event 33,  7, BGEVENT_READ, Route38Sign
@@ -524,5 +632,5 @@ Route38_MapEvents:
 	object_event 12, 15, SPRITE_COWGIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerCowgirlAnnie, -1
 	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
-	object_event  5,  8, SPRITE_COWGIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route38CowgirlScript, -1
+	object_event  5,  8, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route38WhitneyScript, EVENT_MET_WHITNEY_ROUTE_38
 	object_event  8, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route38Item, EVENT_ROUTE38_ITEM

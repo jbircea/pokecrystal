@@ -285,29 +285,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, KOFFING
-	db 14, ZUBAT
-	db 16, MISDREAVUS
-	db 15, MAGBY
-	db 12, KOFFING
-	db 16, MAGBY
-	db 16, MAGMAR
+	db  4, KOFFING
+	db  4, ZUBAT
+	db  4, MISDREAVUS
+	db  4, MAGBY
+	db  5, KOFFING
+	db  5, MAGBY
+	db  5, MAGMAR
 	; day
-	db 14, KOFFING
-	db 14, ZUBAT
-	db 16, MISDREAVUS
-	db 15, MAGBY
-	db 12, KOFFING
-	db 16, MAGBY
-	db 16, MAGMAR
+	db  4, KOFFING
+	db  4, ZUBAT
+	db  4, MISDREAVUS
+	db  4, MAGBY
+	db  5, KOFFING
+	db  5, MAGBY
+	db  5, MAGMAR
 	; nite
-	db 14, MISDREAVUS
-	db 14, KOFFING
-	db 16, ZUBAT
-	db 15, MAGBY
-	db 12, MISDREAVUS
-	db 16, KOFFING
-	db 16, MAGMAR
+	db  4, MISDREAVUS
+	db  4, KOFFING
+	db  4, ZUBAT
+	db  4, MAGBY
+	db  5, MISDREAVUS
+	db  5, KOFFING
+	db  5, MAGMAR
 	end_grass_wildmons
 
 	def_grass_wildmons NATIONAL_PARK
