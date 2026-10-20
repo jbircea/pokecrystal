@@ -1436,29 +1436,29 @@ def_grass_wildmons ROUTE_29
 	def_grass_wildmons ROUTE_37
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, LEDYBA
-	db 14, GROWLITHE
-	db 15, PIDGEY
-	db 16, GROWLITHE
-	db 15, PIDGEOTTO
-	db 15, LEDIAN
-	db 15, LEDIAN
+	db  4, LEDYBA
+	db  4, GROWLITHE
+	db  4, PIDGEY
+	db  4, GROWLITHE
+	db  5, PIDGEY
+	db  5, LEDYBA
+	db  5, LEDYBA
 	; day
-	db 13, GROWLITHE
-	db 14, PIDGEY
-	db 15, NATU
-	db 16, STANTLER
-	db 15, PIDGEOTTO
-	db 15, NATU
-	db 15, STANTLER
+	db  4, GROWLITHE
+	db  4, PIDGEY
+	db  4, NATU
+	db  4, STANTLER
+	db  5, PIDGEY
+	db  5, NATU
+	db  5, STANTLER
 	; nite
-	db 14, STANTLER
-	db 14, HOOTHOOT
-	db 13, SPINARAK
-	db 15, MURKROW
-	db 15, NOCTOWL
-	db 15, ARIADOS
-	db 16, ARIADOS
+	db  4, STANTLER
+	db  4, HOOTHOOT
+	db  4, SPINARAK
+	db  4, MURKROW
+	db  5, HOOTHOOT
+	db  5, SPINARAK
+	db  5, SPINARAK
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_38

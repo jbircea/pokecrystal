@@ -13,9 +13,9 @@ Trainers:
 FalknerGroup:
 	; FALKNER (1)
 	db "FALKNER@", TRAINERTYPE_MOVES
-	db 9, PIDGEY,     TACKLE, MUD_SLAP, GUST, SAND_ATTACK
-	db 9, NATU,       PECK, LEER, NIGHT_SHADE, FLASH
-	db 11, NOCTOWL,   SPLASH, PECK, MUD_SLAP, HYPNOSIS
+	db 2, PIDGEY,     TACKLE, MUD_SLAP, GUST, SAND_ATTACK
+	db 2, NATU,       PECK, LEER, NIGHT_SHADE, FLASH
+	db 2, NOCTOWL,   SPLASH, PECK, MUD_SLAP, HYPNOSIS
 	db -1 ; end
 
 WhitneyGroup:
@@ -610,13 +610,13 @@ SchoolboyGroup:
 BirdKeeperGroup:
 	; BIRD_KEEPER (1)
 	db "ROD@", TRAINERTYPE_NORMAL
-	db  8, ZUBAT
-	db  8, ZUBAT
+	db  2, ZUBAT
+	db  2, ZUBAT
 	db -1 ; end
 
 	; BIRD_KEEPER (2)
 	db "ABE@", TRAINERTYPE_NORMAL
-	db  10, HOOTHOOT
+	db  2, HOOTHOOT
 	db -1 ; end
 
 	; BIRD_KEEPER (3)

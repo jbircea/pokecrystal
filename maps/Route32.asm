@@ -50,12 +50,7 @@ Route32CooltrainerMContinueScene:
 	iftrue .GotMiracleSeed
 	checkflag ENGINE_ZEPHYRBADGE
 	iffalse .DontHaveZephyrBadge
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
-	iftrue .GiveMiracleSeed
-	writetext Route32CooltrainerMText_AideIsWaiting
-	waitbutton
-	closetext
-	end
+	sjump .GiveMiracleSeed
 
 .GoToSproutTower: ; unreferenced
 	writetext Route32CooltrainerMText_UnusedSproutTower
