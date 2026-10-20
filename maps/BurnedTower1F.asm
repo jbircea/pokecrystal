@@ -3,6 +3,7 @@
 	const BURNEDTOWER1F_EUSINE
 	const BURNEDTOWER1F_MORTY
 	const BURNEDTOWER1F_POKE_BALL
+	const BURNEDTOWER1F_TM_ENDURE
 
 BurnedTower1F_MapScripts:
 	def_scene_scripts
@@ -93,6 +94,9 @@ BurnedTower1FHiddenUltraBall:
 
 BurnedTower1FHPUp:
 	itemball HP_UP
+
+BurnedTower1FTMEndure:
+	itemball TM_ENDURE
 
 BurnedTowerMovement_PlayerWalksToRival:
 	step LEFT
@@ -185,7 +189,7 @@ def_coord_events
 coord_event 11, 9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerFloorCollapseScript
 
 	def_bg_events
-	bg_event  8,  7, BGEVENT_ITEM, BurnedTower1FHiddenEther
+	bg_event  8,  9, BGEVENT_ITEM, BurnedTower1FHiddenEther
 	bg_event 13, 11, BGEVENT_ITEM, BurnedTower1FHiddenUltraBall
 
 	def_object_events
@@ -193,3 +197,4 @@ coord_event 11, 9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerFloorCollapseScr
 	object_event 12, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE
 	object_event 14, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 14,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHPUp, EVENT_BURNED_TOWER_1F_HP_UP
+	object_event  8,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FTMEndure, EVENT_BURNED_TOWER_B1F_TM_ENDURE

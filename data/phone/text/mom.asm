@@ -185,3 +185,27 @@ MomMoomooFarmPhoneText:
 	para "Stop by before you"
 	line "head out, OK?"
 	done
+
+MomPhoneEcruteakText:
+	text "Hi, <PLAYER>!"
+	line "How are things?"
+
+	para "ECRUTEAK already?"
+	line "You're really"
+	cont "getting around!"
+
+	para "I hear MORTY's"
+	line "GYM is pretty"
+	cont "tough."
+
+	para "Maybe you should"
+	line "visit VIOLET CITY"
+	cont "first."
+
+	para "FALKNER might be"
+	line "a good place to"
+	cont "start."
+
+	para "Just a thought!"
+	line "Take care!"
+	done

@@ -17,4 +17,5 @@ SpecialPhoneCallList:
 	specialcall SpecialCallWhereverYouAre,  PHONECONTACT_MOM,      MomPhoneLectureScript
 	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_ELM,      ElmPhoneCallerScript
 	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_MOM, MomMoomooFarmPhoneScript
+	specialcall SpecialCallOnlyWhenOutside, PHONECONTACT_MOM, MomPhoneEcruteakScript
 	assert_table_length NUM_SPECIALCALLS

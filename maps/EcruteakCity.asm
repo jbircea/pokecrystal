@@ -1,27 +1,54 @@
 	object_const_def
 	const ECRUTEAKCITY_GRAMPS1
-	const ECRUTEAKCITY_GRAMPS2
 	const ECRUTEAKCITY_LASS1
 	const ECRUTEAKCITY_LASS2
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_DANCE_THEATER_ATTENDANT
 
 EcruteakCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, EcruteakCityDanceTheaterCallback
 	callback MAPCALLBACK_NEWMAP, EcruteakCityFlypointCallback
 
 EcruteakCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_ECRUTEAK
+
+	checkevent EVENT_MOM_CALLED_IN_ECRUTEAK
+	iftrue .Done
+
+	checkevent EVENT_VISITED_ECRUTEAK_POKECENTER
+	iffalse .Done
+
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .AlreadyBeatFalkner
+
+	specialphonecall SPECIALCALL_ECRUTEAK_MOM
+	setevent EVENT_MOM_CALLED_IN_ECRUTEAK
+	sjump .Done
+
+.AlreadyBeatFalkner:
+	setevent EVENT_MOM_CALLED_IN_ECRUTEAK
+
+.Done:
+	endcallback
+
+EcruteakCityDanceTheaterCallback:
+	checkflag ENGINE_PLAINBADGE
+	iftrue .Open
+
+	clearevent EVENT_ECRUTEAK_DANCE_THEATER_ATTENDANT
+	endcallback
+
+.Open:
+	setevent EVENT_ECRUTEAK_DANCE_THEATER_ATTENDANT
 	endcallback
 
 EcruteakCityGramps1Script:
 	jumptextfaceplayer EcruteakCityGramps1Text
-
-EcruteakCityGramps2Script:
-	jumptextfaceplayer EcruteakCityGramps2Text
 
 EcruteakCityGramps3Script:
 	jumptextfaceplayer EcruteakCityGramps3Text
@@ -60,6 +87,9 @@ EcruteakCityFisherScript:
 	waitbutton
 	closetext
 	end
+
+EcruteakCityDanceTheaterAttendantScript:
+	jumptextfaceplayer EcruteakCityDanceTheaterClosedText
 
 EcruteakCityYoungsterScript:
 	jumptextfaceplayer EcruteakCityYoungsterText
@@ -116,19 +146,16 @@ EcruteakCityGramps1Text:
 	line "east and west."
 	done
 
-EcruteakCityGramps2Text:
-	text "Ah, child."
-	line "Have you learned"
+EcruteakCityDanceTheaterClosedText:
+	text "Sorry, the DANCE"
+	line "THEATER is closed"
+	cont "today."
 
-	para "to dance like the"
-	line "KIMONO GIRLS?"
+	para "The KIMONO GIRLS"
+	line "are rehearsing."
 
-	para "If you go to their"
-	line "DANCE THEATER, an"
-
-	para "odd old man will"
-	line "give you something"
-	cont "nice, I hear."
+	para "Please come back"
+	line "later!"
 	done
 
 EcruteakCityLass1Text:
@@ -290,9 +317,9 @@ EcruteakCity_MapEvents:
 
 	def_object_events
 	object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
-	object_event 20, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
 	object_event 21, 29, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
 	object_event  3,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
 	object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event 23, 22, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityDanceTheaterAttendantScript, EVENT_ECRUTEAK_DANCE_THEATER_ATTENDANT

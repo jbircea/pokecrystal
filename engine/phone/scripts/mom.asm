@@ -145,3 +145,8 @@ MomMoomooFarmPhoneScript:
 	specialphonecall SPECIALCALL_NONE
 	farwritetext MomMoomooFarmPhoneText
 	end
+
+MomPhoneEcruteakScript:
+	specialphonecall SPECIALCALL_NONE
+	farwritetext MomPhoneEcruteakText
+	end
