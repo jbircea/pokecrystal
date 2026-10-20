@@ -15,6 +15,12 @@ Route30_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route30TrainerSetupCallback
+
+Route30TrainerSetupCallback:
+	setevent EVENT_ROUTE_30_BATTLE
+	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
+	endcallback
 
 YoungsterJoey_ImportantBattleScript:
 	waitsfx
@@ -206,20 +212,7 @@ TrainerBugCatcherDon:
 	end
 
 Route30YoungsterScript:
-	faceplayer
-	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .CompletedEggQuest
-	writetext Route30YoungsterText_DirectionsToMrPokemonsHouse
-	waitbutton
-	closetext
-	end
-
-.CompletedEggQuest:
-	writetext Route30YoungsterText_EveryoneIsBattling
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route30YoungsterText_EveryoneIsBattling
 
 Route30CooltrainerFScript:
 	jumptextfaceplayer Route30CooltrainerFText

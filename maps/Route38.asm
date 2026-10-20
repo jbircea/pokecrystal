@@ -353,9 +353,13 @@ Route38WhitneyEncounter:
 	writetext Route38WhitneyThanksText
 	waitbutton
 	writetext Route38WhitneyGiftText
+	promptbutton
+
+	getstring STRING_BUFFER_4, .mapcardname
+	scall .ReceiveMapCard
+	setflag ENGINE_MAP_CARD
+	writetext Route38WhitneyGotMapCardText
 	waitbutton
-	verbosegiveitem EXP_SHARE
-	iffalse .NoRoom
 
 	writetext Route38WhitneyInviteText
 	waitbutton
@@ -371,16 +375,12 @@ Route38WhitneyEncounter:
 	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnUpper
 	end
 
-.NoRoom:
-	closetext
-	readvar VAR_YCOORD
-	ifequal 8, .ReturnUpperNoRoom
-	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnLower
+.ReceiveMapCard:
+	jumpstd ReceiveItemScript
 	end
 
-.ReturnUpperNoRoom:
-	applymovement ROUTE38_WHITNEY, Route38WhitneyReturnUpper
-	end
+.mapcardname
+	db "MAP CARD@"
 
 Route38WhitneyApproachUpper:
 	step LEFT
@@ -434,6 +434,11 @@ Route38WhitneyGiftText:
 	line "to have this."
 	done
 
+Route38WhitneyGotMapCardText:
+	text "<PLAYER>'s #GEAR"
+	line "now has a MAP!"
+	done
+	
 Route38WhitneyInviteText:
 	text "I'm WHITNEY!"
 

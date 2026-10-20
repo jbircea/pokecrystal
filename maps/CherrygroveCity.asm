@@ -22,81 +22,9 @@ CherrygroveCityNoop2Scene:
 CherrygroveCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	endcallback
-
+	
 CherrygroveCityGuideGent:
-	faceplayer
-	opentext
-	writetext GuideGentIntroText
-	yesorno
-	iffalse .No
-	sjump .Yes
-.Yes:
-	writetext GuideGentTourText1
-	waitbutton
-	closetext
-	playmusic MUSIC_SHOW_ME_AROUND
-	follow CHERRYGROVECITY_GRAMPS, PLAYER
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement1
-	opentext
-	writetext GuideGentPokecenterText
-	waitbutton
-	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement2
-	turnobject PLAYER, UP
-	opentext
-	writetext GuideGentMartText
-	waitbutton
-	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement3
-	turnobject PLAYER, UP
-	opentext
-	writetext GuideGentRoute30Text
-	waitbutton
-	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement4
-	turnobject PLAYER, LEFT
-	opentext
-	writetext GuideGentSeaText
-	waitbutton
-	closetext
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement5
-	turnobject PLAYER, UP
-	pause 60
-	turnobject CHERRYGROVECITY_GRAMPS, LEFT
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext GuideGentGiftText
-	promptbutton
-	getstring STRING_BUFFER_4, .mapcardname
-	scall .JumpstdReceiveItem
-	setflag ENGINE_MAP_CARD
-	writetext GotMapCardText
-	promptbutton
-	writetext GuideGentPokegearText
-	waitbutton
-	closetext
-	stopfollow
-	special RestartMapMusic
-	turnobject PLAYER, UP
-	applymovement CHERRYGROVECITY_GRAMPS, GuideGentMovement6
-	playsound SFX_ENTER_DOOR
-	disappear CHERRYGROVECITY_GRAMPS
-	clearevent EVENT_GUIDE_GENT_VISIBLE_IN_CHERRYGROVE
-	waitsfx
-	end
-
-.JumpstdReceiveItem:
-	jumpstd ReceiveItemScript
-	end
-
-.mapcardname
-	db "MAP CARD@"
-
-.No:
-	writetext GuideGentNoText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CherrygroveGuideGentPlaceholderText
 
 CherrygroveRivalSceneSouth:
 	moveobject CHERRYGROVECITY_RIVAL, 39, 7
@@ -175,36 +103,10 @@ CherrygroveRivalSceneNorth:
 	end
 
 CherrygroveTeacherScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_MAP_CARD
-	iftrue .HaveMapCard
-	writetext CherrygroveTeacherText_NoMapCard
-	waitbutton
-	closetext
-	end
-
-.HaveMapCard:
-	writetext CherrygroveTeacherText_HaveMapCard
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CherrygroveTeacherText_HaveMapCard
 
 CherrygroveYoungsterScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_POKEDEX
-	iftrue .HavePokedex
-	writetext CherrygroveYoungsterText_NoPokedex
-	waitbutton
-	closetext
-	end
-
-.HavePokedex:
-	writetext CherrygroveYoungsterText_HavePokedex
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CherrygroveYoungsterText_HavePokedex
 
 MysticWaterGuy:
 	faceplayer
@@ -332,6 +234,12 @@ CherrygroveCity_RivalExitsStageLeft:
 	big_step LEFT
 	big_step LEFT
 	step_end
+
+CherrygroveGuideGentPlaceholderText:
+	text "The road ahead"
+	line "isn't what it"
+	cont "used to be."
+	done
 
 GuideGentIntroText:
 	text "You're a rookie"
