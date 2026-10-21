@@ -22,9 +22,23 @@ CherrygroveCityNoop2Scene:
 CherrygroveCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	endcallback
-	
+
 CherrygroveCityGuideGent:
-	jumptextfaceplayer CherrygroveGuideGentPlaceholderText
+	jumptextfaceplayer CherrygroveRoute29BlockedText
+
+CherrygroveRoute29BlockScript:
+	turnobject CHERRYGROVECITY_GRAMPS, DOWN
+	turnobject PLAYER, UP
+	opentext
+	writetext CherrygroveRoute29BlockedText
+	waitbutton
+	closetext
+	applymovement PLAYER, CherrygroveRoute29BlockMovement
+	end
+
+CherrygroveRoute29BlockMovement:
+	step LEFT
+	step_end
 
 CherrygroveRivalSceneSouth:
 	moveobject CHERRYGROVECITY_RIVAL, 39, 7
@@ -235,10 +249,12 @@ CherrygroveCity_RivalExitsStageLeft:
 	big_step LEFT
 	step_end
 
-CherrygroveGuideGentPlaceholderText:
-	text "The road ahead"
-	line "isn't what it"
-	cont "used to be."
+CherrygroveRoute29BlockedText:
+	text "You can't go that"
+	line "way right now."
+
+	para "The road ahead"
+	line "isn't safe."
 	done
 
 GuideGentIntroText:
@@ -465,6 +481,7 @@ CherrygroveCity_MapEvents:
 	def_coord_events
 	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneNorth
 	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneSouth
+	coord_event 36,  7, SCENE_CHERRYGROVECITY_NOOP, CherrygroveRoute29BlockScript
 
 	def_bg_events
 	bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign
@@ -473,7 +490,7 @@ CherrygroveCity_MapEvents:
 	bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign
 
 	def_object_events
-	object_event 32,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGuideGent, EVENT_GUIDE_GENT_IN_HIS_HOUSE
+	object_event 36,  6, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityGuideGent, EVENT_GUIDE_GENT_IN_HIS_HOUSE	
 	object_event 39,  6, SPRITE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_CHERRYGROVE_CITY
 	object_event 27, 12, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1
 	object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
