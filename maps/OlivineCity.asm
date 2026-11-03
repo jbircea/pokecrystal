@@ -3,6 +3,7 @@
 	const OLIVINECITY_STANDING_YOUNGSTER
 	const OLIVINECITY_SAILOR2
 	const OLIVINECITY_OLIVINE_RIVAL
+	const OLIVINECITY_COMPANION
 
 OlivineCity_MapScripts:
 	def_scene_scripts
@@ -76,6 +77,33 @@ OlivineCityFisherScript:
 OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
+OlivineCityCompanionIntro:
+	turnobject PLAYER, RIGHT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	applymovement OLIVINECITY_COMPANION, OlivineCityCompanionApproachMovement
+	sjump OlivineCityCompanionScript
+
+OlivineCityCompanionScript:
+	faceplayer
+	opentext
+	writetext OlivineCityCompanionGreetingText
+	promptbutton
+	writetext OlivineCityCompanionShoesText
+	promptbutton
+	setflag ENGINE_RUNNING_SHOES
+	playsound SFX_ITEM
+	waitsfx
+	writetext OlivineCityGotRunningShoesText
+	waitbutton
+	writetext OlivineCityCompanionGoodbyeText
+	waitbutton
+	closetext
+	setevent EVENT_MET_OLIVINE_COMPANION
+	setscene SCENE_OLIVINECITY_NOOP
+	applymovement OLIVINECITY_COMPANION, OlivineCityCompanionGoesHomeMovement
+	disappear OLIVINECITY_COMPANION
+	end
+
 OlivineCityStandingYoungsterScript:
 	faceplayer
 	opentext
@@ -121,6 +149,17 @@ OlivinePlayersHouseSign:
 
 OlivineNeighborHouseSign:
 	jumptext OlivineNeighborHouseSignText
+
+OlivineCityCompanionApproachMovement:
+	step LEFT
+	step_end
+
+OlivineCityCompanionGoesHomeMovement:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_end
 
 OlivineCityRivalApproachesTopMovement:
 	step DOWN
@@ -246,6 +285,32 @@ OlivineCityFisherText:
 	line "in a long time."
 	done
 
+OlivineCityCompanionGreetingText:
+	text "Hey, <PLAYER>!"
+
+	para "Heading up to"
+	line "MOOMOO FARM?"
+	done
+
+OlivineCityCompanionShoesText:
+	text "Then take these."
+
+	para "You'll get there"
+	line "a lot faster."
+	done
+
+OlivineCityGotRunningShoesText:
+	text "<PLAYER> received"
+	line "RUNNING SHOES!"
+	done
+
+OlivineCityCompanionGoodbyeText:
+	text "Hold B while"
+	line "walking to run."
+
+	para "See you around!"
+	done
+
 OlivineCityStandingYoungsterPokegearText:
 	text "MOOMOO FARM is"
 	line "up ahead."
@@ -344,6 +409,7 @@ OlivineCity_MapEvents:
 	warp_event 20, 27, OLIVINE_PORT_PASSAGE, 2
 
 	def_coord_events
+	coord_event 25, 12, SCENE_OLIVINECITY_RIVAL_ENCOUNTER, OlivineCityCompanionIntro
 
 	def_bg_events
 	bg_event 17, 11, BGEVENT_READ, OlivineCitySign
@@ -355,10 +421,11 @@ OlivineCity_MapEvents:
 	bg_event  8, 21, BGEVENT_READ, OlivineCityMartSign
 	bg_event 12, 22, BGEVENT_READ, OlivineHarborCafeSign
 	bg_event 24, 12, BGEVENT_READ, OlivinePlayersHouseSign
-	bg_event 28, 12, BGEVENT_READ, OlivineNeighborHouseSign
-
+	bg_event 30, 12, BGEVENT_READ, OlivineNeighborHouseSign
+	
 	def_object_events
 	object_event 26, 27, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 19, 12, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 15, 23, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 23, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlivineCityFisherScript, -1
+	object_event 27, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityCompanionScript, EVENT_MET_OLIVINE_COMPANION

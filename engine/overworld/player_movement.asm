@@ -276,7 +276,7 @@ DoPlayerMovement::
 
 ; Downhill riding is slower when not moving down.
 	call .BikeCheck
-	jr nz, .walk
+	jr nz, .CheckRunningShoes
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_DOWNHILL_F, [hl]
@@ -291,14 +291,23 @@ DoPlayerMovement::
 	scf
 	ret
 
-.fast
-	ld a, STEP_BIKE
+.CheckRunningShoes:
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_RUNNING_SHOES_F, a
+	jr z, .walk
+
+	ld a, [wCurInput]
+	and PAD_B
+	jr nz, .fast
+
+.walk
+	ld a, STEP_WALK
 	call .DoStep
 	scf
 	ret
 
-.walk
-	ld a, STEP_WALK
+.fast
+	ld a, STEP_BIKE
 	call .DoStep
 	scf
 	ret

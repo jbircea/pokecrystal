@@ -7,11 +7,11 @@ OlivinePunishmentSpeechHouse_MapScripts:
 
 	def_callbacks
 
-OlivinePunishmentSpeechHouseDad:
-	jumptextfaceplayer OlivinePunishmentSpeechHouseDadText
+OlivineCompanionParent:
+	jumptextfaceplayer OlivineCompanionParentText
 
-OlivinePunishmentSpeechHouseDaughter:
-	jumptextfaceplayer OlivinePunishmentSpeechHouseDaughterText
+OlivineCompanion:
+	jumptextfaceplayer OlivineCompanionText
 
 OlivinePunishmentSpeechHouseBookshelf2:
 	jumpstd PictureBookshelfScript
@@ -19,22 +19,28 @@ OlivinePunishmentSpeechHouseBookshelf2:
 OlivinePunishmentSpeechHouseBookshelf1:
 	jumpstd MagazineBookshelfScript
 
-OlivinePunishmentSpeechHouseDadText:
-	text "Along the way to"
-	line "CIANWOOD, there"
+OlivineCompanionParentText:
+	text "Oh, <PLAYER>."
 
-	para "are four deserted"
-	line "islands."
+	para "Heading out so"
+	line "early?"
 
-	para "Bad kids are taken"
-	line "to the islands as"
-	cont "punishment!"
+	para "You know where to"
+	line "find us if you"
+
+	para "need anything."
 	done
 
-OlivinePunishmentSpeechHouseDaughterText:
-	text "Whenever I get in"
-	line "trouble, Daddy"
-	cont "always scares me."
+OlivineCompanionText:
+	text "Hey, <PLAYER>!"
+
+	para "I heard they want"
+	line "you up at"
+
+	para "MOOMOO FARM."
+
+	para "Don't take all"
+	line "day getting there!"
 	done
 
 OlivinePunishmentSpeechHouse_MapEvents:
@@ -51,5 +57,5 @@ OlivinePunishmentSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, OlivinePunishmentSpeechHouseBookshelf2
 
 	def_object_events
-	object_event  1,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDad, -1
-	object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivinePunishmentSpeechHouseDaughter, -1
+object_event  1,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCompanionParent, -1
+object_event  5,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCompanion, -1
