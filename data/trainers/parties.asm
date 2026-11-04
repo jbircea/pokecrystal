@@ -13,9 +13,9 @@ Trainers:
 FalknerGroup:
 	; FALKNER (1)
 	db "FALKNER@", TRAINERTYPE_MOVES
-	db 10, PIDGEY,     TACKLE, MUD_SLAP, GUST, SAND_ATTACK
-	db 11, NATU,       PECK, LEER, NIGHT_SHADE, FLASH
-	db 12, NOCTOWL,   SPLASH, PECK, MUD_SLAP, HYPNOSIS
+	db 10, PIDGEY,     TACKLE, MUD_SLAP, GUST, QUICK_ATTACK
+	db 11, NATU,       PECK, LEER, NIGHT_SHADE, CONFUSION
+	db 13, NOCTOWL,   SPLASH, PECK, GROWL, HYPNOSIS
 	db -1 ; end
 
 WhitneyGroup:
@@ -608,13 +608,14 @@ SchoolboyGroup:
 BirdKeeperGroup:
 	; BIRD_KEEPER (1)
 	db "ROD@", TRAINERTYPE_NORMAL
-	db  2, ZUBAT
-	db  2, ZUBAT
+	db  9, SPEAROW
+	db  9, HOOTHOOT
 	db -1 ; end
 
 	; BIRD_KEEPER (2)
 	db "ABE@", TRAINERTYPE_NORMAL
-	db  2, HOOTHOOT
+	db  8, PIDGEY
+	db  8, HOOTHOOT
 	db -1 ; end
 
 	; BIRD_KEEPER (3)
@@ -2322,14 +2323,13 @@ HikerGroup:
 	db "ANTHONY@", TRAINERTYPE_NORMAL
 	db 16, GEODUDE
 	db 18, SANDSHREW
-	db 18, DWEBBLE
+	db 18, ONIX
 	db -1 ; end
 
 	; HIKER (2)
 	db "RUSSELL@", TRAINERTYPE_NORMAL
-	db   8, DWEBBLE
-	db  10, DWEBBLE
-	db  12, DWEBBLE
+	db  10, GEODUDE
+	db  12, GEODUDE
 	db -1 ; end
 
 	; HIKER (3)
@@ -2582,8 +2582,8 @@ FirebreatherGroup:
 
 	; FIREBREATHER (5)
 	db "BILL@", TRAINERTYPE_NORMAL
-	db  8, KOFFING
-	db  8, KOFFING
+	db  10, KOFFING
+	db  11, KOFFING
 	db -1 ; end
 
 	; FIREBREATHER (6)

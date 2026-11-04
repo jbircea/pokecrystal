@@ -398,56 +398,56 @@ JohtoGrassWildMons:
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 8, GEODUDE
-	db 6, SANDSHREW
 	db 8, ZUBAT
-	db 8, DWEBBLE
-	db 6, DWEBBLE
+	db 8, SANDSHREW
+	db 9, SANDSHREW
 	db 8, ONIX
 	db 8, ONIX
+	db 9, ONIX
 	; day
 	db 8, GEODUDE
-	db 6, SANDSHREW
 	db 8, ZUBAT
-	db 8, DWEBBLE
-	db 6, DWEBBLE
+	db 8, SANDSHREW
+	db 9, SANDSHREW
 	db 8, ONIX
 	db 8, ONIX
+	db 9, ONIX
 	; nite
-	db 8, WOOPER
-	db 6, GEODUDE
+	db 8, GEODUDE
 	db 8, ZUBAT
-	db 8, DWEBBLE
-	db 6, WOOPER
-	db 8, DWEBBLE
-	db 8, DWEBBLE
+	db 8, SANDSHREW
+	db 9, SANDSHREW
+	db 8, ONIX
+	db 8, ONIX
+	db 9, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 8, GEODUDE
-	db 6, ZUBAT
-	db 8, DWEBBLE
+	db 8, ZUBAT
 	db 8, SANDSHREW
-	db 6, ONIX
+	db 9, SANDSHREW
 	db 8, ONIX
 	db 8, ONIX
+	db 9, ONIX
 	; day
 	db 8, GEODUDE
-	db 6, ZUBAT
-	db 8, DWEBBLE
-	db 8, SANDSHREW
-	db 6, ONIX
-	db 8, ONIX
-	db 8, ONIX
-	; nite
-	db 8, WOOPER
-	db 6, GEODUDE
 	db 8, ZUBAT
-	db 8, DWEBBLE
-	db 6, WOOPER
-	db 8, DWEBBLE
-	db 8, DWEBBLE
+	db 8, SANDSHREW
+	db 9, SANDSHREW
+	db 8, ONIX
+	db 8, ONIX
+	db 9, ONIX
+	; nite
+	db 8, GEODUDE
+	db 8, ZUBAT
+	db 8, SANDSHREW
+	db 9, SANDSHREW
+	db 8, ONIX
+	db 8, ONIX
+	db 9, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
@@ -455,7 +455,7 @@ JohtoGrassWildMons:
 	; morn
 	db 25, GOLBAT
 	db 22, GRAVELER
-	db 24, DWEBBLE
+	db 24, SANDSLASH
 	db 24, ONIX
 	db 25, GOLBAT
 	db 26, ONIX
@@ -463,17 +463,17 @@ JohtoGrassWildMons:
 	; day
 	db 25, GOLBAT
 	db 22, GRAVELER
-	db 24, DWEBBLE
+	db 24, SANDSLASH
 	db 24, ONIX
 	db 25, GOLBAT
 	db 26, ONIX
 	db 26, ONIX
 	; nite
-	db 25, QUAGSIRE
-	db 22, GOLBAT
-	db 24, DWEBBLE
+	db 25, GOLBAT
+	db 22, GRAVELER
+	db 24, SANDSLASH
 	db 24, ONIX
-	db 25, QUAGSIRE
+	db 25, GOLBAT
 	db 26, ONIX
 	db 26, ONIX
 	end_grass_wildmons
