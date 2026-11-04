@@ -41,9 +41,9 @@ FishGroups:
 	db 100 percent,     MR__MIME,   20
 
 .Olivine_Old:
-	db  50 percent + 1, KRABBY,    5
-	db  80 percent + 1, SHELLDER,  5
-	db 100 percent,     TENTACOOL, 6
+	db  50 percent + 1, MAGIKARP,   5
+	db  80 percent + 1, KRABBY,     5
+	db 100 percent,     SHELLDER,   6
 
 .Olivine_Good:
 	db  35 percent,     KRABBY,    10
@@ -88,9 +88,9 @@ FishGroups:
 	db 100 percent,     time_group 5
 
 .Pond_Old:
-	db  70 percent + 1, SUNKERN,     5
+	db  70 percent + 1, MAGIKARP,    5
 	db  85 percent + 1, POLIWAG,     5
-	db 100 percent,     MAGIKARP,    5
+	db 100 percent,     WOOPER,      5
 .Pond_Good:
 	db  35 percent,     SUNKERN,    10
 	db  70 percent,     POLIWAG,    10

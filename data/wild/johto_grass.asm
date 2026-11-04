@@ -5,57 +5,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons SPROUT_TOWER_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, SENTRET
-	db 4, SENTRET
-	db 5, HOOTHOOT
-	db 3, HOOTHOOT
-	db 6, BELLSPROUT
+	db 5, SENTRET
+	db 6, SENTRET
+	db 5, SENTRET
+	db 6, SENTRET
+	db 7, SENTRET
 	db 5, GASTLY
-	db 5, GASTLY
+	db 6, GASTLY
 	; day
-	db 3, SENTRET
-	db 4, SENTRET
-	db 5, HOOTHOOT
-	db 3, HOOTHOOT
-	db 6, BELLSPROUT
+	db 5, SENTRET
+	db 6, SENTRET
+	db 5, SENTRET
+	db 6, SENTRET
+	db 7, SENTRET
 	db 5, GASTLY
-	db 5, GASTLY
+	db 6, GASTLY
 	; nite
-	db 3, HOOTHOOT
-	db 4, GASTLY
 	db 5, GASTLY
-	db 3, BELLSPROUT
-	db 6, HOOTHOOT
+	db 6, GASTLY
 	db 5, GASTLY
-	db 5, BELLSPROUT
+	db 6, GASTLY
+	db 7, GASTLY
+	db 5, SENTRET
+	db 6, SENTRET
 	end_grass_wildmons
 
 	def_grass_wildmons SPROUT_TOWER_3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, SENTRET
-	db 4, SENTRET
-	db 5, HOOTHOOT
-	db 3, HOOTHOOT
-	db 6, BELLSPROUT
+	db 5, SENTRET
+	db 6, SENTRET
+	db 5, SENTRET
+	db 6, SENTRET
+	db 7, SENTRET
 	db 5, GASTLY
-	db 5, GASTLY
+	db 6, GASTLY
 	; day
-	db 3, SENTRET
-	db 4, SENTRET
-	db 5, HOOTHOOT
-	db 3, HOOTHOOT
-	db 6, BELLSPROUT
+	db 5, SENTRET
+	db 6, SENTRET
+	db 5, SENTRET
+	db 6, SENTRET
+	db 7, SENTRET
 	db 5, GASTLY
-	db 5, GASTLY
+	db 6, GASTLY
 	; nite
-	db 3, HOOTHOOT
-	db 4, GASTLY
 	db 5, GASTLY
-	db 3, BELLSPROUT
-	db 6, HOOTHOOT
+	db 6, GASTLY
 	db 5, GASTLY
-	db 5, BELLSPROUT
+	db 6, GASTLY
+	db 7, GASTLY
+	db 5, SENTRET
+	db 6, SENTRET
 	end_grass_wildmons
 
 	def_grass_wildmons TIN_TOWER_2F
@@ -285,29 +285,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db  4, KOFFING
 	db  4, ZUBAT
-	db  4, MISDREAVUS
+	db  4, KOFFING
 	db  4, MAGBY
+	db  5, ZUBAT
 	db  5, KOFFING
 	db  5, MAGBY
-	db  5, MAGMAR
-	; day
-	db  4, KOFFING
-	db  4, ZUBAT
-	db  4, MISDREAVUS
-	db  4, MAGBY
-	db  5, KOFFING
-	db  5, MAGBY
-	db  5, MAGMAR
-	; nite
-	db  4, MISDREAVUS
-	db  4, KOFFING
-	db  4, ZUBAT
-	db  4, MAGBY
 	db  5, MISDREAVUS
+	; day
+	db  4, ZUBAT
+	db  4, KOFFING
+	db  4, MAGBY
+	db  5, ZUBAT
 	db  5, KOFFING
-	db  5, MAGMAR
+	db  5, MAGBY
+	db  5, MISDREAVUS
+	; nite
+	db  4, ZUBAT
+	db  4, KOFFING
+	db  4, MAGBY
+	db  5, ZUBAT
+	db  5, KOFFING
+	db  5, MAGBY
+	db  5, MISDREAVUS
 	end_grass_wildmons
 
 	def_grass_wildmons NATIONAL_PARK
@@ -1210,59 +1210,59 @@ def_grass_wildmons ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 
 	; morn
-	db 2, SENTRET    
-	db 2, SUNKERN     
-	db 3, SPEAROW  
-	db 3, SENTRET     
-	db 3, SUNKERN    
-	db 3, SPEAROW    
-	db 4, PSYDUCK    
+	db 5, SENTRET    
+	db 5, SUNKERN     
+	db 5, SPEAROW  
+	db 6, SENTRET     
+	db 6, SUNKERN    
+	db 6, SPEAROW    
+	db 5, PSYDUCK    
 
 	; day
-	db 2, SENTRET    
-	db 2, SUNKERN     
-	db 3, SPEAROW  
-	db 3, SENTRET     
-	db 3, SUNKERN    
-	db 3, SPEAROW    
-	db 4, PSYDUCK    
+	db 5, SENTRET    
+	db 5, SUNKERN     
+	db 5, SPEAROW  
+	db 6, SENTRET     
+	db 6, SUNKERN    
+	db 6, SPEAROW    
+	db 5, PSYDUCK    
 
 	; nite
-	db 2, SENTRET    
-	db 2, SUNKERN     
-	db 3, SPEAROW  
-	db 3, SENTRET     
-	db 3, SUNKERN    
-	db 3, SPEAROW    
-	db 4, PSYDUCK 
+	db 5, SENTRET    
+	db 5, SUNKERN     
+	db 5, SPEAROW  
+	db 6, SENTRET     
+	db 6, SUNKERN    
+	db 6, SPEAROW    
+	db 5, PSYDUCK 
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_30
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 3, LEDYBA
-	db 3, SENTRET
-	db 4, SPEAROW
-	db 4, SUNKERN
-	db 3, LEDYBA
+	db 4, LEDYBA
 	db 4, SENTRET
 	db 4, SPEAROW
+	db 4, SUNKERN
+	db 5, LEDYBA
+	db 5, SENTRET
+	db 5, SPEAROW
 	; day
-	db 3, LEDYBA
-	db 3, SENTRET
-	db 4, SPEAROW
-	db 4, SUNKERN
-	db 3, LEDYBA
+	db 4, LEDYBA
 	db 4, SENTRET
 	db 4, SPEAROW
+	db 4, SUNKERN
+	db 5, LEDYBA
+	db 5, SENTRET
+	db 5, SPEAROW
 	; nite
-	db 3, SPINARAK
-	db 3, SENTRET
+	db 4, SPINARAK
+	db 4, SENTRET
 	db 4, SPEAROW
 	db 4, POLIWAG
-	db 3, SPINARAK
-	db 4, SENTRET
-	db 4, SPEAROW
+	db 5, SPINARAK
+	db 5, SENTRET
+	db 5, SPEAROW
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_31
@@ -1270,55 +1270,55 @@ def_grass_wildmons ROUTE_29
 	; morn
 	db 4, LEDYBA
 	db 4, BELLSPROUT
-	db 5, PIDGEY
+	db 4, PIDGEY
 	db 5, LEDYBA
-	db 4, BELLSPROUT
-	db 5, NATU
+	db 5, BELLSPROUT
+	db 4, NATU
 	db 5, NATU
 	; day
 	db 4, LEDYBA
 	db 4, BELLSPROUT
-	db 5, PIDGEY
+	db 4, PIDGEY
 	db 5, LEDYBA
-	db 4, BELLSPROUT
-	db 5, NATU
+	db 5, BELLSPROUT
+	db 4, NATU
 	db 5, NATU
 	; nite
 	db 4, SPINARAK
 	db 4, BELLSPROUT
-	db 5, PIDGEY
+	db 4, HOOTHOOT
 	db 5, SPINARAK
-	db 4, BELLSPROUT
-	db 5, GASTLY
+	db 5, BELLSPROUT
+	db 4, GASTLY
 	db 5, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, PIDGEY
-	db 5, EKANS
-	db 7, LEDYBA
-	db 6, YANMA
-	db 7, PIDGEY
-	db 7, EKANS
-	db 7, YANMA
+	db 8, WOOPER
+	db 8, SUNKERN
+	db 8, LEDYBA
+	db 9, WOOPER
+	db 9, SUNKERN
+	db 8, YANMA
+	db 9, YANMA
 	; day
-	db 4, PIDGEY
-	db 5, EKANS
-	db 7, LEDYBA
-	db 6, YANMA
-	db 7, PIDGEY
-	db 7, EKANS
-	db 7, YANMA
+	db 8, WOOPER
+	db 8, SUNKERN
+	db 8, LEDYBA
+	db 9, WOOPER
+	db 9, SUNKERN
+	db 8, YANMA
+	db 9, YANMA
 	; nite
-	db 4, HOOTHOOT
-	db 5, WOOPER
-	db 7, SPINARAK
-	db 6, GASTLY
-	db 7, HOOTHOOT
-	db 7, WOOPER
-	db 7, GASTLY
+	db 8, WOOPER
+	db 8, SUNKERN
+	db 8, SPINARAK
+	db 9, WOOPER
+	db 9, SUNKERN
+	db 8, HOOTHOOT
+	db 9, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_33
@@ -1437,24 +1437,24 @@ def_grass_wildmons ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db  3, PIDGEY
-	db  3, CATERPIE
 	db  3, STANTLER
+	db  3, CATERPIE
 	db  4, PIDGEY
 	db  4, CATERPIE
 	db  4, STANTLER
 	db  4, GROWLITHE
 	; day
 	db  3, PIDGEY
-	db  3, CATERPIE
 	db  3, STANTLER
+	db  3, CATERPIE
 	db  4, PIDGEY
 	db  4, CATERPIE
 	db  4, STANTLER
 	db  4, GROWLITHE
 	; nite
 	db  3, HOOTHOOT
-	db  3, SPINARAK
 	db  3, STANTLER
+	db  3, SPINARAK
 	db  4, HOOTHOOT
 	db  4, SPINARAK
 	db  4, STANTLER
@@ -1481,16 +1481,16 @@ def_grass_wildmons ROUTE_29
 	db 3, TAUROS
 	; nite
 	db 2, HOOTHOOT
-	db 2, MEOWTH
+	db 2, MAREEP
 	db 3, CATERPIE
 	db 3, HOOTHOOT
-	db 3, MEOWTH
+	db 3, MAREEP
 	db 3, PONYTA
 	db 3, TAUROS
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 2, PIDGEY
 	db 2, MAREEP
@@ -1509,10 +1509,10 @@ def_grass_wildmons ROUTE_29
 	db 3, MILTANK
 	; nite
 	db 2, HOOTHOOT
-	db 2, MEOWTH
+	db 2, MAREEP
 	db 3, CATERPIE
 	db 3, HOOTHOOT
-	db 3, MEOWTH
+	db 3, MAREEP
 	db 3, CATERPIE
 	db 3, MILTANK
 	end_grass_wildmons
