@@ -481,29 +481,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SLOWPOKE_WELL_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, ZUBAT
-	db 6, ZUBAT
-	db 7, ZUBAT
-	db 6, SLOWPOKE
-	db 8, ZUBAT
-	db 8, SLOWPOKE
-	db 8, SLOWPOKE
+	db  8, ZUBAT
+	db  9, ZUBAT
+	db  8, SLOWPOKE
+	db  9, SLOWPOKE
+	db 10, ZUBAT
+	db 10, SLOWPOKE
+	db 10, SLOWPOKE
 	; day
-	db 5, ZUBAT
-	db 6, ZUBAT
-	db 7, ZUBAT
-	db 6, SLOWPOKE
-	db 8, ZUBAT
-	db 8, SLOWPOKE
-	db 8, SLOWPOKE
+	db  8, ZUBAT
+	db  9, ZUBAT
+	db  8, SLOWPOKE
+	db  9, SLOWPOKE
+	db 10, ZUBAT
+	db 10, SLOWPOKE
+	db 10, SLOWPOKE
 	; nite
-	db 5, ZUBAT
-	db 6, ZUBAT
-	db 7, ZUBAT
-	db 6, SLOWPOKE
-	db 8, ZUBAT
-	db 8, SLOWPOKE
-	db 8, SLOWPOKE
+	db  8, ZUBAT
+	db  9, ZUBAT
+	db  8, SLOWPOKE
+	db  9, SLOWPOKE
+	db 10, ZUBAT
+	db 10, SLOWPOKE
+	db 10, SLOWPOKE
 	end_grass_wildmons
 
 	def_grass_wildmons SLOWPOKE_WELL_B2F
@@ -1324,29 +1324,29 @@ def_grass_wildmons ROUTE_29
 	def_grass_wildmons ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 7, PIDGEY
-	db 7, NIDORAN_F
-	db 8, EKANS
-	db 8, HOPPIP
-	db 8, HOPPIP
-	db 8, PIDGEY
-	db 9, NIDORAN_F
+	db  9, PIDGEY
+	db  9, GEODUDE
+	db  9, NIDORAN_M
+	db 10, NIDORAN_F
+	db 10, PIDGEY
+	db  9, CLEFFA
+	db 10, CLEFFA
 	; day
-	db 7, PIDGEY
-	db 7, NIDORAN_M
-	db 8, EKANS
-	db 8, HOPPIP
-	db 8, HOPPIP
-	db 8, PIDGEY
-	db 9, NIDORAN_M
+	db  9, PIDGEY
+	db  9, GEODUDE
+	db  9, NIDORAN_M
+	db 10, NIDORAN_F
+	db 10, PIDGEY
+	db  9, CLEFFA
+	db 10, CLEFFA
 	; nite
-	db 7, HOOTHOOT
-	db 7, ODDISH
-	db 8, DWEBBLE
-	db 8, GASTLY
-	db 8, GASTLY
-	db 8, HOOTHOOT
-	db 9, ODDISH
+	db  9, HOOTHOOT
+	db  9, GEODUDE
+	db  9, NIDORAN_F
+	db  9, CLEFFA
+	db 10, HOOTHOOT
+	db  9, CLEFFA
+	db 10, CLEFFA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34
