@@ -32,7 +32,7 @@ BugsyGroup:
 	db "BUGSY@", TRAINERTYPE_MOVES
 	db 16, SUNKERN,    WATER_GUN, QUICK_ATTACK, SWEET_SCENT, LEECH_LIFE
 	db 16, BUTTERFREE, CONFUSION, SLEEP_POWDER, POISONPOWDER, GUST
-	db 17, LEDIAN,     MACH_PUNCH, REFLECT, SUPERSONIC, BATON_PASS
+	db 17, LEDIAN,     MACH_PUNCH, REFLECT, SUPERSONIC, LIGHT_SCREEN
 	db 18, HERACROSS,  HORN_ATTACK, FURY_CUTTER, COUNTER, LEER
 	db -1 ; end
 
@@ -375,16 +375,14 @@ YoungsterGroup:
 
 	; YOUNGSTER (5)
 	db "SAMUEL@", TRAINERTYPE_NORMAL
-	db 10, MEOWTH
-	db 10, GRIMER
-	db 12, ODDISH
-	db 12, DROWZEE
+	db 13, MEOWTH
+	db 14, DROWZEE
 	db -1 ; end
 
 	; YOUNGSTER (6)
 	db "IAN@", TRAINERTYPE_NORMAL
-	db 12, SPEAROW
-	db 12, PSYDUCK
+	db 13, SPEAROW
+	db 14, PSYDUCK
 	db -1 ; end
 
 	; YOUNGSTER (7)
@@ -438,8 +436,8 @@ YoungsterGroup:
 SchoolboyGroup:
 	; SCHOOLBOY (1)
 	db "JACK@", TRAINERTYPE_NORMAL
-	db 14, HOOTHOOT
-	db 15, NIDORAN_M
+	db 15, HOOTHOOT
+	db 16, NIDORAN_M
 	db -1 ; end
 
 	; SCHOOLBOY (2)
@@ -620,8 +618,8 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (3)
 	db "BRYAN@", TRAINERTYPE_NORMAL
-	db 14, FARFETCH_D
-	db 16, PIDGEOTTO
+	db 15, SPEAROW
+	db 16, HOOTHOOT
 	db -1 ; end
 
 	; BIRD_KEEPER (4)
@@ -742,8 +740,7 @@ LassGroup:
 
 	; LASS (4)
 	db "KRISE@", TRAINERTYPE_NORMAL
-	db 15, ODDISH
-	db 15, FURRET
+	db 18, FURRET
 	db -1 ; end
 
 	; LASS (5)
@@ -1099,8 +1096,7 @@ CooltrainerFGroup:
 BeautyGroup:
 	; BEAUTY (1)
 	db "VICTORIA@", TRAINERTYPE_NORMAL
-	db 13, SENTRET
-	db 15, NIDORAN_F
+	db 16, NIDORINA
 	db 18, FURRET
 	db -1 ; end
 
@@ -1448,8 +1444,9 @@ GruntMGroup:
 
 	; GRUNTM (29)
 	db "GRUNT@", TRAINERTYPE_NORMAL
+	db  7, WEEDLE
 	db  9, KAKUNA
-	db 11, GRIMER
+	db 11, BEEDRILL
 	db -1 ; end
 
 	; GRUNTM (30)
@@ -1654,7 +1651,7 @@ BugCatcherGroup:
 	; BUG_CATCHER (19)
 	db "WAYNE@", TRAINERTYPE_NORMAL
 	db 14, SPINARAK
-	db 14, BEEDRILL
+	db 15, BEEDRILL
 	db -1 ; end
 
 FisherGroup:
@@ -2164,8 +2161,8 @@ SuperNerdGroup:
 
 	; SUPER_NERD (2)
 	db "ERIC@", TRAINERTYPE_NORMAL
-	db 13, GRIMER
-	db 13, GRIMER
+	db 14, GRIMER
+	db 14, GRIMER
 	db -1 ; end
 
 	; SUPER_NERD (3)
@@ -2604,8 +2601,8 @@ FirebreatherGroup:
 JugglerGroup:
 	; JUGGLER (1)
 	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 12, VOLTORB
 	db 14, VOLTORB
+	db 15, VOLTORB
 	db 16, VOLTORB
 	db 18, VOLTORB
 	db -1 ; end
@@ -2819,9 +2816,9 @@ PicnickerGroup:
 
 	; PICNICKER (2)
 	db "GINA@", TRAINERTYPE_NORMAL
-	db 11, SPEAROW
-	db 11, HOPPIP
-	db 13, BULBASAUR
+	db 12, PIDGEY
+	db 13, ODDISH
+	db 14, BULBASAUR
 	db -1 ; end
 
 	; PICNICKER (3)
@@ -2981,15 +2978,14 @@ CamperGroup:
 
 	; CAMPER (3)
 	db "IVAN@", TRAINERTYPE_NORMAL
-	db 15, SANDSHREW
 	db 15, ZUBAT
-	db 17, DWEBBLE
+	db 16, SANDSHREW
 	db -1 ; end
 
 	; CAMPER (4)
 	db "ELLIOT@", TRAINERTYPE_NORMAL
-	db 15, SANDSHREW
-	db 15, MARILL
+	db 15, NIDORAN_M
+	db 16, MARILL
 	db -1 ; end
 
 	; CAMPER (5)
@@ -3269,7 +3265,7 @@ BoarderGroup:
 PokefanMGroup:
 	; POKEFANM (1)
 	db "WILLIAM@", TRAINERTYPE_ITEM
-	db 16, RAICHU,     BERRY
+	db 17, RAICHU,     BERRY
 	db -1 ; end
 
 	; POKEFANM (2)
@@ -3404,8 +3400,8 @@ TwinsGroup:
 
 	; TWINS (4)
 	db "AMY & MAY@", TRAINERTYPE_NORMAL
-	db 10, LEDYBA
-	db 10, SPINARAK
+	db 12, LEDYBA
+	db 12, SPINARAK
 	db -1 ; end
 
 	; TWINS (5)
@@ -3518,7 +3514,7 @@ OfficerGroup:
 GruntFGroup:
 	; GRUNTF (1)
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db  9, ZUBAT
+	db 10, ZUBAT
 	db 11, EKANS
 	db -1 ; end
 

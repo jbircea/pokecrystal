@@ -313,29 +313,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons NATIONAL_PARK
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, NIDORAN_M
-	db 12, LEDYBA
+	db 13, NIDORAN_M
+	db 13, LEDYBA
 	db 14, NIDORAN_F
-	db 13, PIKACHU
-	db 10, PINSIR
-	db 10, SCYTHER
-	db 10, SCYTHER
+	db 14, PIKACHU
+	db 15, PINSIR
+	db 15, SCYTHER
+	db 15, SCYTHER
 	; day
-	db 12, NIDORAN_F
-	db 12, CATERPIE
+	db 13, NIDORAN_F
+	db 13, CATERPIE
 	db 14, NIDORAN_M
-	db 13, JIGGLYPUFF
-	db 10, SCYTHER
-	db 10, PINSIR
-	db 10, PINSIR
+	db 14, JIGGLYPUFF
+	db 15, SCYTHER
+	db 15, PINSIR
+	db 15, PINSIR
 	; nite
-	db 12, HOOTHOOT
+	db 13, HOOTHOOT
 	db 13, SPINARAK
 	db 14, VENONAT
-	db 15, JIGGLYPUFF
-	db 10, PINSIR
-	db 12, PSYDUCK
-	db 12, PSYDUCK
+	db 14, JIGGLYPUFF
+	db 15, PINSIR
+	db 15, PSYDUCK
+	db 15, PSYDUCK
 	end_grass_wildmons
 
 	def_grass_wildmons RUINS_OF_ALPH_OUTSIDE
@@ -537,29 +537,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ILEX_FOREST
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 8,  SPINARAK
-	db 8,  KAKUNA
-	db 8,  ODDISH
-	db 9,  ODDISH
-	db 9,  PARAS
-	db 9,  GRIMER
-	db 10, BEEDRILL
+	db 12, SPINARAK
+	db 13, ODDISH
+	db 12, WEEDLE
+	db 12, PARAS
+	db 10, PICHU
+	db 10, HERACROSS
+	db 13, HERACROSS
 	; day
-	db 8,  SPINARAK
-	db 8,  KAKUNA
-	db 8,  ODDISH
-	db 9,  ODDISH
-	db 9,  PARAS
-	db 9,  GRIMER
-	db 10, BEEDRILL
+	db 12, SPINARAK
+	db 13, ODDISH
+	db 12, WEEDLE
+	db 12, PARAS
+	db 10, PICHU
+	db 10, HERACROSS
+	db 13, HERACROSS
 	; nite
-	db 8,  SPINARAK
-	db 8,  KAKUNA
-	db 8,  ODDISH
-	db 9,  ODDISH
-	db 9,  PARAS
-	db 9,  GRIMER
-	db 10, BEEDRILL
+	db 12, SPINARAK
+	db 13, ODDISH
+	db 12, WEEDLE
+	db 12, PARAS
+	db 10, PICHU
+	db 10, HERACROSS
+	db 13, HERACROSS
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -1352,57 +1352,57 @@ def_grass_wildmons ROUTE_29
 	def_grass_wildmons ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 10, SPEAROW
-	db 11, SNUBBULL
-	db 12, HOPPIP
-	db 10, ABRA
-	db 12, SPEAROW
-	db 10, MEOWTH
-	db 12, MEOWTH
+	db 13, SPEAROW
+	db 13, SNUBBULL
+	db 14, DROWZEE
+	db 13, ABRA
+	db 14, SPEAROW
+	db 11, IGGLYBUFF
+	db 11, IGGLYBUFF
 	; day
-	db 10, SPEAROW
-	db 11, SNUBBULL
-	db 12, HOPPIP
-	db 10, ABRA
-	db 12, SPEAROW
-	db 10, MEOWTH
-	db 12, MEOWTH
+	db 13, SPEAROW
+	db 13, SNUBBULL
+	db 14, DROWZEE
+	db 13, ABRA
+	db 14, SPEAROW
+	db 11, IGGLYBUFF
+	db 11, IGGLYBUFF
 	; nite
-	db 12, DROWZEE
-	db 11, HOOTHOOT
-	db 12, HOUNDOUR
-	db 10, ABRA
-	db 12, DROWZEE
-	db 10, JIGGLYPUFF
-	db 10, JIGGLYPUFF
+	db 13, SPEAROW
+	db 13, SNUBBULL
+	db 14, DROWZEE
+	db 13, ABRA
+	db 14, IGGLYBUFF
+	db 11, IGGLYBUFF
+	db 11, IGGLYBUFF
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_35
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, NIDORAN_F
-	db 14, NIDORAN_M
-	db 13, SNUBBULL
-	db 10, ABRA
-	db 12, MEOWTH
-	db 10, DITTO
-	db 12, DITTO
-	; day
-	db 12, NIDORAN_F
-	db 14, NIDORAN_M
-	db 13, SNUBBULL
-	db 10, ABRA
-	db 12, MEOWTH
-	db 10, DITTO
-	db 12, DITTO
-	; nite
-	db 12, NIDORAN_F
-	db 14, HOOTHOOT
 	db 13, NIDORAN_M
-	db 10, ABRA
-	db 12, MEOWTH
-	db 10, DITTO
-	db 12, DITTO
+	db 14, PIDGEY
+	db 14, SNUBBULL
+	db 15, ABRA
+	db 14, NIDORAN_F
+	db 15, DITTO
+	db 15, DITTO
+	; day
+	db 13, NIDORAN_M
+	db 14, PIDGEY
+	db 14, SNUBBULL
+	db 15, ABRA
+	db 14, NIDORAN_F
+	db 15, DITTO
+	db 15, DITTO
+	; nite
+	db 13, NIDORAN_F
+	db 14, HOOTHOOT
+	db 14, MEOWTH
+	db 15, ABRA
+	db 14, NIDORAN_M
+	db 15, DITTO
+	db 15, DITTO
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_36
